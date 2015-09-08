@@ -1,0 +1,47 @@
+<section id="wizard">
+  <%= simple_form_for @user, url: school_registration_path(@user),method: :post, class: "form-horizontal",novalidate: "novalidate" do |f| %>
+		<div id="rootwizard">
+			<ul class="nav nav-pills">
+			  <li class="active"><a href="#tab1" data-toggle="tab" aria-expanded="true">First</a></li>
+				<li><a href="#tab2" data-toggle="tab">Second</a></li>
+				<li><a href="#tab3" data-toggle="tab">Third</a></li>
+			</ul>
+		  <div id="bar" class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+      </div>
+			<div class="tab-content">
+			  <div class="tab-pane active" id="tab1">
+
+          <%= f.input :first_name, placeholder: 'user@domain.com',class: "required email" %>
+          <%= f.input :last_name, placeholder: 'user@domain.com',class: "required email" %>
+          <%= f.input :gender, as: :check_boxes %>
+          <%= f.input :age %>
+          <%= f.input :school_name %>
+          <%= f.input :grade_year %>
+          <%= f.input :address %>
+          <%= f.input :city %>
+          <%= f.input :state %>
+          <%= f.input :zip_code %>
+        </div>
+		    <div class="tab-pane" id="tab2">
+		      <div class="control-group">
+				    <label class="control-label" for="url">URL</label>
+				    <div class="controls">
+				      <input type="text" id="urlfield" name="urlfield" class="required url">
+				    </div>
+				  </div>
+		    </div>
+				<div class="tab-pane" id="tab3">
+					3
+			  </div>
+				<ul class="pager wizard">
+					<li class="previous first disabled" style="display:none;"><a href="#">First</a></li>
+					<li class="previous disabled"><a href="javascript:void(0)">Previous</a></li>
+					<li class="next last" style="display:none;"><a href="#">Last</a></li>
+					<%=f.submit 'Next',class: "next"%>
+				  <li class="next"><a href="javascript:void(0)">Next</a></li>
+				</ul>
+			</div>
+		</div>
+	<%end%>
+</section>

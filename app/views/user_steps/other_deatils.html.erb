@@ -1,0 +1,29 @@
+<%= render layout: 'form' do |f| %>
+<div class="container center_div">
+  <div class="tab-pane" id="tab3">
+    <h4>Step 3</h4>
+    <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :persons_auth, as: :text, label: 'Person’s Authorized to pick up child', required: true %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :other_arrangements, label: "Other Dismissal Arrangements", required: true %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :emergency_contact, label: "Emergency contact", required: true %>
+	    </div>
+
+	    <div class="col-lg-3">
+	      <%= f.input :child_helath_prob, label: "Specify any of your child’s health problems", required: true%>
+	    </div>
+	  </div>
+	</div>
+</div>
+<div class="previous"%>
+    <%= link_to "previous step", wizard_path(:gardian_details),class: "page-refresh btn btn-primary btn-sm" %>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+  </div>
+
+<% end %>

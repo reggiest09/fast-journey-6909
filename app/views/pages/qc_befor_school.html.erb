@@ -1,0 +1,97 @@
+
+		<section class="module bg-dark bg-dark-60" data-background="assets/images/section-4.jpg">
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-sm-6 col-sm-offset-3">
+
+						<h1 class="module-title font-alt">Queen City Stem Before School</h1>
+						<div class="module-subtitle font-serif mb-0">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at elit posuere, pharetra urna sed, venenatis est. Pellentesque nec tincidunt libero. Sed ut sodales neque, ut viverra quam. Donec urna ante, pulvinar nec maximus vel, euismod at metus. Vivamus finibus mauris sed lorem lobortis, id sagittis justo pharetra. Curabitur dolor odio, semper et
+						</div>
+
+					</div>
+
+				</div><!-- .row -->
+
+			</div>
+		</section>
+		<!-- Header section end -->
+
+	<!-- Wrapper start -->
+	<div class="main">
+
+		<section class="module">
+			<div class="container">
+
+				<div class="row">
+
+					<!-- Product images start -->
+					<div class="col-sm-6 mb-sm-40">
+						<a href="assets/images/shop/product-7.jpg" class="gallery"><img src="assets/images/shop/product-7.jpg" alt=""></a>
+						
+					</div>
+					<!-- Product images end -->
+
+					<!-- Product detail start -->
+					<div class="col-sm-6">
+
+						<div class="row">
+							<div class="col-sm-12">
+								<h1 class="product-title font-alt">Queen City Stem Before School Plan</h1>
+							</div>
+						</div>
+
+						
+
+						<div class="row mb-20">
+							<div class="col-sm-12">
+								<div class="price font-alt">
+									<span class="amount">$25 registration fee</span><br>
+									<span class="amount">$20 wk</span><br>
+									<span class="amount">$80 mo</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-20">
+							<div class="col-sm-12">
+								<div class="description">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at elit posuere, pharetra urna sed, venenatis est. Pellentesque nec tincidunt libero. Sed ut sodales neque, ut viverra quam. Donec urna ante, pulvinar nec maximus vel, euismod at metus. Vivamus finibus mauris sed lorem lobortis, id sagittis justo pharetra. Curabitur dolor odio, semper et</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row mb-20">
+							
+							<div class="col-sm-8">
+							  <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "before_school") : new_user_session_path(interval: "weekly",plan_name: "before_school"),class: "btn btn-lg btn-block btn-round btn-b" %><br/><br/>
+              
+							</div>
+
+
+              </div>
+              
+              <div class="row mb-20">
+							
+							<div class="col-sm-8">
+							  <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "before_school") : new_user_session_path(interval: "monthly",plan_name: "before_school"),class: "btn btn-lg btn-block btn-round btn-b" %>
+							</div>
+						</div>
+
+		
+					</div>
+					<!-- Product detail end -->
+
+				</div><!-- .row -->
+
+				<div class="row mt-70">
+					
+				</div><!-- .row -->
+
+			</div>
+		</section>
+
+		<!-- Divider -->
+		<hr class="divider-w">

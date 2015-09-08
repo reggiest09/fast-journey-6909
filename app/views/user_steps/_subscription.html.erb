@@ -1,0 +1,22 @@
+
+
+
+ <div class="tab-content">
+   
+<%= simple_form_for @subscription do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= yield f %>
+  
+<% end %>
+ </div>
+</div>
+</section>

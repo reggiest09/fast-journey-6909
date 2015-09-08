@@ -1,0 +1,50 @@
+<%= simple_form_for @subscription do |f| %>
+  <div class="container center_div">
+  <div class="tab-pane" id="tab5">
+     <h4>Step 5</h4>
+  <%= f.hidden_field :stripe_card_token %>
+
+  <%= f.hidden_field :user_id,value: @user.id%>
+  <%#= f.hidden_field :plan_id %>
+  <% if @subscription.stripe_card_token.present? %>
+    Credit card has been provided.
+  <% else %>
+    <div class="row">
+      <div class="col-lg-4">
+        <%= label_tag :card_number, "Credit Card Number" %>
+        <%= text_field_tag :card_number, nil, name: nil, class: "form-control input-lg", required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <%= label_tag :card_code, "Security Code on Card (CVV)" %>
+        <%= text_field_tag :card_code, nil, name: nil, class: "form-control input-lg", required: true %>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <%= label_tag :card_month, "Card Expiration" %>
+        <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control input-lg", required: true} %>
+        <br>
+        <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year",class: "form-control input-lg", required: true} %>
+      </div>
+    </div>
+  <% end %>
+  <div id="stripe_error">
+    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+  <br>
+  <div class="previous"%>
+    <%= link_to "previous step", wizard_path(:redme),class: "page-refresh btn btn-primary btn-sm" %>
+    <%= f.submit "Make Payment",class: "next btn btn-primary btn-sm" %>
+    <%# link_to "skip this step", next_wizard_path,class: "skip btn btn-primary btn-sm" %>
+  </div>
+<%end%>
+<div class = "error-code"></div>
+<div class="coupon-text-message">
+  <div class="alert fade in">
+    <a href="#" class="close" data-dismiss="alert" style = "display:none">&times;</a>
+    <span></span>
+  </div>
+</div>
+

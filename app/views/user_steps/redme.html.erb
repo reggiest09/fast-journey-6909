@@ -1,0 +1,131 @@
+<%= render layout: 'form' do |f| %>
+<div class="container center_div">
+  <div class="tab-pane" id="tab4">
+   <h4>Step 4</h4>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_helath_prob, label: "Is your child on any medication?" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_midication, label: "If your child is on medication please specifiy" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_midication_desc, label: "Snack" %>
+      </div>
+      <div class="col-lg-3">
+        <%= f.input :snack, label: "Specify any of your childâ€™s health problems"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h6>If you will be sending your childâ€™s snack, please be sure that your childâ€™s lunch is clearly marked with your childâ€™s name and last name. Glass bottles/containers are not allowed. All snacks must follow the nutritional guidelines(no candy, soda, sweets)</h6>
+      </div>
+    </div>
+    <h2>Readme</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg" data-keyboard="false" data-backdrop="static">
+          <span class="glyphicon glyphicon-collapse-down"></span> Payment Mode
+        </button>
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg" data-keyboard="false" data-backdrop="static">
+          <span class="glyphicon glyphicon-collapse-down"></span> Late Payment Penality
+        </button>
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg" data-keyboard="false" data-backdrop="static">
+          <span class="glyphicon glyphicon-collapse-down"></span> Fun
+        </button>
+      </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Payment Mode</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  Payment** Cash is not accepted**<br/>
+                  Payments may be made on-line with debit or credit card. Check,money order or cashierâ€™s check is accepted. Full weekly fees are charged for school weeks with holidays.<br/>
+                  Registration Fee <br/>
+                  $25.00 family registration fee; a re-enrollment fee is charged anytime there is a break in service.<br/>
+                  Extended day camp for school holidays<br/>
+                  $85.00 per week<br/>
+                  Weekly Afterschool Enrichment Fees:<br/>
+                  $50.00 per week<br/>
+                  Monthly Afterschool Enrichment<br/>
+                  $200.00 per month
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bs-example1-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Late Payment Penality</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  Late Payment Penalties<br/>
+                  Weekly fees are due by Monday at 6:00 PM for the week of care (unless your child is absent). If fees for the week have not been paid on Monday, a $5 late fee is assessed. Payments can be made on-line any day however the $5 late fee will still be assessed for payments received after 6:00 PM on Monday. Monday and Friday are the only days fees are payable on-site. If payment has not been made by school dismissal time on the following Monday the child will not be allowed to attend afterschool. The child cannot be re-enrolled in any T.A.P.S. program until full payment of the balance due has been made. A $25 registration fee is due at re-enrollment<br/>
+                  Payment Options <br/>
+                  Payments may be made on-line with debit or credit card, check, money order, or cashierâ€™s check. Cash is not accepted. Full weekly fees are charged for school weeks with holidays.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade bs-example2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Fun</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  Winter and Spring Break<br/>
+                  (Optional Care): $20/day for the first child; $18/day for siblings<br/>
+                  Fee Payment Policy<br/>
+                  Fees are due on or before Monday of the week of care. Fees may be paid in advance for any period of time. The full weekly fee is due regardless of the number of days a student attends. All funds must be deposited on the day they are received; therefore, T.A.P.S. accepts on-site payments only on Mondays and Fridays to avoid daily deposits. If a holiday, long day, or snow day occurs on a usual fee collection day, an extra day of fee collection will be added without penalty. Checks or money orders should be made payable to: T.A.P.S. Inc.<br/>
+                  Returned Check <br/>
+                  There is a 30.00 Dollar return check fee assessed to your account, if you have a check to return, you would be required to use another method of payment going forward..
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="previous readme_page"%>
+    <%= link_to "previous step", wizard_path(:other_deatils),class: "page-refresh btn btn-primary btn-sm" %>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+  </div>
+<% end %>

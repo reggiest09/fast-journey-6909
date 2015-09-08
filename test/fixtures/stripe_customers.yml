@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  object: MyString
+  description: MyString
+  livemode: false
+  created_timestamp: 1
+  reference_id: MyString
+  user_id: 1
+
+two:
+  object: MyString
+  description: MyString
+  livemode: false
+  created_timestamp: 1
+  reference_id: MyString
+  user_id: 1

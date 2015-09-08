@@ -1,0 +1,63 @@
+
+<%= render layout: 'form' do |f| %>
+  <div class="container center_div">
+    <div class="tab-pane" id="tab1">
+      <h4> Step 1 </h4>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :first_name, placeholder: 'first name',class: "required email", required: true %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.input :last_name, placeholder: 'last name',class: "required email", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :gender, as: :radio_buttons, :collection => [['Male', 'Male'], ['Female', 'Female']],class: "required", required: true %>
+        </div>
+      </div>
+      <% if params[:plan_name] == "queen_city" %>
+        <div class="row">
+          <div class = "col-lg-3">
+             <%= f.input :employee_qc, as: :radio_buttons,class: "required", required: true, label: "Are you an employee of Queen City Stem School" %>
+          </div>
+        </div>
+      <%end%>
+      <div class="row">
+      <div class="col-lg-3">
+              <%= f.input :age, required: true %>
+      </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-3">
+              <%= f.input :school_name, required: true %>
+      </div>
+      <div class="col-lg-3">
+              <%= f.input :grade_year, required: true %>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+                <%= f.input :home_address, required: true %>
+        </div>
+        <div class="col-lg-3">
+                <%= f.input :home_city, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+                <%= f.input :home_state, required: true %>
+        </div>
+        <div class="col-lg-3">
+                <%= f.input :home_zip_code, required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="previous"%>
+    <%= link_to "previous step", wizard_path(:new_registration),class: "btn btn-primary btn-sm" %>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+    <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
+    <%= f.hidden_field "interval", :value => params[:interval] %>
+  </div>
+<% end %>

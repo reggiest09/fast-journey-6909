@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 col-md-offset">
+      <h2>Profile</h2>
+      <div class="pull-left">
+        First Name : <%= current_user.first_name.titleize  if current_user.first_name.present?%>
+        <br>
+        Last Name : <%= current_user.last_name.titleize if current_user.last_name.present?%>
+        <br>
+        Email : <%= current_user.email.capitalize if current_user.email.present?%>
+        <br>
+        Gender : <%= current_user.gender%>
+        <br>
+        Age : <%= current_user.age%>
+      </div>
+      <div class="pull-right">
+        School Name : <%= current_user.school_name.titleize if current_user.school_name.present?%>
+        <br>
+        Grade Year : <%= current_user.grade_year%>
+        <br>
+        Father Name : <%= current_user.father_name%>
+        <br>
+        Mother Name : <%= current_user.mother_name%>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="portlet box red">
+    <div class="portlet-title">
+      <div class="caption">
+        <i class="fa fa-cogs"></i>Subscriptions
+      </div>
+    </div>
+    <div class="portlet-body">
+      <div class="table-scrollable">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th> Plan Interval </th>
+              <th> Plan Name </th>
+              <th> Status</th>
+              <th> Cancel </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% current_user.subscriptions.each do |subscription| %>
+              <tr>
+                <td> <%= current_user.plan.titleize%> </td>
+                <td> <%= subscription.plan_name.titleize%> </td>
+                <td> <%= subscription.active%> </td>
+                <td>
+                  <% if subscription.active %>
+                    <%= link_to "Cancel", subscription_cancel_path(subscription.stripe_card_token), class: "btn btn-success btn-sm" %>
+                  <% else %>
+                    <%= link_to "Subscription Cancelled", subscription_cancel_path(subscription.stripe_card_token), class: "btn btn-success btn-sm", disabled: true %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

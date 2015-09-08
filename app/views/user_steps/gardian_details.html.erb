@@ -1,0 +1,45 @@
+
+<%= render layout: 'form' do |f| %>
+<div class="container center_div">
+	<div class="tab-pane" id="tab2">
+	  <h4>Step 2</h4>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :ada_accommodation, as: :text, label: 'Please list ADA Accommodations needed' %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :parent_gurdin_email, label: "Email", required: true %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :mother_name, label: "Mother's Name" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :mother_day_number, label: "Mother's Day Phone Number"%>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :mother_cell_num, label: "Mother's Cell Phone Number" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :father_name, label: "Father's Name" %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :father_day_number, label: "Father's Day Phone Number" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :father_cell_number, label: "Father's Cell Phone Number" %>
+	    </div>
+	  </div>
+	</div>
+</div>
+<div class="previous"%>
+    <%= link_to "previous step", wizard_path(:student_info),class: "page-refresh btn btn-primary btn-sm" %>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+  </div>
+
+<% end %>
