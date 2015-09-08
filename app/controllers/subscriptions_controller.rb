@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(sub_params)
     if @subscription.save_with_payment(current_user)
-      redirect_to :back, :notice => "Thank you for subscribing!"
+      redirect_to :back, :notice => "Thank you for your purchase!"
     else
       redirect_to :back, :notice => "Card details is invalid please check!"
     end
