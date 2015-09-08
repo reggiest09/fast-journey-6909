@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users,:controllers => { registrations: 'users/registrations',sessions: 'users/sessions' }
+   
 
   resources :user_steps
   resources :users, only: [:new, :create]
@@ -18,7 +19,8 @@ Rails.application.routes.draw do
   get "qc_befor_school" => "pages#qc_befor_school"
   get "taps_after_school" => "pages#taps_after_school"
   get "taps_gallery" => "pages#taps_gallery"
-
+  get '/st_payment' => 'pages#st_payment'
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

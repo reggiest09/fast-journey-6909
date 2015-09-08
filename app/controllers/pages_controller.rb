@@ -26,6 +26,9 @@ class PagesController < ApplicationController
   def taps
   end
 
+  def st_payment
+  end
+
   def show
     @user = current_user
   end
