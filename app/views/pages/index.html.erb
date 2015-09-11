@@ -480,7 +480,7 @@
               <h4>School Closing</h4>
               <p class="small">School Closing</p>
               <div class="borderline"></div>
-              <p class="price"><span>$</span>25</p>
+              <h2 class="price"><span>$</span>25 per Day</h2>
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
@@ -501,7 +501,8 @@
               <h4>Christmas Break</h4>
               <p class="small">Spring Break</p>
               <div class="borderline"></div>
-              <p class="price"><span>$</span>25</p>
+              <h2 class="price"><span>$</span>25 per Day</h2>
+              <h2 class="price"><span>$</span>85 per Week</h2>
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
@@ -541,7 +542,8 @@
             <div class="price-table font-alt">
               <h4>Before school plan including after school</h4>
               <div class="borderline"></div>
-              <h2 class="price"><span>$</span>62</h2>
+              <h2 class="price"><span>$</span>62 wk</h2>
+              <h2 class="price"><span>$</span>248 mo</h2>
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
@@ -549,8 +551,9 @@
                 <li><span>better quality homework</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              
-              <%= link_to 'Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"),class: "btn btn-d btn-round" %>
+               
+               <%= link_to 'Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "after_school") : new_user_session_path(interval: "weekly", plan_name: "after_school"),class: "btn btn-d btn-round" %><br/><br/>
+               <%= link_to 'Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"),class: "btn btn-d btn-round" %>
             </div>
 
           </div>
