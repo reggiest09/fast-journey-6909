@@ -1,37 +1,38 @@
 var subscription;
 jQuery(function() {
-  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
-  return subscription.setupForm();
+    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+    return subscription.setupForm();
 });
 subscription = {
-  setupForm: function() {
-    return $('#new_subscription').submit(function() {
-      $('input[type=submit]').attr('disabled', true);
-      if ($('#card_number').length) {
-        subscription.processCard();
-        return false;
-      } else {
-        return true;
-      }
+    setupForm: function() {
+      $(document).on('submit','#new_subscription',function(e){
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            subscription.processCard();
+            return false;
     });
   },
   processCard: function() {
+        $('input[type=submit]').attr('disabled', true).val('Processing. Please, wait...');
+        $('input[type=submit]').addClass('processing');
+
     var card;
     card = {
-      number: $('#card_number').val(),
-      cvc: $('#card_code').val(),
-      expMonth: $('#card_month').val(),
-      expYear: $('#card_year').val()
-    };
+        number: $('#card_number').val(),
+        cvc: $('#card_code').val(),
+        expMonth: $('#card_month').val(),
+        expYear: $('#card_year').val()
+      };
     return Stripe.createToken(card, subscription.handleStripeResponse);
   },
   handleStripeResponse: function(status, response) {
     if (status === 200) {
       $('#subscription_stripe_card_token').val(response.id);
-      return $('#new_subscription')[0].submit();
+      $('#new_subscription')[0].submit();
     } else {
-      $('#stripe_error').text(response.error.message);
-      return $('input[type=submit]').attr('disabled', false);
+      $("#stripe_error").text("Stripe Error: "+response.error.message);
+      $('#subscribe_button').removeClass('processing');
+      return $('input[type=submit]').attr('disabled', false).val('Subscribe');
     }
   }
 };

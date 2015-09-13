@@ -8,4 +8,13 @@ class User < ActiveRecord::Base
   has_one :coupon
   has_many :stripe_plans
   has_many :stripe_customers
+
+  after_create :send_admin_mail
+
+  def send_admin_mail
+    begin
+      UserMailer.send_email_to_admin.deliver_now
+    rescue Exception => e
+    end
+  end
 end

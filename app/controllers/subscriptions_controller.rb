@@ -48,7 +48,7 @@ def check_coupon_code
   private
 
   def sub_params
-    params.require(:subscription).permit(:stripe_card_token, :user_id, :active).merge({plan_name: current_user.plan})
+    params.require(:subscription).permit(:stripe_card_token, :user_id, :active, :tos_payment).merge({plan_name: current_user.plan})
   end
 
 end
