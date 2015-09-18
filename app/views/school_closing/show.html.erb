@@ -1,0 +1,175 @@
+<div class="tab-content">
+	<%= simple_form_for @user, url: school_closing_path(@user), method: "put" do |f| %>
+    <div class="container change-container center_div">
+    <div class="tab-pane" id="tab1">
+      <h4> School Closing </h4>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :first_name, placeholder: 'first name',class: "required email", required: true %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.input :last_name, placeholder: 'last name',class: "required email", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :gender, as: :radio_buttons, :collection => [['Male', 'Male'], ['Female', 'Female']],class: "required", required: true %>
+        </div>
+      </div>
+      <% if params[:plan_name] == "queen_city" %>
+        <div class="row">
+          <div class = "col-lg-3">
+             <%= f.input :employee_qc, as: :radio_buttons,class: "required", required: true, label: "Are you an employee of Queen City Stem School" %>
+          </div>
+        </div>
+      <%end%>
+      <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :age, required: true %>
+      </div>
+      </div>
+      <div class="row">
+       <div class="col-lg-3">
+        <%= f.input :school_name, required: true %>
+      </div>
+      <div class="col-lg-3">
+        <%= f.input :grade_year, required: true %>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :home_address, required: true %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.input :home_city, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.input :home_state, required: true, :collection => us_states, prompt: "Please Select State" %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.input :home_zip_code, required: true %>
+        </div>
+      </div>
+      <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :ada_accommodation, as: :text, label: 'Please list ADA Accommodations needed' %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :parent_gurdin_email, label: "Email", required: true %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :mother_name, label: "Mother's Name" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :mother_day_number, label: "Mother's Day Phone Number"%>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :mother_cell_num, label: "Mother's Cell Phone Number" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :father_name, label: "Father's Name" %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :father_day_number, label: "Father's Day Phone Number" %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :father_cell_number, label: "Father's Cell Phone Number" %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :persons_auth, as: :text, label: 'Person’s Authorized to pick up child', required: true %>
+	    </div>
+	    <div class="col-lg-3">
+	      <%= f.input :other_arrangements, label: "Other Dismissal Arrangements", required: true %>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="col-lg-3">
+	      <%= f.input :emergency_contact, label: "Emergency contact", required: true %>
+	    </div>
+
+	    <div class="col-lg-3">
+	      <%= f.input :child_helath_prob, label: "Specify any of your child’s health problems", required: true%>
+	    </div>
+	  </div>
+	  <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_helath_prob, label: "Is your child on any medication?" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_midication, label: "If your child is on medication please specifiy" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <%= f.input :child_midication_desc, label: "Snack" %>
+      </div>
+      <div class="col-lg-3">
+        <%= f.input :snack, label: "Specify any of your childâ€™s health problems"%>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h6>If you will be sending your childâ€™s snack, please be sure that your childâ€™s lunch is clearly marked with your childâ€™s name and last name. Glass bottles/containers are not allowed. All snacks must follow the nutritional guidelines(no candy, soda, sweets)</h6>
+      </div>
+    </div>
+    <div class="row">
+    	<div class="col-lg-6">
+    		<b>Payment** Cash is not accepted**</b><br/>
+	      Payments may be made on-line with debit or credit card. Check,money order or cashier’s check is accepted. Full weekly fees are charged for school weeks with holidays.
+    	</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Individual Days</b><br>
+        $25.00 Per Day
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Total Number Of Early Release Days/School Holidays Did You Select</b><br>
+        <%= f.input :holiday, required: true, :collection => ((1..11).map{|i| [i,i]} << ["No limit",nil]), prompt: "Select Days" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Combined Early Release/ Student Holidays Prices</b><br>
+        $275.00 is the toatal amount due for all available  Early Release/Student Holidays
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Returned Check</b><br>
+        There is a 30.00 Dollar return check fee assessed to your account, if you have a check to return, you would be required to use another method of payment going forward.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Payment Options</b><br>
+        Payments may be made on-line with debit or credit card, check, money order, or cashier’s check. Cash is not accepted. Full weekly fees are charged for school weeks with holidays.
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <b>Contact Information</b><br>
+        For more information, contact Cynthia Smith, Director of Programs and Administration  704-674-8331
+      </div>
+    </div>
+    </div>
+  </div>
+  <%= f.submit "Continue", class: "btn btn-primary btn-sm" %>
+  <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
+  <%= f.hidden_field "interval", :value => params[:interval] %>
+	<% end %>
+</div>

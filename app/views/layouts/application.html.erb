@@ -15,24 +15,25 @@
 </head>
 <body>
 <%=render partial: "layouts/nav_header" %>
-
-<section id="wizard">
-<div id="rootwizard">
-  <div class="navbar">
-    <div class="navbar-inner">
-      <div class="container">
-  <ul>
-    <li><%=link_to 'Student Information','javascript:void(0)',id: "tab1","data-toggle"=> "tab" %></li>
-    <li><%=link_to 'Gardian Details',"#",id: "tab2","data-toggle"=> "tab" %></li>
-    <li><a href="#tab3" id="tab3" data-toggle="tab">Other Details</a></li>
-    <li><a href="#tab4" id="tab4" data-toggle="tab">Readme</a></li>
-    <li><a href="#tab5" id="tab5" data-toggle="tab">Payment</a></li>
-  </ul>
-   </div>
+<% unless params[:plan_name] == "school_closing" ||  current_user.plan_name == "school_closing"%>
+  <section id="wizard">
+  <div id="rootwizard">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+    <ul>
+      <li><%=link_to 'Student Information','javascript:void(0)',id: "tab1","data-toggle"=> "tab" %></li>
+      <li><%=link_to 'Gardian Details',"#",id: "tab2","data-toggle"=> "tab" %></li>
+      <li><a href="#tab3" id="tab3" data-toggle="tab">Other Details</a></li>
+      <li><a href="#tab4" id="tab4" data-toggle="tab">Readme</a></li>
+      <li><a href="#tab5" id="tab5" data-toggle="tab">Payment</a></li>
+    </ul>
+     </div>
+      </div>
     </div>
   </div>
-</div>
-</section>
+  </section>
+<% end %>
 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "alert alert-info" %>

@@ -1,10 +1,10 @@
 <%= simple_form_for @subscription do |f| %>
-  <div class="container center_div">
+  <div class="container change-container center_div">
   <div class="tab-pane" id="tab5">
      <h4>Step 5</h4>
   <%= f.hidden_field :stripe_card_token %>
 
-  <%= f.hidden_field :user_id,value: @user.id%>
+  <%= f.hidden_field :user_id,value: current_user.id%>
   <%#= f.hidden_field :plan_id %>
   <% if @subscription.stripe_card_token.present? %>
     Credit card has been provided.
@@ -48,7 +48,7 @@
 </div>
 <br>
   <div class="previous"%>
-    <%= link_to "previous step", wizard_path(:redme),class: "page-refresh btn btn-primary btn-sm" %>
+    <%#= link_to "previous step", wizard_path(:redme),class: "page-refresh btn btn-primary btn-sm" %>
     <%= f.submit "Make Payment",class: "next btn btn-primary btn-sm" %>
     <%# link_to "skip this step", next_wizard_path,class: "skip btn btn-primary btn-sm" %>
   </div>
