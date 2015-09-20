@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :stripe_customers
   has_many :stripe_charges
 
+  serialize :holiday
+
   after_create :send_admin_mail
 
   def send_admin_mail

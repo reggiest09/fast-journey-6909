@@ -15,6 +15,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         session["#{resource_name}_return_to"] = user_steps_path(plan_name: session[:plan_name],interval: session[:interval])
       when "after_school"
         session["#{resource_name}_return_to"] = user_steps_path(plan_name: session[:plan_name],interval: session[:interval])
+      when "school_closing"
+        session["#{resource_name}_return_to"] = school_closing_steps_path(plan_name: session[:plan_name],interval: session[:interval])
+      when "football"
+        session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
     end
     super
   end

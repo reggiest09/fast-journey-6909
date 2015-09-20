@@ -46,14 +46,19 @@
     <%= f.input :tos_payment, as: :boolean, checked_value: true, unchecked_value: false, class: "required", required: true, label: "I read this waiver" %>
   </div>
 </div>
-<br>
   <div class="previous"%>
     <%#= link_to "previous step", wizard_path(:redme),class: "page-refresh btn btn-primary btn-sm" %>
     <%= f.submit "Make Payment",class: "next btn btn-primary btn-sm" %>
     <%# link_to "skip this step", next_wizard_path,class: "skip btn btn-primary btn-sm" %>
   </div>
 <%end%>
-
+<% unless current_user.amount.present? %>
+<div class="row">
+  <div class="col-lg-12 color-change">
+    You will be charged $<%=current_user.holiday.reject { |c| c.empty? }.count * 25 %>
+  </div>
+</div>
+<%end%>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

@@ -570,9 +570,28 @@
                 <li><span>better quality homework</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              <%= link_to 'Daily', current_user.present? ? school_closing_path(current_user, interval: "daily", plan_name: "school_closing") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
+              <%= link_to 'Daily', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "school_closing") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
           </div>
+
+
+          <div class="col-sm-6 col-md-3 col-lg-3">
+
+            <div class="price-table font-alt">
+              <h4>Norsemen Football / Cheerleading </h4>
+              <div class="borderline"></div>
+              <h2 class="price"><span>$</span>175</h2>
+              <ul class="price-details">
+                <li>Benefits</li>
+                <li>develop new skills</li>
+                <li><span>develop interests</span></li>
+                <li><span>better quality homework</span></li>
+                <li><span>show higher aspirations</span></li>
+              </ul>
+              <%= link_to 'Daily', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "football") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
+            </div>
+          </div>
+
         </div>
 
         <div class="row mt-40">

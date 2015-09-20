@@ -21,6 +21,9 @@ class Subscription < ActiveRecord::Base
       if user.plan_name == "school_closing"
         stripe_charge = Stripe::Charge.create(amount: stripe_charge_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      elsif user.plan_name == "football"
+        stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+        user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
       else
         subscription = customer.subscriptions.create(:plan => payment_discount)
         user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: stripe_customer.id)
@@ -69,7 +72,11 @@ class Subscription < ActiveRecord::Base
   end
 
   def stripe_charge_amount(user)
-    user.holiday * 25 * 100
+    (user.last.holiday.reject { |c| c.empty? }.count) * 25 * 100
+  end
+  
+  def stripe_football_amount(user)
+    (user.amount) * 100
   end
 
   # def check_subscription(user)
