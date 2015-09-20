@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917194135) do
+ActiveRecord::Schema.define(version: 20150920063915) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -141,7 +141,17 @@ ActiveRecord::Schema.define(version: 20150917194135) do
     t.string   "plan"
     t.string   "plan_name"
     t.boolean  "tos_payment",            default: false
-    t.integer  "holiday"
+    t.string   "holiday"
+    t.string   "phone"
+    t.string   "primary_phone"
+    t.string   "dob"
+    t.string   "grand_level"
+    t.string   "event"
+    t.string   "shirt_size"
+    t.string   "company"
+    t.string   "register_for"
+    t.string   "player_weight"
+    t.string   "amount"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

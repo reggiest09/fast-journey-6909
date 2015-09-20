@@ -1,6 +1,6 @@
-class SchoolClosingController < ApplicationController
-
-  def show
+class SchoolClosingStepsController < ApplicationController
+  before_action :authenticate_user!
+  def index
     @user = current_user
     @subscription = Subscription.new
   end
@@ -15,7 +15,7 @@ class SchoolClosingController < ApplicationController
     if @user.save
       redirect_to payment_path
     else
-      render 'show'
+      render 'index'
     end
     @subscription = Subscription.new
   end
@@ -25,7 +25,7 @@ class SchoolClosingController < ApplicationController
   end
   private
   def person_params
-    params.require(:user).permit(:plan, :plan_name, :first_name, :last_name,
+    params.require(:user).permit(:plan, :plan_name,:first_name, :last_name,
                                  :gender,:age,:school_name,:grade_year,
                                  :home_address,:home_city,:home_state,
                                  :home_zip_code,:ada_accommodation,
@@ -35,6 +35,6 @@ class SchoolClosingController < ApplicationController
                                  :father_cell_number,:persons_auth,
                                  :other_arrangements,:emergency_contact,
                                  :child_helath_prob,:child_midication,
-                                 :child_midication_desc,:snack, :holiday)
+                                 :child_midication_desc,:snack,:holiday => [])
   end
 end

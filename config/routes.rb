@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   end
   root 'pages#index'
   resources :profiles, only: [:index]
-  resources :school_closing
+  resources :school_closing_steps
+  resources :football_steps
 
   get "qc_before_after_school" => "pages#qc_before_after_school"
   get "qc_after_school" => "pages#qc_after_school"
@@ -20,7 +21,8 @@ Rails.application.routes.draw do
   get "taps_after_school" => "pages#taps_after_school"
   get "taps_gallery" => "pages#taps_gallery"
   get '/st_payment' => 'pages#st_payment'
-  get 'payment' => 'school_closing#payment'
+  get 'payment' => 'school_closing_steps#payment'
+  get 'football_payment' => 'football_steps#football_payment'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
