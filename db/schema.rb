@@ -141,7 +141,7 @@ ActiveRecord::Schema.define(version: 20150920063915) do
     t.string   "plan"
     t.string   "plan_name"
     t.boolean  "tos_payment",            default: false
-    t.string   "holiday"
+    t.integer  "holiday"
     t.string   "phone"
     t.string   "primary_phone"
     t.string   "dob"
