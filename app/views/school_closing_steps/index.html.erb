@@ -2,111 +2,111 @@
 	<%= simple_form_for @user, :url=>{:controller=>"school_closing_steps",:action=>"update",:id=>@user.id}, method: "put" do |f| %>
     <div class="container change-container center_div">
     <div class="tab-pane" id="tab1">
-      <h4> School Closing </h4>
+      <h3> School Closing </h3>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :first_name, placeholder: 'first name',class: "required email col-xs-5 col-lg-1", required: true %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :last_name, placeholder: 'last name',class: "required email", required: true %>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :gender, as: :radio_buttons, :collection => [['Male', 'Male'], ['Female', 'Female']],class: "required", required: true %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :age, required: true %>
         </div>
       </div>
       <div class="row">
-       <div class="col-lg-3 col-xs-5 col-lg-1">
+       <div class="col-lg-3 col-xs-5">
         <%= f.input :school_name, required: true %>
       </div>
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5">
         <%= f.input :grade_year, required: true %>
       </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :home_address, required: true %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :home_city, required: true %>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :home_state, required: true, :collection => us_states, prompt: "Please Select State" %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5">
           <%= f.input :home_zip_code, required: true %>
         </div>
       </div>
       <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :ada_accommodation, as: :text, label: 'Please list ADA Accommodations needed' %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :parent_gurdin_email, label: "Email", required: true %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :mother_name, label: "Mother's Name" %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :mother_day_number, label: "Mother's Day Phone Number"%>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :mother_cell_num, label: "Mother's Cell Phone Number" %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :father_name, label: "Father's Name" %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :father_day_number, label: "Father's Day Phone Number" %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :father_cell_number, label: "Father's Cell Phone Number" %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :persons_auth, as: :text, label: 'Person’s Authorized to pick up child', required: true %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :other_arrangements, label: "Other Dismissal Arrangements", required: true %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :emergency_contact, label: "Emergency contact", required: true %>
 	    </div>
 
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5">
 	      <%= f.input :child_helath_prob, label: "Specify any of your child’s health problems", required: true%>
 	    </div>
 	  </div>
 	  <div class="row">
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5">
         <%= f.input :child_helath_prob, label: "Is your child on any medication?" %>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5">
         <%= f.input :child_midication, label: "If your child is on medication please specifiy" %>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5">
         <%= f.input :child_midication_desc, label: "Snack" %>
       </div>
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5">
         <%= f.input :snack, label: "Specify any of your childâ€™s health problems"%>
       </div>
     </div>
@@ -132,16 +132,16 @@
 
 
     <div class ="row">
-      <div class="col-lg-6 col-xs-5 col-lg-1">
+      <div class="col-lg-6 col-xs-5">
         <%#=f.input :snack, as: :boolean %> 
         <%= f.input :holiday, as: :check_boxes, collection: [['09/23/2015', '09/23/2015'], ['10/2/2015
-', '10/2/2015'],['10/23/2015', '10/23/2015'],['12/18/2015', '12/18/2015'],['01/04/2016', '01/04/2016'],['02/05/2016', '02/05/2016'],['02/15/2016', '02/15/2016'],['03/01/2016', '03/01/2016'],['04/25/2016', '04/25/2016'],['06/09/2016', '06/09/2016'],['06/10/2016', '06/10/2016']] %>
+', '10/2/2015'],['10/23/2015', '10/23/2015'],['12/18/2015', '12/18/2015'],['01/04/2016', '01/04/2016'],['02/05/2016', '02/05/2016'],['02/15/2016', '02/15/2016'],['03/01/2016', '03/01/2016'],['04/25/2016', '04/25/2016'],['06/09/2016', '06/09/2016'],['06/10/2016', '06/10/2016']], label: "Choose day" %>
       </div>
     </div>
 
 
 
-    
+   
   </div>
   <%= f.submit "Continue", class: "btn btn-primary btn-info" %>
   <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
