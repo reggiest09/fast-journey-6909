@@ -15,7 +15,6 @@
 </head>
 <body>
 <%=render partial: "layouts/nav_header" %>
-<% unless params[:plan_name] == "school_closing" ||  current_user.plan_name == "school_closing"%>
   <section id="wizard">
   <div id="rootwizard">
     <div class="navbar">
@@ -33,10 +32,9 @@
     </div>
   </div>
   </section>
-<% end %>
 
   <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-info" %>
+    <%= content_tag :div, msg, class: "alert alert-info sucuess-msg" %>
   <% end %>
 
 
