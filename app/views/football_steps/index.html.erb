@@ -4,81 +4,81 @@
     <div class="tab-pane" id="tab1">
       <h3> Norsemen Football / Cheerleading Registration Form </h3>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
-          <%= f.input :first_name, placeholder: 'first name',class: "required email col-xs-5 col-lg-1", required: true %>
+        <div class="col-lg-3 col-xs-5 ">
+          <%= f.input :first_name, placeholder: 'first name',class: "required email col-xs-5 ", required: true %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5 ">
           <%= f.input :last_name, placeholder: 'last name',class: "required email", required: true %>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5 ">
           <%= f.input :home_address, required: true %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5 ">
           <%= f.input :home_city, required: true %>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5 ">
           <%= f.input :home_state, required: true, :collection => us_states, prompt: "Please Select State" %>
         </div>
-        <div class="col-lg-3 col-xs-5 col-lg-1">
+        <div class="col-lg-3 col-xs-5 ">
           <%= f.input :home_zip_code, required: true %>
         </div>
       </div>
       <div class="row">
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :phone, label: 'Phone' %>
   	    </div>
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :primary_phone, label: "Primary Phone", required: true %>
   	    </div>
 	    </div>
   	  <div class="row">
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :dob, label: "Date of Birth" %>
   	    </div>
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :grand_level, label: "Grade Level as of Fall 2015"%>
   	    </div>
   	  </div>
   	  <div class="row">
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :event, as: :radio_buttons, :collection => [['Friend or Colleague', 'f_c'], ['Search Engine', 'search'],['Advertisement', 'advertisement'],['Other', 'other']],class: "required", required: true %>
   	      <%= f.input :event, label: "other" %>
         </div>
-  	    <div class="col-lg-3 col-xs-5 col-lg-1">
+  	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :shirt_size, as: :radio_buttons, :collection => [['Youth XS', 'f_c'], ['Youth S', 'search'],['Youth M', 'advertisement'],['Youth L', 'other'],['Adult S', 'other'],['Adult M', 'other']],class: "required", required: true %>
   	    </div>
   	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :father_name, label: "Parents Name" %>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :school_name, label: "Father's Cell Phone Number" %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :company, label: 'Company'%>
 	    </div>
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']] %>
 	    </div>
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :other_arrangements, as: :text,label: "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:"%>
 	    </div>
 
-	    <div class="col-lg-3 col-xs-5 col-lg-1">
+	    <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :player_weight, label: "Football Player's Weight"%>
 	    </div>
 	  </div>
 	  <div class="row">
-      <div class="col-lg-3 col-xs-5 col-lg-1">
+      <div class="col-lg-3 col-xs-5 ">
         <%= f.hidden_field :amount, label: "Fee",value: "175" %>
         Fee: <span>$175</span>
       </div>
