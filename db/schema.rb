@@ -141,7 +141,6 @@ ActiveRecord::Schema.define(version: 20150920063915) do
     t.string   "plan"
     t.string   "plan_name"
     t.boolean  "tos_payment",            default: false
-<<<<<<< HEAD
     t.string   "holiday"
     t.string   "phone"
     t.string   "primary_phone"
@@ -153,8 +152,6 @@ ActiveRecord::Schema.define(version: 20150920063915) do
     t.string   "register_for"
     t.string   "player_weight"
     t.string   "amount"
-=======
->>>>>>> 106c15772211c5af14a65bff3e11db3645bf5a05
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
