@@ -71,9 +71,9 @@
 	    </div>
 	    <div class="col-lg-3 col-xs-5 ">
         <%if params[:plan_name] == "basketball" %> 
-          <%= f.input :register_for, as: :check_boxes, collection: [['Basketball', 'basketball']] %>
+          <%= f.input :register_for, as: :check_boxes, collection: [['Basketball', 'basketball']],class: "required", required: true %>
         <%else%>
-	       <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']] %>
+	       <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']],class: "required", required: true %>
         <%end%>
 	    </div>
 	  </div>
