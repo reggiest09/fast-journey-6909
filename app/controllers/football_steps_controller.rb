@@ -32,7 +32,7 @@ class FootballStepsController < ApplicationController
                                  :primary_phone,:dob,
                                  :grand_level,:event,
                                  :shirt_size,:father_name,
-                                 :company,:register_for,
+                                 :company,:register_for => [],
                                  :other_arrangements,:player_weight,
                                  :amount)
   end

@@ -21,7 +21,7 @@ class Subscription < ActiveRecord::Base
       if user.plan_name == "school_closing"
         stripe_charge = Stripe::Charge.create(amount: stripe_charge_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "football"
+      elsif user.plan_name == "football" || user.plan_name == "basketball"
         stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
       else
