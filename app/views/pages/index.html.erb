@@ -509,7 +509,8 @@
                 <li><span>better quality homework</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              <a href="#" class="btn btn-d btn-round coming-soon1">Sign Up</a>
+
+              <%= link_to 'Sign Up', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "christmas_break") : new_user_session_path(interval: "daily", plan_name: "christmas_break"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
 
           </div>
@@ -592,6 +593,8 @@
               <%= link_to 'Sign Up', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "basketball") : new_user_session_path(interval: "daily", plan_name: "basketball"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
           </div>
+
+        
 
         </div>
 
