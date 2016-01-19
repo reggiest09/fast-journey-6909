@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   serialize :holiday
 
+
   after_create :send_admin_mail
 
   def send_admin_mail
