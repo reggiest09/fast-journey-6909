@@ -62,4 +62,11 @@
       </div>
     </div>
   </div>
+  <%= form_tag download_pdf_path,method: :get do %>
+    <% if current_user.stripe_customers.present? %>
+      <%= submit_tag 'Download Pdf', class: "btn btn-success btn-lg" %>
+    <%else%>
+      <%= submit_tag 'Submit', class: "btn btn-default btn-lg disabled" %>
+    <%end%>
+  <%end%>
 </div>

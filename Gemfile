@@ -31,6 +31,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'stripe'
 gem 'activeadmin', github: 'activeadmin'
+gem 'prawn'
+gem 'prawn-table'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

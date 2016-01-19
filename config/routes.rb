@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/st_payment' => 'pages#st_payment'
   get 'payment' => 'school_closing_steps#payment'
   get 'football_payment' => 'football_steps#football_payment'
+  get 'download_pdf' => 'profiles#download_pdf'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
