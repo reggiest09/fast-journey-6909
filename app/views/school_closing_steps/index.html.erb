@@ -2,7 +2,11 @@
 	<%= simple_form_for @user, :url=>{:controller=>"school_closing_steps",:action=>"update",:id=>@user.id}, method: "put" do |f| %>
     <div class="container change-container center_div">
     <div class="tab-pane" id="tab1">
-      <h3> School Closing </h3>
+      <% if params[:plan_name] == "school_closing" %>
+        <h3> School Closing </h3>
+      <%else%>
+        <h3> Christmas Break </h3>
+      <%end%>
       <div class="row">
         <div class="col-lg-3 col-xs-5">
           <%= f.input :first_name, placeholder: 'first name',class: "required email col-xs-5 col-lg-1", required: true %>
@@ -112,20 +116,13 @@
     </div>
     <div class="row">
       <div class="col-lg-6">
-        <h6>If you will be sending your childâ€™s snack, please be sure that your childâ€™s lunch is clearly marked with your childâ€™s name and last name. Glass bottles/containers are not allowed. All snacks must follow the nutritional guidelines(no candy, soda, sweets)</h6>
+        <h6>If you will be sending your child's snack, please be sure that your child's lunch is clearly marked with your child's name and last name. Glass bottles/containers are not allowed. All snacks must follow the nutritional guidelines(no candy, soda, sweets)</h6>
       </div>
     </div>
-    <div class="row">
-    	<div class="col-lg-6">
-    		<b>Payment** Cash is not accepted**</b><br/>
-	      Payments may be made on-line with debit or credit card. Check,money order or cashier’s check is accepted. Full weekly fees are charged for school weeks with holidays.
-    	</div>
-    </div>
-
     <div class ="row">
       <div class="col-lg-6">
         <%#=f.input :snack, as: :boolean %> 
-        Per the Queen City STEM Calendar there are a total of eleven (11) early release/student holiday days. T.A.P.S will be providing care for all currently enrolled, after school participants and will allow a limited amount of participants at the drop in rate of $25.00 per day. If you are already enrolled in after school, the early release dates are already included in your weekly fee so there is nothing you need to do. IF your child IS NOT a part of the after school program, you must register them for that day at least 48 hours prior by paying the $25.00 drop in rate. Remember, the spaces for early release are limited so if you are anticipating your student being there, it would be best to secure that spot as early as possible. You have the option of paying for those dates upfront, or individually. 
+        Per the Queen City STEM Calendar there are a total of eleven (11) early release/student holiday days. T.A.P.S will be providing care for all currently enrolled, after school participants and will allow a limited amount of participants at the drop in rate of $25.00 per day. If you are already enrolled in after school, the early release dates are already included in your weekly fee so there is nothing you need to do. IF your child IS NOT a part of the after school program, you must register them for that day at least 24 hours prior by paying the $25.00 drop in rate. Remember, the spaces for early release are limited so if you are anticipating your student being there, it would be best to secure that spot as early as possible. Please make your selection from the dates below. 
 
       </div>
     </div>
@@ -133,9 +130,12 @@
 
     <div class ="row">
       <div class="col-lg-6 col-xs-5">
-        <%#=f.input :snack, as: :boolean %> 
-        <%= f.input :holiday, as: :check_boxes, collection: [['09/23/2015', '09/23/2015'], ['10/2/2015
-', '10/2/2015'],['10/23/2015', '10/23/2015'],['12/18/2015', '12/18/2015'],['01/04/2016', '01/04/2016'],['02/05/2016', '02/05/2016'],['02/15/2016', '02/15/2016'],['03/01/2016', '03/01/2016'],['04/25/2016', '04/25/2016'],['06/09/2016', '06/09/2016'],['06/10/2016', '06/10/2016']], label: "Choose day" %>
+        <% if params[:plan_name] == "school_closing" %>
+          <%#=f.input :snack, as: :boolean %> 
+          <%= f.input :holiday, as: :check_boxes, collection: [['09/23/2015', '09/23/2015'], ['10/2/2015', '10/2/2015'],['10/23/2015', '10/23/2015'],['12/18/2015', '12/18/2015'],['01/04/2016', '01/04/2016'],['02/05/2016', '02/05/2016'],['02/15/2016', '02/15/2016'],['03/01/2016', '03/01/2016'],['04/25/2016', '04/25/2016'],['06/09/2016', '06/09/2016'],['06/10/2016', '06/10/2016']], label: "Choose day" %>
+        <%else%>
+          <%= f.input :holiday, as: :check_boxes, collection: [['12/21/2015', '12/21/2015'], ['12/22/2015', '12/22/2015'],['12/23/2015', '12/23/2015'],['12/28/2015', '12/28/2015'],['12/29/2015', '12/29/2015'],['12/30/2015', '12/30/2015'],['12/31/2015', '12/31/2015']], label: "Choose day" %>
+        <%end%>
       </div>
     </div>
 

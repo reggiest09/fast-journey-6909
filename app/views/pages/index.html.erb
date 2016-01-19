@@ -476,11 +476,10 @@
           <!-- Price table start -->
           <div class="col-sm-6 col-md-3 col-lg-3">
 
-            <div class="price-table best font-alt">
+            <div class="price-table font-alt">
               <h4>School Closing</h4>
-              <p class="small">School Closing</p>
               <div class="borderline"></div>
-              <h2 class="price"><span>$</span>25 per Day</h2>
+              <h2 class="price"><span>$</span>25</h2>
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
@@ -488,9 +487,8 @@
                 <li><span>better quality homework</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              <a href="#" class="btn btn-d btn-round coming-soon">Sign Up</a>
+              <%= link_to 'Sign Up', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "school_closing") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
-
           </div>
           <!-- Price table end -->
 
@@ -502,7 +500,6 @@
               <p class="small">Spring Break</p>
               <div class="borderline"></div>
               <h2 class="price"><span>$</span>25 per Day</h2>
-              <h2 class="price"><span>$</span>85 per Week</h2>
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
@@ -510,7 +507,8 @@
                 <li><span>better quality homework</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              <a href="#" class="btn btn-d btn-round coming-soon1">Sign Up</a>
+
+              <%= link_to 'Sign Up', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "christmas_break") : new_user_session_path(interval: "daily", plan_name: "christmas_break"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
 
           </div>
@@ -557,22 +555,7 @@
             </div>
 
           </div>
-          <div class="col-sm-6 col-md-3 col-lg-3">
-
-            <div class="price-table font-alt">
-              <h4>School Closing</h4>
-              <div class="borderline"></div>
-              <h2 class="price"><span>$</span>25</h2>
-              <ul class="price-details">
-                <li>Benefits</li>
-                <li>develop new skills</li>
-                <li><span>develop interests</span></li>
-                <li><span>better quality homework</span></li>
-                <li><span>show higher aspirations</span></li>
-              </ul>
-              <%= link_to 'Daily', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "school_closing") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
-            </div>
-          </div>
+         
 
 
           <div class="col-sm-6 col-md-3 col-lg-3">
@@ -584,13 +567,32 @@
               <ul class="price-details">
                 <li>Benefits</li>
                 <li>develop new skills</li>
-                <li><span>develop interests</span></li>
-                <li><span>better quality homework</span></li>
+                <li><span>High self-esteem</span></li>
+                <li><span>working together</span></li>
                 <li><span>show higher aspirations</span></li>
               </ul>
-              <%= link_to 'Daily', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "football") : new_user_session_path(interval: "daily", plan_name: "school_closing"),class: "btn btn-d btn-round" %><br/><br/>
+              <%= link_to 'Sign Up', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "football") : new_user_session_path(interval: "daily", plan_name: "football"),class: "btn btn-d btn-round" %><br/><br/>
             </div>
           </div>
+
+          <div class="col-sm-6 col-md-3 col-lg-3">
+
+            <div class="price-table font-alt">
+              <h4> Basketball</h4>
+              <div class="borderline"></div>
+              <h2 class="price"><span>$</span>75</h2>
+              <ul class="price-details">
+                <li>Benefits</li>
+                <li>develop new skills</li>
+                <li><span>High self-esteem</span></li>
+                <li><span>working together</span></li>
+                <li><span>show higher aspirations</span></li>
+              </ul>
+              <%= link_to 'Sign Up', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "basketball") : new_user_session_path(interval: "daily", plan_name: "basketball"),class: "btn btn-d btn-round" %><br/><br/>
+            </div>
+          </div>
+
+        
 
         </div>
 
@@ -629,7 +631,7 @@
               <div class="row">
 
                 <div class="col-sm-8 col-sm-offset-2">
-                  <blockquote class="testimonial-text font-alt">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</blockquote>
+                  <blockquote class="testimonial-text font-alt">We can't help everyone, but everyone can help someone.</blockquote>
                 </div>
 
               </div><!-- .row -->
@@ -639,8 +641,8 @@
                 <div class="col-sm-4 col-sm-offset-4">
                   <div class="testimonial-author">
                     <div class="testimonial-caption font-alt">
-                      <div class="testimonial-title">Jack Woods</div>
-                      <div class="testimonial-descr">SomeCompany INC, CEO</div>
+                      <div class="testimonial-title">Ronlad Regan</div>
+                      <div class="testimonial-descr">40th U.S. President</div>
                     </div>
                   </div>
                 </div>
@@ -668,7 +670,7 @@
               <div class="row">
 
                 <div class="col-sm-8 col-sm-offset-2">
-                  <blockquote class="testimonial-text font-alt">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.</blockquote>
+                  <blockquote class="testimonial-text font-alt">If opportunity dosen't knock, build a door.</blockquote>
                 </div>
 
               </div><!-- .row -->
@@ -678,8 +680,8 @@
                 <div class="col-sm-4 col-sm-offset-4">
                   <div class="testimonial-author">
                     <div class="testimonial-caption font-alt">
-                      <div class="testimonial-title">Jim Stone</div>
-                      <div class="testimonial-descr">SomeCompany INC, CEO</div>
+                      <div class="testimonial-title">Milton Berle</div>
+                      <div class="testimonial-descr">Comedian</div>
                     </div>
                   </div>
                 </div>
@@ -707,7 +709,7 @@
               <div class="row">
 
                 <div class="col-sm-8 col-sm-offset-2">
-                  <blockquote class="testimonial-text font-alt">I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</blockquote>
+                  <blockquote class="testimonial-text font-alt">Perfection is not attainable, but if we chase perfection we can catch excellence.</blockquote>
                 </div>
 
               </div><!-- .row -->
@@ -717,8 +719,8 @@
                 <div class="col-sm-4 col-sm-offset-4">
                   <div class="testimonial-author">
                     <div class="testimonial-caption font-alt">
-                      <div class="testimonial-title">Adele Snow</div>
-                      <div class="testimonial-descr">SomeCompany INC, CEO</div>
+                      <div class="testimonial-title">Vince Lombardi</div>
+                      <div class="testimonial-descr">Coach, NFL</div>
                     </div>
                   </div>
                 </div>

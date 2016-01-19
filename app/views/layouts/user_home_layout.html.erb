@@ -14,7 +14,9 @@
 <body>
   <%=render partial: "layouts/nav_header" %>
   <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-info sucuess-msg" %>
+    <% if msg == "Thank you for your purchase!" || "Card details is invalid please check!" %> 
+      <%= content_tag :div, msg, class: "alert alert-info sucuess-msg" %>
+    <%end%>
   <% end %>
   <%= yield %>
 </body>

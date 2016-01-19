@@ -2,7 +2,12 @@
 	<%= simple_form_for @user, :url=>{:controller=>"football_steps",:action=>"update",:id=>@user.id}, method: "put" do |f| %>
     <div class="container change-container center_div">
     <div class="tab-pane" id="tab1">
-      <h3> Norsemen Football / Cheerleading Registration Form </h3>
+      <h3>  <%if params[:plan_name] == "basketball" %> 
+              Basketball Registration Form
+            <%else%>
+              Norsemen Football / Cheerleading Registration Form" %> 
+            <%end%>
+      </h3>
       <div class="row">
         <div class="col-lg-3 col-xs-5 ">
           <%= f.input :first_name, placeholder: 'first name',class: "required email col-xs-5 ", required: true %>
@@ -65,22 +70,33 @@
 	      <%= f.input :company, label: 'Company'%>
 	    </div>
 	    <div class="col-lg-3 col-xs-5 ">
-	      <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']] %>
+        <%if params[:plan_name] == "basketball" %> 
+          <%= f.input :register_for, as: :check_boxes, collection: [['Basketball', 'basketball']],class: "required", required: true %>
+        <%else%>
+	       <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']],class: "required", required: true %>
+        <%end%>
 	    </div>
 	  </div>
 	  <div class="row">
 	    <div class="col-lg-3 col-xs-5 ">
-	      <%= f.input :other_arrangements, as: :text,label: "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:"%>
+        <% text = params[:plan_name] == "football" ? "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:" : "Please list the names and grades of brothers and/or sisters also participating in basketball:" %>
+	      <%= f.input :other_arrangements, as: :text,label: text%>
 	    </div>
-
-	    <div class="col-lg-3 col-xs-5 ">
-	      <%= f.input :player_weight, label: "Football Player's Weight"%>
-	    </div>
+      <%if params[:plan_name] == "football" %>
+  	    <div class="col-lg-3 col-xs-5 ">
+  	      <%= f.input :player_weight, label: "Football Player's Weight"%>
+  	    </div>
+      <%end%>
 	  </div>
 	  <div class="row">
       <div class="col-lg-3 col-xs-5 ">
-        <%= f.hidden_field :amount, label: "Fee",value: "175" %>
-        Fee: <span>$175</span>
+        <%if params[:plan_name] == "basketball" %>
+          <%= f.hidden_field :amount, label: "Fee",value: "75" %>
+          Fee: <span>$75</span>
+        <%else%>
+          <%= f.hidden_field :amount, label: "Fee",value: "175" %>
+          Fee: <span>$175</span>
+        <%end%>
       </div>
     </div>
 
