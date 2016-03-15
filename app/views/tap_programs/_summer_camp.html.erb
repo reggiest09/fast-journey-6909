@@ -1,0 +1,162 @@
+<div id="content">
+  <div class="breadcrumbs1_wrapper">
+    <div class="container">
+      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>Summer Camp</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h2 class="c">Information</h2>
+    <p>
+     For an in depth description on each activity please contact 704-674-8331
+    </p>
+
+    <p>
+      <strong class="text-uppercase">
+        Monday-Friday 7:30am-6:00pm,  $100.00 weekly fee and 10% off oldest sibling.
+        Extended Care 7:00-7:30a and 5:30-6:00p. 
+        Breakfast, Lunch and Snack provided daily
+      </strong>
+    </p>
+
+    <p>
+     School may be out, but education and adventure are always in at T.A.P.S Summer Enrichment Camp! With 
+
+activities for kindergarten – rising grade 8, there are tons of programs to get kids excited about Academics, Arts and 
+
+Athletics. The club, studio and lab environment encourages experimentation, exploration and discovery geared for 
+
+specific age groups. 
+
+This summer T.A.P.S will be providing a summer to remember for every child in K-8th grade. The children will be 
+
+broken into groups with a 25:2 camper/counselor ratio. Each morning campers will participate in an empowerment 
+
+session and then head out on our artificial turf filed for a group ice breaker. After the ice breaker it’s time for 
+
+Academics! We have hired a host of certified teachers to ensure your children will not lose all their hard work from 
+
+the school year in the areas of Math and Literacy. The campers will be separated according to grade level for an 
+
+hour of Math and reading every day.  After the academic session as according to the club/elective your camper has 
+
+chosen they will rotate into a time of exploration and fun. We have an array of clubs including STEM, ARTS (visual 
+
+and performing dance, music and drama), ATHLETICS, HOME ECONOMICS and more! During lunch campers 
+
+are able to eat , relax and enjoy movies, after lunch campers have free time to play outside or in one of our many 
+
+interactive areas . At the end of the day all campers will come together and have a group activity.  
+
+In the Academic Club lead by a certified teacher Children will engage in STEM as they take part in hands-on 
+
+simulations, workshops, while making new friends and having unforgettable adventures. Exploring STEM is a 
+
+unique learning experience for bright, forward-thinking students who will evolve into our next generation of 
+
+innovators, engineers, doctors, software developers, mathematicians, and physicists. Engineering is all about 
+
+creating, building, and making things better! So what does it take to be an engineer? If you like math and science, 
+
+you are off to a great start. If you enjoy discovering new things, solving problems, and learning how things work - 
+
+even better! Creativity, persistence, and the desire to make the world a better place are also important our summer 
+
+program will be a great start. We have a Math and Technology Lab as well as a Science and Engineering lab
+
+In Athletic Club Children lead by former high school and collegiate athletes the children will participate in their 
+
+favorite sport games and learn fundamentals in sports such as:  dodge ball, capture the flag, kickball, baseball, 
+
+soccer basketball and football. They will also participate in game room tournaments. 
+
+In the ARTS Club lead by undergraduate and art educators who are passionate about art which is designed to seed 
+
+inspiration, foster curiosity, and channel enthusiasm, while turning the wonder of children’s imagination and 
+
+creativity through Art, Drama, Music(lessons available) and Dance.  We are happy to announce we have art, music 
+
+and drama classrooms as well as a dance studio.
+
+T.A.P.S prides itself in our signature Entrepreneurship and Philanthropy program where the children learn about 
+
+branding and money management and open and run their very own in-house store. This was a camp favorite 
+
+amongst the parents and the children last year.
+
+STOP! Is our anti-bullying session where we partner with outside organizations such as CMPD to teach the 
+
+importance of being a champion against bullying.
+    </p>
+
+
+
+    <h2>Select Plan</h2>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/early.png" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>Early registration ends April 15th</h3>
+              <p>
+                <strong class="text-uppercase">
+                  Summer Camp Early Registration $25.00 ends April 15th
+                </strong>
+              </p>
+              
+              <h1> $25.00 <%= link_to 'Buy', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "basketball") : new_user_session_path(interval: "daily", plan_name: "basketball"), class: "btn-default btn2" %></h1>
+              
+              
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/early_bird.png" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>Early Bird Special</h3>
+              <p>
+                <strong class="text-uppercase">
+                  $85 per week. All weeks must be paid in advance
+                </strong>
+              </p>
+              
+              <h1> $935.00<%= link_to 'Buy', current_user.present? ? football_steps_path(current_user, interval: "all_days", plan_name: "basketball") : new_user_session_path(interval: "all_days", plan_name: "basketball"), class: "btn-default btn2" %></h1>
+              
+              
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="wave2"></div>
+</div>
+

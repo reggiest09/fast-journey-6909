@@ -1,5 +1,4 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  layout 'user_home_layout'
   def new
     session[:plan_name] = params["plan_name"]
     session[:interval] = params["interval"]

@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  layout 'user_home_layout'
-
-
+  layout 'user_home_layout', only: :index
   def qc_before_after_school
   end
 
@@ -21,6 +19,18 @@ class PagesController < ApplicationController
   end
 
   def afterschool
+  end
+
+  def about
+  end
+
+  def contact
+  end
+
+  def program
+  end
+
+  def gallery
   end
 
   def taps

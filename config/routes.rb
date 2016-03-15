@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:index]
   resources :school_closing_steps
   resources :football_steps
+  resources :tap_programs
 
   get "qc_before_after_school" => "pages#qc_before_after_school"
   get "qc_after_school" => "pages#qc_after_school"
@@ -24,6 +25,10 @@ Rails.application.routes.draw do
   get 'payment' => 'school_closing_steps#payment'
   get 'football_payment' => 'football_steps#football_payment'
   get 'download_pdf' => 'profiles#download_pdf'
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
+  get 'program' => 'pages#program'
+  get 'gallery' => 'pages#gallery'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

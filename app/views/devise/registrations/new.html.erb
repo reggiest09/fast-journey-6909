@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="row">
-    <br>
+<div id="content">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signup login-form", role: "form"}) do |f| %>
       <h2>Sign up</h2>
       <%= devise_error_messages! %>
@@ -25,9 +23,8 @@
       <br/>
       <div class="actions">
         <%= f.submit "Sign up", class: 'btn btn-success' %>
+        <%= render "devise/shared/links" %>
       </div>
-      <br>
-      <%= render "devise/shared/links" %>
     <% end %>
-  </div>
+  <div class="wave2"></div>
 </div>

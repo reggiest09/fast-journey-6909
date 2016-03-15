@@ -12,22 +12,4 @@
 
 //= require_self
 //= require jquery
-//= reqire jqBootstrapValidation
-//= require bootstrap.min
-//= require jquery.mb.YTPlayer.min
-//= require appear
-//= require jquery.simple-text-rotator.min
-//= require isotope.pkgd.min
-//= require imagesloaded.pkgd
-//= require jquery.flexslider-min
-//= require jquery.magnific-popup.min
-//= require jquery.fitvids
-//= require smoothscroll
-//= require wow.min
-//= require owl.carousel.min
-//= require prettify
-//= require custom
-//= require contact
-//= require jquery.flexslider
-//= require jquery.bootstrap.wizard
 //= require_tree .

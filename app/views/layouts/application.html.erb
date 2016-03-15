@@ -13,31 +13,17 @@
   <%#= javascript_include_tag 'gmaps.js' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<%=render partial: "layouts/nav_header" %>
-  <section id="wizard">
-  <div id="rootwizard">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="container">
-    <ul>
-      <li><%=link_to 'Student Information','javascript:void(0)',id: "tab1","data-toggle"=> "tab" %></li>
-      <li><%=link_to 'Gardian Details',"#",id: "tab2","data-toggle"=> "tab" %></li>
-      <li><a href="#tab3" id="tab3" data-toggle="tab">Other Details</a></li>
-      <li><a href="#tab4" id="tab4" data-toggle="tab">Readme</a></li>
-      <li><a href="#tab5" id="tab5" data-toggle="tab">Payment</a></li>
-    </ul>
-     </div>
+<body class = "front">
+  <div id = "main">
+    <%= render :partial => '/layouts/header_taps' %>
+		<% flash.each do |name, msg| %>
+		  <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong><%=msg%></strong>
       </div>
-    </div>
+		<% end %>
+    <%= yield %>
+      <%= render partial: "/layouts/footer_content" %>
   </div>
-  </section>
-
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-info sucuess-msg" %>
-  <% end %>
-
-
-<%= yield %>
 </body>
 </html>

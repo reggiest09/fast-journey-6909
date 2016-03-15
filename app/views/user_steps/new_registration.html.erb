@@ -1,43 +1,46 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h3>
-        After-School/Before Registration Form
-      </h3>
-      <h3>
-        T.A.P.S
-      </h3>
-      
-      <div>
-       <p>If you select a weekly or monthly after school or before school plan.
-       You will be charged immediately for the current pay period. Each subsequent period, you'll see a charge for the subscription renewal. You can cancel at any time...</p>
-      </div>
-      
-      <div>
-        To register your student in the after school program located at the TAPS <span>School click below to start a Registration.</span>
-      </div>
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>
+          After-School/Before Registration Form
+        </h3>
+        <h3>
+          T.A.P.S
+        </h3>
+        
+        <div>
+         <p>If you select a weekly or monthly after school or before school plan.
+         You will be charged immediately for the current pay period. Each subsequent period, you'll see a charge for the subscription renewal. You can cancel at any time...</p>
+        </div>
+        
+        <div>
+          To register your student in the after school program located at the TAPS <span>School click below to start a Registration.</span>
+        </div>
 
-      <p>
-        Parents should have the following ready when applying online:
-      </p>
-      <ul>
-        <li>
-          <span>Emergency Contact’s full name, address, email or telephone number</span>
-        </li>
-        <li>
-          Medical information for the participant
-        </li>
-        <li>
-          Valid Credit Card information
-        </li>
-      </ul>
-      <p>
-        Please allow 10-15 minutes to complete this application
-      </p>
-      <%=link_to "Start a New Registration",next_wizard_path(plan_name: params[:plan_name], interval: params[:interval]),class: "btn btn-default btn-primary" %>
-      <br>
+        <p>
+          Parents should have the following ready when applying online:
+        </p>
+        <ul>
+          <li>
+            <span>Emergency Contact’s full name, address, email or telephone number</span>
+          </li>
+          <li>
+            Medical information for the participant
+          </li>
+          <li>
+            Valid Credit Card information
+          </li>
+        </ul>
+        <p>
+          Please allow 10-15 minutes to complete this application
+        </p>
+        <%=link_to "Start a New Registration",next_wizard_path(plan_name: params[:plan_name], interval: params[:interval]),class: "btn btn-default btn-primary" %>
+        <br>
+      </div>
     </div>
   </div>
-</div>
-<div class="previous"%>
+  <div class="previous"%>
+  </div>
+  <div class="wave2"></div>
 </div>

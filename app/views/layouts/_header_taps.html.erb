@@ -1,0 +1,39 @@
+<div class="top_wrapper">
+  <div class="top_bg">
+    <img src="/assets/sky2.jpg" alt="" class="sky2">
+    <div class="grass1"></div>
+    <div class="sun1"></div>
+    <div class="green2"></div>
+  </div>
+  <div class="top_content">
+    <div class="container">
+      <header>
+        <div class="logo_wrapper">
+          <a href="index.html" class="logo">
+            <img src="/assets/logo.png" alt="" class="img-responsive">
+          </a>
+        </div>
+      </header>
+      <%= render partial: '/layouts/tap_nav_header' %>
+
+      <div class="snail1_wrapper">
+        <div class="tree1 animated" data-animation="fadeIn" data-animation-delay="200"><img src="/assets/tree1.png" alt="" class="img-responsive"></div>
+        <div class="snail1 animated" data-animation="bounceInLeft" data-animation-delay="300"><img src="/assets/snail1.png" alt="" class="img-responsive"></div>
+      </div>
+      <% if params[:action] == 'contact' %>
+        <div class="page_title">Contact Us</div>
+      <% elsif params[:query] == 'summer_camp' %>
+         <div class="page_title">Summer Camp 2016</div>
+      <% elsif params[:query] == 'queen_city' %>
+         <div class="page_title">Queen City Stem School</div>
+      <% elsif params[:query] == 'noresman_football' %>
+         <div class="page_title">Norseman Athletics</div>
+      <%elsif params[:action] == 'about'%>
+        <div class="page_title">little about us</div>
+      <%else%>
+      <%end%>
+
+    </div>
+  </div>
+  <div class="wave1"></div>
+</div>

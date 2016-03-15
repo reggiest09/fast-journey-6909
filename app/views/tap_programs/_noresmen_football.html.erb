@@ -1,0 +1,56 @@
+<div id="content">
+  <div class="breadcrumbs1_wrapper">
+    <div class="container">
+      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>Norseman Athletics</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h2 class="c">Information</h2>
+
+    <p>
+      <strong class="text-uppercase">
+        Norseman Football/ Norseman Cheer
+      </strong>
+    </p>
+
+    <p>
+      Similar to how a drop of water ripples throughout a puddle, acts of positivity in youth sports can affect a team's environment and spread throughout the league - and even the whole community! It only needs one person to start. Will that person be you? Sign up for Norseman Football or Norseman Cheer
+    </p>
+
+
+
+    <h2>Select Plan</h2>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/norseman.png" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>Norseman</h3>
+              <p>
+                <strong class="text-uppercase">
+                  Norseman Football/Norseman Cheer
+                </strong>
+              </p>
+              
+              <h1> $175  <h1> $175.00 <%= link_to 'Buy', current_user.present? ? football_steps_path(current_user, interval: "daily", plan_name: "football") : new_user_session_path(interval: "daily", plan_name: "football"), class: "btn-default btn2" %></h1></h1>
+              
+              
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  <div class="wave2"></div>
+</div>

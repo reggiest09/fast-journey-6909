@@ -1,5 +1,6 @@
 class UserStepsController < ApplicationController
   before_action :authenticate_user!
+  before_action :user_plan_update, only: :show
   include Wicked::Wizard
   steps :new_registration, :student_info, :gardian_details,
         :other_deatils, :redme, :payment
@@ -45,5 +46,11 @@ private
 
   def redirect_to_finish_wizard(options = nil)
     redirect_to root_url, notice: "Thank you for signing up."
+  end
+
+  def user_plan_update
+    if params[:plan_name].present? && params[:interval].present?
+      current_user.update_attributes(plan_name: params[:plan_name],plan: params[:interval])
+    end
   end
 end

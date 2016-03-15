@@ -1,0 +1,56 @@
+<div id="content">
+  <div class="breadcrumbs1_wrapper">
+    <div class="container">
+      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>T.A.P.S after school</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h2 class="c">Information</h2>
+
+    <p>
+      <strong class="text-uppercase">
+        Providing Quality Student Care For Queen City Families
+      </strong>
+    </p>
+
+    <p>
+      The T.A.P.S. afterschool programs aspires to be the leading after school program provider that educates, enlightens and inspires students each day through after school activities centered around sports, health, fitness and leadership. T.A.P.S. offers sports programs to students in Grades 1 through 5 focusing on fun, safety and convenience. The program that you are about to be introduced is a result of years of learning, practice and hard work. Everything that we have created within the T.A.P.S. organization has been experienced since childhood when we played and succeeded in sports, learned how to teach it while in college and executed with many years of teaching and school administrative experience
+    </p>
+
+
+
+    <h2>Select Plan</h2>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/taps_after.jpg" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>After School</h3>
+              <p>
+                <strong class="text-uppercase">
+                  T.A.P.S After School PLAN $25 Registration Fee
+                </strong>
+              </p>
+              
+              <h1> $50 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "taps") : new_user_session_path(interval: "weekly", plan_name: "taps"), class: "btn-default btn2" %></h1>
+              
+              <h1> $200 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "taps") : new_user_session_path(interval: "monthly", plan_name: "taps"), class: "btn-default btn2"%></h1>
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  <div class="wave2"></div>
+</div>
