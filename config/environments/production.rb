@@ -9,7 +9,6 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -46,7 +45,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :warn
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -76,14 +75,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  # config.action_mailer.delivery_method = :smtp
-  # # # SMTP settings for gmail
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.gmail.com",
-  #   :port                 => 587,
-  #   :domain               => 'tapseducationandsportsacademy.com',
-  #   :user_name            => ENV["USER_EMAIL"],
-  #   :password             => ENV["USER_PASSWORD"],
-  #   :authentication       => 'plain'
-  # }
+  config.action_mailer.delivery_method = :smtp
+  # # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'intense-tor-91881.herokuapp.com',
+    :user_name            => ENV["USER_EMAIL"],
+    :password             => ENV["USER_PASSWORD"],
+    :authentication       => 'plain'
+  }
 end

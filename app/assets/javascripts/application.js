@@ -12,4 +12,15 @@
 
 //= require_self
 //= require jquery
+//= require js/jquery-migrate-1.2.1.min
+//= require js/jquery.easing.1.3
+//= require js/superfish
+//= require js/jquery.parallax-1.1.3.resize
+//= require js/SmoothScroll
+//= require js/jquery.appear
+//= require js/jquery.flexslider
+//= require js/jquery.caroufredsel
+//= require js/jquery.touchSwipe.min
+//= require js/jquery.ui.totop
+//= require js/script
 //= require_tree .
