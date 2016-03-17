@@ -12,7 +12,6 @@
 
 //= require_self
 //= require jquery
-//= require subscription
 //= require js/jquery-migrate-1.2.1.min
 //= require js/jquery.easing.1.3
 //= require js/superfish
