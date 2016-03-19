@@ -3,7 +3,7 @@
     <div class="container change-container center_div">
     <div class="tab-pane" id="tab1">
       <h3>  <%if params[:plan_name] == "basketball" %> 
-              Basketball Registration Form
+              Summer Camp Registration Form
             <%else%>
               Norsemen Football / Cheerleading Registration Form" %> 
             <%end%>
@@ -71,7 +71,7 @@
 	    </div>
 	    <div class="col-lg-3 col-xs-5 ">
         <%if params[:plan_name] == "basketball" %> 
-          <%= f.input :register_for, as: :check_boxes, collection: [['Basketball', 'basketball']],class: "required", required: true %>
+          <%= f.input :register_for, as: :check_boxes, collection: [['Summer Camp', 'basketball']],class: "required", required: true %>
         <%else%>
 	       <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']],class: "required", required: true %>
         <%end%>
@@ -79,7 +79,7 @@
 	  </div>
 	  <div class="row">
 	    <div class="col-lg-3 col-xs-5 ">
-        <% text = params[:plan_name] == "football" ? "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:" : "Please list the names and grades of brothers and/or sisters also participating in basketball:" %>
+        <% text = params[:plan_name] == "football" ? "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:" : "Please list the names and grades of brothers and/or sisters also participating in Summer Camp:" %>
 	      <%= f.input :other_arrangements, as: :text,label: text%>
 	    </div>
       <%if params[:plan_name] == "football" %>
@@ -91,8 +91,8 @@
 	  <div class="row">
       <div class="col-lg-3 col-xs-5 ">
         <%if params[:plan_name] == "basketball" %>
-          <%= f.hidden_field :amount, label: "Fee",value: "75" %>
-          Fee: <span>$75</span>
+          <%= f.hidden_field :amount, label: "Fee",value: "25" %>
+          Fee: <span>$25</span>
         <%else%>
           <%= f.hidden_field :amount, label: "Fee",value: "175" %>
           Fee: <span>$175</span>
