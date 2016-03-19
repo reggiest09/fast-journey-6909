@@ -1,7 +1,6 @@
 <script>
 $(document).ready(function() {
   //
-
   //  carouFredSel team
   $('#team .carousel.main ul').carouFredSel({
     auto: {
@@ -31,31 +30,14 @@ $(document).ready(function() {
       onTouch: true
       }
   });
-
-
-
-
-
-
-
   $(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
   function updateSizes_vat(){
     $('#team .carousel.main ul').trigger("updateSizes");
-
   }
   updateSizes_vat();
-
-
-
-
-
-
-
-
 }); //
 $(window).load(function() {
   //
-
   /////// flexslider
   $('#flexslider').flexslider({
     animation: "fade",
@@ -68,9 +50,6 @@ $(window).load(function() {
     controlNav: true,
     directionNav: true
   });
-
-
-
 }); //
 </script>
 
@@ -322,10 +301,6 @@ $(window).load(function() {
         </p>
 
         <a href="#" class="btn-default btn1">contact us today</a>
-
-
-
-
 
       </div>
     </div>
