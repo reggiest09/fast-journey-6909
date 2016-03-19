@@ -1,5 +1,4 @@
 class SchoolClosingStepsController < ApplicationController
-  layout 'user_home_layout'
   before_action :authenticate_user!
   def index
     @user = current_user

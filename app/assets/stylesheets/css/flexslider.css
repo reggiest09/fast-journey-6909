@@ -1,0 +1,141 @@
+html[xmlns] .slides{display:block;}
+* html .slides{height:1%;}
+
+#slider_wrapper{margin-top: 15px;position: relative; background: #fff; padding: 10px; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
+#slider{margin:0; position: relative;}
+
+#flexslider{position:relative; min-height: 530px;}
+#flexslider .slides>li{display:none;position:relative;}
+
+.slides:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.slides{list-style:none outside none;margin:0;padding: 0;}
+.slides img{width:100%; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px;}
+
+#flexslider .flex-control-nav{display:inline-block; padding: 0; margin: 0; position: absolute; right: 0; left: 3%; bottom: 4%; z-index:5; overflow:hidden;list-style:none; text-align: left; line-height: 1;}
+#flexslider .flex-control-nav li{display: inline-block; float:none; width:14px; height:14px; margin:0 5px}
+#flexslider .flex-control-nav li:first-child{}
+#flexslider .flex-control-nav li a{display:block;width: 100%; height: 100%; background: url(/assets/pagination.png) left top no-repeat; text-indent: -9999%; cursor:pointer; position: relative; overflow: hidden;}
+#flexslider .flex-control-nav li a:hover, #flexslider .flex-control-nav li a.flex-active{ background-position: right;}
+#flexslider .flex-control-nav li .flex-active{cursor:default;pointer-events:none;}
+
+#flexslider .flex-direction-nav{padding: 0; margin: 0; list-style: none;}
+#flexslider .flex-direction-nav li{position: absolute; left: 0; top: 50%; margin-top: -25px; width: 50px; height: 50px; margin-left: 10px; margin-right: 10px;}
+#flexslider .flex-direction-nav li.flex-next{left: auto; right: 0;}
+#flexslider .flex-direction-nav li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  content: '';
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+#flexslider .flex-direction-nav li:hover:before {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#flexslider .flex-direction-nav li a {
+  position: relative;
+  display: block;
+  margin: 10% 0 0 10%;
+  width: 80%;
+  height: 80%;
+  font-size: 0;
+}
+
+#flexslider .flex-direction-nav li.flex-next a {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#flexslider .flex-direction-nav li a:before,
+#flexslider .flex-direction-nav li a:after {
+  position: absolute;
+  left: 25%;
+  width: 3px;
+  height: 50%;
+  background: #fff;
+  content: '';
+  -webkit-transition: -webkit-transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#flexslider .flex-direction-nav li a:before {
+  -webkit-transform: translateX(-50%) rotate(30deg);
+  transform: translateX(-50%) rotate(30deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+
+#flexslider .flex-direction-nav li a:after {
+  top: 50%;
+  -webkit-transform: translateX(-50%) rotate(-30deg);
+  transform: translateX(-50%) rotate(-30deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+#flexslider .flex-direction-nav li:hover a:before,
+#flexslider .flex-direction-nav li:hover a:after {
+  background: #00a8ff;
+}
+
+#flexslider .flex-direction-nav li:hover a:before {
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+#flexslider .flex-direction-nav li:hover a:after {
+  -webkit-transform: translateX(-50%) rotate(-45deg);
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.flex-caption{position:absolute;width: auto; left:8%; top: 50%; margin-top: -110px; text-align:left;}
+.flex-caption > div{}
+.flex-caption .txt1{font-family: 'Roboto'; font-weight: 700; font-size: 40px; line-height: 1; color: #fff; text-transform: uppercase; padding-bottom: 15px;}
+.flex-caption .txt2{font-family: 'Roboto'; font-weight: 300; font-size: 16px; line-height: 1.3; color: #fff; text-transform: uppercase; padding-bottom: 20px;}
+.flex-caption .txt3{}
+
+
+
+@media (max-width: 1219px) {
+  #flexslider{min-height: 430px;}
+
+
+}
+
+@media (max-width: 991px) {
+  #flexslider{min-height: 330px;}
+  .flex-caption .txt1{font-size: 30px;}
+
+}
+
+@media (max-width: 767px) {
+  #flexslider{min-height: 190px;}
+
+  .flex-caption{display: none;}
+  /*.flex-caption{position: relative; margin-top: 0; top: 0; padding: 15px 0;}*/
+  /*.flex-caption .txt1{font-size: 20px;}*/
+  /*.flex-caption .txt2{font-size: 14px;}*/
+
+  /*#flexslider .flex-direction-nav li a{top: 30%; margin-top: 0px;}*/
+
+}
+
+@media (max-width: 480px) {
+  #flexslider{min-height: 120px;}
+
+  /*.flex-caption .txt1{font-size: 30px;}*/
+  /*.flex-caption .txt2{font-size: 12px;}*/
+
+}

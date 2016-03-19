@@ -1,0 +1,12 @@
+<% if params[:query] == "summer_camp" %>
+  <%= render partial: 'summer_camp' %>
+<% elsif params[:query] == "queen_city"%>
+  <%= render partial: 'queen_city' %>
+<% elsif params[:query] == "tap_after_sc"%>
+  <%= render partial: 'tap_after_school' %>
+<% elsif params[:query] == "noresman_football"%>
+  <%= render partial: 'noresmen_football' %>
+<% elsif params[:query] == "school_closing"%>
+  <%= render partial: 'school_closing' %>
+<%else%>
+<%end%>

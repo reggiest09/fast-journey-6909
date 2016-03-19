@@ -1,3 +1,4 @@
+<div id="content">
 <div class="tab-content">
 	<%= simple_form_for @user, :url=>{:controller=>"football_steps",:action=>"update",:id=>@user.id}, method: "put" do |f| %>
     <div class="container change-container center_div">
@@ -90,9 +91,12 @@
 	  </div>
 	  <div class="row">
       <div class="col-lg-3 col-xs-5 ">
-        <%if params[:plan_name] == "basketball" %>
+        <%if params[:plan_name] == "basketball" && params[:interval] == 'daily'%>
           <%= f.hidden_field :amount, label: "Fee",value: "25" %>
           Fee: <span>$25</span>
+        <%elsif params[:plan_name] == "basketball" && params[:interval] == 'all_days'%>
+          <%= f.hidden_field :amount, label: "Fee",value: "935" %>
+          Fee: <span>$935</span>
         <%else%>
           <%= f.hidden_field :amount, label: "Fee",value: "175" %>
           Fee: <span>$175</span>
@@ -106,4 +110,7 @@
   <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
   <%= f.hidden_field "interval", :value => params[:interval] %>
 	<% end %>
+</div>
+ <div class="wave2"></div>
+</div>
 </div>

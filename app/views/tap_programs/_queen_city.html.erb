@@ -1,0 +1,117 @@
+
+<div id="content">
+  <div class="breadcrumbs1_wrapper">
+    <div class="container">
+      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>Queen City Stem</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h2 class="c">Information</h2>
+
+    <p>
+      <strong class="text-uppercase">
+        Providing Quality Student Care For Queen City Families
+      </strong>
+    </p>
+
+    <p>
+      Students who are participating in breakfast (at Queen City) will still be able to eat and then return to before school to prepare for morning bell. T.A.P.S will not be providing breakfast or morning snack. If you feel you need that please contact Heaven Sent Catering for those options. Before care begins at 6:30 AM and operates until the start of the school day. Each program is housed at Queen City STEM, which means parents don’t have to provide transportation between the school and childcare. The program follows the regular school calendar. When schools are closed, the program is closed. When schools are open for any part of the day, the program is open (Unless otherwise directed)
+    </p>
+
+
+
+    <h2>Select Plan</h2>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/parents01.jpg" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>Before School</h3>
+              <p>
+                <strong class="text-uppercase">
+                  QUEEN CITY STEM BEFORE SCHOOL PLAN
+                </strong>
+              </p>
+              
+              <h1> $15 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "before_school") : new_user_session_path(interval: "weekly", plan_name: "before_school"), class: "btn-default btn2" %></h1>
+              
+              <h1> $60 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "before_school") : new_user_session_path(interval: "monthly", plan_name: "before_school"), class: "btn-default btn2"%></h1>
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/parents02.jpg" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>After School</h3>
+              <p>
+                <strong class="text-uppercase">
+                 QUEEN CITY STEM AFTER SCHOOL PLAN  $25 Registration Fee
+                </strong>
+              </p>
+              
+              
+              <h1> $50 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "queen_city") : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
+              
+              <h1> $200 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
+
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/parents03.jpg" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>BEFORE SCHOOL & AFTERSCHOOL</h3>
+              <p>
+                <strong class="text-uppercase">
+                  BEFORE SCHOOL & AFTERSCHOOL PLAN
+                </strong>
+              </p>
+              
+              <h1> $62 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "after_school") : new_user_session_path(interval: "weekly", plan_name: "after_school"), class: "btn-default btn2" %></h1>
+              
+              <h1> $248 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"), class: "btn-default btn2"%></h1>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <div class="wave2"></div>
+</div>
+
+

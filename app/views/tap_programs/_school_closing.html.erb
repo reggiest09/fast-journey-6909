@@ -1,0 +1,58 @@
+<div id="content">
+  <div class="breadcrumbs1_wrapper">
+    <div class="container">
+      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>School Closing Dates</div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h2 class="c">Information</h2>
+
+    <p>
+      <strong class="text-uppercase">
+        Providing Quality Student Care For Queen City Families
+      </strong>
+    </p>
+
+    <p>
+      The T.A.P.S. afterschool programs aspires to be the leading after school program provider that educates, enlightens and inspires students each day through after school activities centered around sports, health, fitness and leadership. T.A.P.S. offers sports programs to students in Grades 1 through 5 focusing on fun, safety and convenience. The program that you are about to be introduced is a result of years of learning, practice and hard work. Everything that we have created within the T.A.P.S. organization has been experienced since childhood when we played and succeeded in sports, learned how to teach it while in college and executed with many years of teaching and school administrative experience
+    </p>
+
+
+
+    <h2>Select Dates</h2>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="thumb4">
+          <div class="thumbnail clearfix">
+            <figure class="img-polaroid">
+              <img src="/assets/springbreak.jpg" alt="" class="img-responsive">
+            </figure>
+            <div class="caption">
+              <h3>Spring Break</h3>
+              <p>
+                <strong class="text-uppercase">
+                  $25 Per Day 
+                </strong>
+              </p>
+              
+              <h1> $25 per day 
+              <%= link_to 'Buy', current_user.present? ? school_closing_steps_path(current_user, interval: "daily", plan_name: "school_closing") : new_user_session_path(interval: "daily", plan_name: "school_closing")%></h1>
+              
+        
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  <div class="wave2"></div>
+</div>
+
+

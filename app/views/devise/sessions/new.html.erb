@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="row">
-    <br>
+<div id="content">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin", role: "form"}) do |f| %>
       <h2>Log in</h2>
       <div class="field">
@@ -22,9 +20,9 @@
 
       <div class="actions">
         <%= f.submit "Log in", class: 'btn btn-success' %>
+        <%= render "devise/shared/links" %>
       </div>
-      <br>
-      <%= render "devise/shared/links" %>
     <% end %>
-  <div>
+
+  <div class="wave2"></div>
 </div>

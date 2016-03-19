@@ -1,0 +1,36 @@
+<div class="menu_wrapper">
+        <div class="navbar navbar_ navbar-default">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-collapse navbar-collapse_ collapse">
+            <ul class="nav navbar-nav sf-menu clearfix">
+              <li class="nav1 active"><%=link_to 'Home', pages_path %></li>
+              <li class="nav2"><%=link_to 'About',about_path %></li>
+              <li class="nav3 sub-menu sub-menu-1"><%=link_to 'Programs',program_path %>
+                <ul>
+                  <li><%=link_to 'Taps',tap_programs_path(query: "tap_after_sc")%></li></li>
+                  <li><%=link_to 'Queen City Stem',tap_programs_path(query: "queen_city")%></li>
+                  <li><%=link_to 'Summer Camp',tap_programs_path(query: "summer_camp")%></li>
+                  <li><%=link_to 'Norsemen Athletics',tap_programs_path(query: "noresman_football")%></li>
+                  <li><%=link_to 'School Closing Dates',tap_programs_path(query: "school_closing")%></li>
+                  <li><%=link_to 'Gallery', gallery_path %></li>
+                  <% if user_signed_in? %>
+                    <li><%= link_to 'Profile', profiles_path %></li>
+                  <%end%>
+                </ul>
+              </li>
+              <% if user_signed_in? %>
+                <li class="nav5"><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+              <%else%>
+                <li class="nav4"><%=link_to 'Sign Up', new_user_registration_path %></li>
+                <li class="nav5"><%=link_to 'Log In', new_user_session_path %></li>
+              <%end%>
+              <li class="nav6"><%=link_to 'Contact us', contact_path%></li>
+            </ul>
+          </div>
+        </div>
+      </div>
