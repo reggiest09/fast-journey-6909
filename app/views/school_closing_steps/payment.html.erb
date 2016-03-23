@@ -56,7 +56,11 @@
 
 <div class="row">
   <div class="col-lg-12 color-change">
+   <% if current_user.plan == "daily" %>
     You will be charged $<%=current_user.holiday.reject { |c| c.empty? }.count * 25 %>
+   <%else%>
+    You will be charged $85
+   <%end%>
   </div>
 </div>
 
