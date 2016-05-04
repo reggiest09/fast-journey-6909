@@ -92,11 +92,11 @@
 	  <div class="row">
       <div class="col-lg-3 col-xs-5 ">
         <%if params[:plan_name] == "basketball" && params[:interval] == 'daily'%>
-          <%= f.hidden_field :amount, label: "Fee",value: "25" %>
-          Fee: <span>$25</span>
+          <%= f.hidden_field :amount, label: "Fee",value: "35" %>
+          Fee: <span>$35</span>
         <%elsif params[:plan_name] == "basketball" && params[:interval] == 'all_days'%>
-          <%= f.hidden_field :amount, label: "Fee",value: "935" %>
-          Fee: <span>$935</span>
+          <%= f.hidden_field :amount, label: "Fee",value: "1100" %>
+          Fee: <span>$1100</span>
         <%else%>
           <%= f.hidden_field :amount, label: "Fee",value: "175" %>
           Fee: <span>$175</span>
