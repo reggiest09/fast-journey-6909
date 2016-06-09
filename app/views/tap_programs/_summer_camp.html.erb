@@ -155,11 +155,8 @@ importance of being a champion against bullying.
                       $90 per week sibling discount for the oldest child of multiple children.
                     </strong>
                   </p>
-                  
-                  <!-- <h1> $1,100<%= link_to 'Buy', current_user.present? ? football_steps_path(current_user, interval: "all_days", plan_name: "basketball") : new_user_session_path(interval: "all_days", plan_name: "basketball"), class: "btn-default btn2" %></h1>
-                   -->
-                  
-                  
+                  <h1> $90 WK <%= link_to 'Buy Weekly', current_user.present? ? football_steps_path(interval: "weekly", plan_name: "summer_wk") : new_user_session_path(interval: "weekly", plan_name: "summer_wk"), class: "btn-default btn2" %></h1>
+                  <h1> $100 WK <%= link_to 'Buy Weekly', current_user.present? ? football_steps_path(interval: "weekly", plan_name: "summer_wk1") : new_user_session_path(interval: "weekly", plan_name: "summer_wk1"), class: "btn-default btn2" %></h1>
                 </div>
               </div>
             </div>

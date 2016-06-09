@@ -1,0 +1,25 @@
+<h3>Summer Camp Registration Form</h3>
+      <div class="row">
+        <div class="col-lg-3 col-xs-5 ">
+          <%= f.input :parent_name, placeholder: 'Parent Name',class: "required parent col-xs-5 ", required: true %>
+        </div>
+        <div class="col-lg-3 col-xs-5 ">
+          <%= f.input :parent_email, placeholder: 'Parent Email',class: "required email", required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-xs-5 ">
+          <%= f.input :child_name, placeholder: 'Child Name',class: "required child", required: true %>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-lg-3 col-xs-5 ">
+        <% if plan_name == "summer_wk"%>
+        <%= f.hidden_field :amount, label: "Fee",value: "90" %>
+        Fee: <span>$90</span>
+        <%else%>
+        <%= f.hidden_field :amount, label: "Fee",value: "100" %>
+        Fee: <span>$100</span>
+        <%end%>
+      </div>
+    </div>

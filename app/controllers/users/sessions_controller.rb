@@ -20,6 +20,8 @@ class Users::SessionsController < Devise::SessionsController
         session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
       when "basketball"
         session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
+      when "summer_wk" || "summer_wk1"
+        session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
     end
     super
   end
