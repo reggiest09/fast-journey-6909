@@ -3,7 +3,9 @@
 	<%= simple_form_for @user, :url=>{:controller=>"football_steps",:action=>"update",:id=>@user.id}, method: "put" do |f| %>
     <div class="container change-container center_div">
     <div class="tab-pane" id="tab1">
-    <% if params[:plan_name] == "summer_wk" || params[:plan_name] == "summer_wk1" %>
+    <% if params[:plan_name] == "summer_wk"%>
+      <%= render partial: "summer_weekly", locals: {plan_name: params[:plan_name],summer_plan: params[:summer_plan],f: f} %>
+    <%elsif params[:plan_name] == "summer_wk1" %> 
       <%= render partial: "summer_weekly", locals: {plan_name: params[:plan_name],f: f} %>
     <%else%>
       <h3>  <%if params[:plan_name] == "basketball" %> 

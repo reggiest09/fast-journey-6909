@@ -155,7 +155,15 @@ importance of being a champion against bullying.
                       $90 per week sibling discount for the oldest child of multiple children.
                     </strong>
                   </p>
-                  <h1> $90 WK <%= link_to 'Buy Weekly', current_user.present? ? football_steps_path(interval: "weekly", plan_name: "summer_wk") : new_user_session_path(interval: "weekly", plan_name: "summer_wk"), class: "btn-default btn2" %></h1>
+                  <%=form_tag current_user.present? ? football_steps_path : new_user_session_path,method: :get do %>
+                   <%=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
+                   <%=hidden_field_tag 'interval',nil, value: 'weekly'%>
+                  <h3> $190 WK<%=check_box_tag 'summer_plan[]', 190, false%></h1>
+                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',290,false%></h1>
+                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',390,false%></h1>
+                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',490,false%></h1>
+                   <%=submit_tag 'Buy Weekly',class: 'btn btn-primary' %>
+                  <%end%>
                   <h1> $100 WK <%= link_to 'Buy Weekly', current_user.present? ? football_steps_path(interval: "weekly", plan_name: "summer_wk1") : new_user_session_path(interval: "weekly", plan_name: "summer_wk1"), class: "btn-default btn2" %></h1>
                 </div>
               </div>

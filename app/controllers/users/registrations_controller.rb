@@ -1,6 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   def new
     session[:plan_name] = params["plan_name"]
+    session[:summer_plan] = params["summer_plan"]
     session[:interval] = params["interval"]
     super
   end
@@ -20,7 +21,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
         session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
       when "basketball"
         session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
-      when "summer_wk" || "summer_wk1"
+      when "summer_wk"
+        session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval],summer_plan: session[:summer_plan])
+      when "summer_wk1"
         session["#{resource_name}_return_to"] = football_steps_path(plan_name: session[:plan_name],interval: session[:interval])
     end
     super

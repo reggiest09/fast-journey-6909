@@ -8,15 +8,62 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-3 col-xs-5 ">
-          <%= f.input :child_name, placeholder: 'Child Name',class: "required child", required: true %>
-        </div>
+        <% if summer_plan.count ==1%>
+        <label class="string required control-label" ><abbr title="required">*</abbr> Child name</label>
+          <div class="col-lg-3 col-xs-5 ">
+            <%= text_field_tag 'child_name[]', nil,placeholder: 'Child Name',class: "required child form-control", required: true %>
+          </div>
+        <%elsif summer_plan.count ==2%>
+
+          <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name',class: "required child form-control", required: true %>
+          </div>
+          <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name1</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name1',class: "required child form-control", required: true %>
+          </div>
+        <%elsif summer_plan.count ==3%>
+          <div class="col-lg-3 col-xs-5 ">
+          <label class="string required control-label" ><abbr title="required">*</abbr> Child name</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name',class: "required child form-control", required: true %>
+          </div>
+          <div class="col-lg-3 col-xs-5 ">
+          <label class="string required control-label" ><abbr title="required">*</abbr> Child name1</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name1',class: "required child form-control", required: true %>
+          </div>
+            <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name2</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name2',class: "required child form-control", required: true %>
+            </div>
+          </div>
+        <%elsif summer_plan.count ==4%>
+          <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name',class: "required child form-control", required: true %>
+          </div>
+          <div class="col-lg-3 col-xs-5 ">
+          <label class="string required control-label" ><abbr title="required">*</abbr> Child name1</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name1',class: "required child form-control", required: true %></div>
+            <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name2</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name3',class: "required child form-control", required: true %></div>
+            <div class="col-lg-3 col-xs-5 ">
+            <label class="string required control-label" ><abbr title="required">*</abbr> Child name3</label>
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name3',class: "required child form-control", required: true %>
+            </div>
+          </div>
+        <else%>
+          <div class="col-lg-3 col-xs-5 ">
+            <%= text_field_tag 'child_name[]',nil, placeholder: 'Child Name',class: "required child form-control", required: true %>
+          </div>
+        <%end%>
       </div>
       <div class="row">
       <div class="col-lg-3 col-xs-5 ">
         <% if plan_name == "summer_wk"%>
-        <%= f.hidden_field :amount, label: "Fee",value: "90" %>
-        Fee: <span>$90</span>
+        <%= f.hidden_field :amount, label: "Fee",value: summer_plan.map(&:to_i).reduce { |sum, float| sum + float } %>
+        Fee: <span>$<%=summer_plan.map(&:to_i).reduce { |sum, float| sum + float }%></span>
         <%else%>
         <%= f.hidden_field :amount, label: "Fee",value: "100" %>
         Fee: <span>$100</span>
