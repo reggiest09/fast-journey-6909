@@ -158,13 +158,13 @@ importance of being a champion against bullying.
                   <%=form_tag current_user.present? ? football_steps_path : new_user_session_path,method: :get do %>
                    <%=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
                    <%=hidden_field_tag 'interval',nil, value: 'weekly'%>
+                  <h3> $100 WK<%=check_box_tag 'summer_plan[]', 100, false%></h1>
                   <h3> $190 WK<%=check_box_tag 'summer_plan[]', 190, false%></h1>
                   <h3> $290 WK<%=check_box_tag 'summer_plan[]',290,false%></h1>
-                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',390,false%></h1>
-                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',490,false%></h1>
-                   <%=submit_tag 'Buy Weekly',class: 'btn btn-primary' %>
+                  <h3> $390 WK<%=check_box_tag 'summer_plan[]',390,false%></h1>
+                  <h3> $490 WK<%=check_box_tag 'summer_plan[]',490,false%></h1>
+                   <%=submit_tag 'Buy Weekly',class: 'btn btn-primary hide-button' %>
                   <%end%>
-                  <h1> $100 WK <%= link_to 'Buy Weekly', current_user.present? ? football_steps_path(interval: "weekly", plan_name: "summer_wk1") : new_user_session_path(interval: "weekly", plan_name: "summer_wk1"), class: "btn-default btn2" %></h1>
                 </div>
               </div>
             </div>
@@ -186,4 +186,16 @@ importance of being a champion against bullying.
   </div>
   <div class="wave2"></div>
 </div>
+
+<script>
+  $(document).ready(function(){
+
+    $('.hide-button').prop('disabled', true);
+  })
+  $('input[type=checkbox]').click(function(){
+    if(this.checked) {
+      $('.hide-button').prop('disabled', false);
+    }
+  });
+</script>
 
