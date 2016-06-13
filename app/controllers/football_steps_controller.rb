@@ -10,7 +10,6 @@ class FootballStepsController < ApplicationController
     if params[:user][:plan_name].present? && params[:user][:interval].present?
       @user.attributes = person_params.merge(plan: params[:user][:interval], plan_name: params[:user][:plan_name])
     else
-      binding.pry
       @user.attributes = person_params.merge(child_name: params[:child_name].present? ? params[:child_name] : nil)
     end
     if @user.save
