@@ -149,20 +149,20 @@ importance of being a champion against bullying.
                   <img src="/assets/weekly.png" alt="" class="img-responsive">
                 </figure>
                 <div class="caption">
-                  <h3>$100 per week. Begining June 10th </h3>
+                  <h3>Select Your weekly payment Plan</h3>
                   <p>
                     <strong class="text-uppercase">
-                      $90 per week sibling discount for the oldest child of multiple children.
+                      My Family is registering:
                     </strong>
                   </p>
                   <%=form_tag current_user.present? ? football_steps_path : new_user_session_path,method: :get do %>
                    <%=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
                    <%=hidden_field_tag 'interval',nil, value: 'weekly'%>
-                  <h3> $100 WK<%=check_box_tag 'summer_plan[]', 100, false%></h1>
-                  <h3> $190 WK<%=check_box_tag 'summer_plan[]', 190, false%></h1>
-                  <h3> $290 WK<%=check_box_tag 'summer_plan[]',290,false%></h1>
-                  <h3> $390 WK<%=check_box_tag 'summer_plan[]',390,false%></h1>
-                  <h3> $490 WK<%=check_box_tag 'summer_plan[]',490,false%></h1>
+                  <h4>One child $100 WK<%=check_box_tag 'summer_plan[]', 100, false%></h4>
+                  <h4>Two Children $190 WK<%=check_box_tag 'summer_plan[]', 190, false%></h4>
+                  <h4>Three Children $290 WK<%=check_box_tag 'summer_plan[]',290,false%></h4>
+                  <h4>Four children $390 WK<%=check_box_tag 'summer_plan[]',390,false%></h4>
+                  <h4>Five Children $490 WK<%=check_box_tag 'summer_plan[]',490,false%></h4>
                    <%=submit_tag 'Buy Weekly',class: 'btn btn-primary hide-button' %>
                   <%end%>
                 </div>
