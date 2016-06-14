@@ -15,8 +15,7 @@ class Subscription < ActiveRecord::Base
 
   def create_stripe_customer_and_subscription(user)
     begin
-      s_customer = Stripe::Customer.create(description: user.first_name, card: self.stripe_card_token,email: user.email) if user.email.present? && user.first_name.present?
-      s_customer = Stripe::Customer.create(description: user.parent_name, card: self.stripe_card_token,email: user.parent_email)
+      s_customer = Stripe::Customer.create(description: user.first_name, card: self.stripe_card_token,email: user.email)
       stripe_customer = StripeCustomer.create(object: s_customer.object, description: s_customer.description, livemode: s_customer.livemode, created_timestamp: s_customer.created, reference_id: s_customer.id, user_id: self.user_id)
       customer = Stripe::Customer.retrieve(stripe_customer.reference_id)
       if user.plan_name == "school_closing" && user.plan == "daily"
