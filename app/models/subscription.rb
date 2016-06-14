@@ -28,9 +28,11 @@ class Subscription < ActiveRecord::Base
       elsif user.plan_name == "football" || user.plan_name == "basketball"
         stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "summer_wk" || user.plan_name == "summer_wk1"
-        stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id) 
+      elsif user.plan_name == "summer_wk"
+        #stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+        user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: s_customer.id) 
+        subscription = customer.subscriptions.create(:plan => user.plan)
+        user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: customer.id)
       else
         subscription = customer.subscriptions.create(:plan => payment_discount)
         user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: stripe_customer.id)

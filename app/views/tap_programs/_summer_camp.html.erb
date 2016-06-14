@@ -157,7 +157,7 @@ importance of being a champion against bullying.
                   </p>
                   <%=form_tag current_user.present? ? football_steps_path : new_user_session_path,method: :get do %>
                    <%=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
-                   <%=hidden_field_tag 'interval',nil, value: 'weekly'%>
+                   <%#=hidden_field_tag 'interval',nil, value: 'weekly'%>
                   <h4>One child $100 WK<%=radio_button_tag 'summer_plan', 1, false%></h4>
                   <h4>Two Children $190 WK<%=radio_button_tag 'summer_plan', 2, false%></h4>
                   <h4>Three Children $290 WK<%=radio_button_tag 'summer_plan',3,false%></h4>
