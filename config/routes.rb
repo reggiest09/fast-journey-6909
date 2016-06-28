@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'program' => 'pages#program'
   get 'gallery' => 'pages#gallery'
+  get 'football_camp' => 'tap_programs#football_camp'
+  post 'register_football' => 'tap_programs#register_football'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :stripe_plans
   has_many :stripe_customers
   has_many :stripe_charges
+  has_many :football_camps
+  accepts_nested_attributes_for :football_camps, reject_if: :all_blank, allow_destroy: true
 
   serialize :holiday
 

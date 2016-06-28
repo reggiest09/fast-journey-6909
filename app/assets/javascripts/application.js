@@ -23,4 +23,5 @@
 //= require js/jquery.touchSwipe.min
 //= require js/jquery.ui.totop
 //= require js/script
+//= require cocoon
 //= require_tree .

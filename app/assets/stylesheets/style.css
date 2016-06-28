@@ -605,3 +605,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 
 
 }
+
+.football-head{text-align: center;}
+.football-text{text-align: center;}
+.football-btn{float: right;margin-right: 70%}

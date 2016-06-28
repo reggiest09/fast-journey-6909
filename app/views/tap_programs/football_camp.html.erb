@@ -1,0 +1,32 @@
+<div id="content">
+<div class="tab-content">
+   <div class="football-head">
+	  <span><h4> 2016	T.A.P.S</h4></span>
+	  <span><h4>  #10	FOOTBALL	CAMP</h4></span>
+	  <span><h4>     REGISTRATION	FORM </h4></span>
+  </div>
+  <div class="football-text">
+    <span>Directed	by	Antico	Dalton	and	Jermaine	Smith</span><br/>
+<span>Non-contact	camp	for	boys	ages	5	– 14 </span><br/>
+<span>Saturday	July	30th</span><br/>
+<span>10:00	a.m.	to	2:00	p.m.</span>
+<span>Morehead	High	School</span>
+</div>
+	<%= simple_form_for @user,:url=>{:controller=>"tap_programs",:action=>"register_football"},method: :post do |f| %>
+    <div class="container change-container center_div">
+    <div class="tab-pane" id="tab1">
+      <%=f.fields_for :football_camps do |football| %>
+        <%= render 'football_camp_fields', f: football %>
+        <br/>
+      <%end%>
+      <div class="links">
+       <%= link_to_add_association 'add task', f, :football_camps, class: "btn btn-success" %>
+       <%= f.submit "Continue", class: "btn btn-primary btn-info football-btn" %>
+      </div>
+    </div>
+	<% end %>
+    </div>
+</div>
+</div>
+<div class="wave2"></div>
+</div>
