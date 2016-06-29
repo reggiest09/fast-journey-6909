@@ -1,12 +1,12 @@
 <div class="nested-fields">
 <div class="row">
-  <div class="col-lg-3 col-xs-8">
+  <div class="col-lg-3 col-xs-5">
     <%= f.input :tshirt_size, placeholder: 'T-SHIRT	SIZE',label: "T-SHIRT	SIZE	(Youth	Size):",class: "required name col-xs-5 col-lg-1 col-xs-3", required: true %>
   </div>
 </div>
 <div class="row">
   <div class = "col-lg-3 col-xs-5">
-    <%= f.input :offensive_position, :as => :check_boxes, :label=> "OFFENSIVE	POSITION:	(pick	one)",:collection => [["Offensive Lineman","offensive_lineman"],["Quarterback Running Back","quarterback_running_back"],["Receiver","receiver"]],class: "required",required: true %>
+    <%= f.input :offensive_position, :as => :check_boxes, :label=> "OFFENSIVE	POSITION:	(pick	one)",:collection => [["Offensive Lineman","offensive_lineman"],["Quarterback","quarterback"], ["Running Back","running back"],["Receiver","receiver"]],class: "required",required: true %>
   </div>
   <div class = "col-lg-3 col-xs-5">
     <%= f.input :defensive_position, :as => :check_boxes, :label=> "DEFENSIVE	POSITION:	(pick	one)",:collection => [["Defensive Lineman","defensive_lineman"],["Linebacker","linebacker"], ["Defensive Back","defensive_back"]],class: "required",required: true %>

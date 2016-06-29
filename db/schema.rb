@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609061930) do
+ActiveRecord::Schema.define(version: 20160627200422) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -55,6 +55,24 @@ ActiveRecord::Schema.define(version: 20160609061930) do
     t.boolean  "active",          default: false
     t.string   "plan_name"
     t.string   "plan"
+  end
+
+  create_table "football_camps", force: :cascade do |t|
+    t.string   "offensive_position"
+    t.string   "defensive_position"
+    t.string   "name"
+    t.text     "st_adreess"
+    t.string   "city"
+    t.string   "parent_name"
+    t.string   "phone_number"
+    t.string   "em_phone_number"
+    t.string   "age_and_grade"
+    t.string   "email_address"
+    t.integer  "user_id"
+    t.boolean  "tos_payment"
+    t.string   "tshirt_size"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "stripe_charges", force: :cascade do |t|
