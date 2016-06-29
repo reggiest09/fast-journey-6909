@@ -12,6 +12,8 @@ class CreateFootballCamps < ActiveRecord::Migration
       t.string :age_and_grade
       t.string :email_address
       t.integer :user_id
+      t.boolean :tos_payment
+      t.string :tshirt_size
       t.timestamps null: false
     end
   end

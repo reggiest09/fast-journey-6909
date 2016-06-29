@@ -1,16 +1,21 @@
 <div class="nested-fields">
 <div class="row">
-  <h4>T-SHIRT	SIZE	(Youth	Size):</h4>
+  <div class="col-lg-3 col-xs-8">
+    <%= f.input :tshirt_size, placeholder: 'T-SHIRT	SIZE',label: "T-SHIRT	SIZE	(Youth	Size):",class: "required name col-xs-5 col-lg-1 col-xs-3", required: true %>
+  </div>
+</div>
+<div class="row">
   <div class = "col-lg-3 col-xs-5">
-    <%= f.input :offensive_position, :as => :check_boxes, :label=> "OFFENSIVE	POSITION:	(pick	one)",:collection => ["offensive_lineman","quarterback_running_back", "receiver"],class: "required",required: true %>
+    <%= f.input :offensive_position, :as => :check_boxes, :label=> "OFFENSIVE	POSITION:	(pick	one)",:collection => [["Offensive Lineman","offensive_lineman"],["Quarterback Running Back","quarterback_running_back"],["Receiver","receiver"]],class: "required",required: true %>
   </div>
   <div class = "col-lg-3 col-xs-5">
-    <%= f.input :defensive_position, :as => :check_boxes, :label=> "DEFENSIVE	POSITION:	(pick	one)",:collection => ["defensive_lineman","linebacker", "defensive_back"],class: "required",required: true %>
+    <%= f.input :defensive_position, :as => :check_boxes, :label=> "DEFENSIVE	POSITION:	(pick	one)",:collection => [["Defensive Lineman","defensive_lineman"],["Linebacker","linebacker"], ["Defensive Back","defensive_back"]],class: "required",required: true %>
   </div>
 </div>
 <div class="row">
 <div class="col-lg-3 col-xs-5">
-  <%= f.input :name, placeholder: 'first name',class: "required name col-xs-5 col-lg-1", required: true %>
+  <%= f.input :name, placeholder: 'Child Name', input_html: { multiple: true,"data-role"=>"tagsinput",required: true }, class: "required name col-xs-6 col-lg-2" %>
+  <span><b>Enter comma (,) add multiple childrens</b></span>
 </div>
 <div class="col-lg-3 col-xs-5">
   <%= f.input :st_adreess, label: "STREET ADDRESS",placeholder: 'Street Address',class: "required address", required: true %>
@@ -34,12 +39,20 @@
 </div>
 <div class="row">
 <div class="col-lg-3 col-xs-5">
-  <%= f.input :age_and_grade, label: "AGE and GRADE OF CAMPER(This Fall)", class: "required age", required: true %>
+  <%= f.input :age_and_grade, label: "AGE and GRADE OF CAMPER(This Fall)", placeholder: 'Age and Grade', class: "required age", required: true %>
 </div>
 <div class="col-lg-3 col-xs-5">
   <%= f.input :email_address, label: "E-MAIL ADDRESS", placeholder: 'Email Address',class: "required email", required: true %>
 </div>
 </div>
-<%= link_to_remove_association "remove task", f, class: "btn btn-danger" %>
+<%#= link_to_remove_association "remove task", f, class: "btn btn-danger" %>
 
 </div>
+
+<script>
+  $(document).ready(function(){
+  	if($('.bootstrap-tagsinput').size() > 1){
+  		$('.bootstrap-tagsinput').first().remove()
+  	}
+  })
+</script>

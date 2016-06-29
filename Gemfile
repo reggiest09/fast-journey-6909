@@ -25,9 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem 'gmaps4rails'
 gem 'wicked'
-gem "cocoon"
 gem 'simple_form'
-gem "slim-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'

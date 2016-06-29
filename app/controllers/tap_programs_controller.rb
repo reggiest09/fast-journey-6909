@@ -4,18 +4,17 @@ class TapProgramsController < ApplicationController
   end
 
   def football_camp
-  	@user = User.new
-  	@user.football_camps.build
+  	@user = current_user.football_camps.new
   end
 
   def register_football
-  	@user = current_user
-    @user.update_attributes(football_params)
+    @football = current_user.football_camps.new(football_params)
+    @football.save
     redirect_to root_path
   end
 
   private
     def football_params
-      params.require(:user).permit(football_camps_attributes: [:id, :user_id, :name, :st_adreess,:city,:parent_name, :phone_number, :em_phone_number, :age_and_grade, :email_address,:_destroy,:offensive_position=> [], :defensive_position=> []])
+      params.require(:football_camp).permit(:st_adreess,:city,:parent_name, :phone_number, :em_phone_number, :age_and_grade, :email_address,:_destroy,:offensive_position=> [], :defensive_position=> [],:name => [])
     end
 end
