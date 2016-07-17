@@ -25,7 +25,7 @@
     <h2>Select Plan</h2>
 
     <div class="row">
-      <div class="col-sm-4">
+      <!-- <div class="col-sm-4">
         <div class="thumb4">
           <div class="thumbnail clearfix">
             <figure class="img-polaroid">
@@ -39,15 +39,15 @@
                 </strong>
               </p>
               
-              <h1> $15 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "before_school") : new_user_session_path(interval: "weekly", plan_name: "before_school"), class: "btn-default btn2" %></h1>
+              <h1> $15 WK <%#= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "before_school") : new_user_session_path(interval: "weekly", plan_name: "before_school"), class: "btn-default btn2" %></h1>
               
-              <h1> $60 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "before_school") : new_user_session_path(interval: "monthly", plan_name: "before_school"), class: "btn-default btn2"%></h1>
+              <h1> $60 MO <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "before_school") : new_user_session_path(interval: "monthly", plan_name: "before_school"), class: "btn-default btn2"%></h1>
         
               
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="col-sm-4">
         <div class="thumb4">
           <div class="thumbnail clearfix">
@@ -56,16 +56,16 @@
             </figure>
             <div class="caption">
               <h3>After School</h3>
-              <p>
+              <!-- <p>
                 <strong class="text-uppercase">
                  TAPS AFTER SCHOOL PLAN  $25 Registration Fee
                 </strong>
               </p>
+               -->
               
+              <h1> $35 <%= link_to 'Buy Plan', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "queen_city") : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
               
-              <h1> $50 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "queen_city") : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
-              
-              <h1> $200 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
+              <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %>
 
               
               
@@ -73,7 +73,12 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-8">  
+      <figure class="google_map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13023.086444686476!2d-80.746715!3d35.311656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541c3cfc836d17%3A0xbdf42fd6f88a83ba!2s9100+Olmsted+Dr%2C+Charlotte%2C+NC+28262!5e0!3m2!1sen!2sus!4v1457247619016" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </figure>
+    </div>
+     <!--  <div class="col-sm-4">
         <div class="thumb4">
           <div class="thumbnail clearfix">
             <figure class="img-polaroid">
@@ -87,21 +92,21 @@
                 </strong>
               </p>
               
-              <h1> $62 WK <%= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "after_school") : new_user_session_path(interval: "weekly", plan_name: "after_school"), class: "btn-default btn2" %></h1>
+              <h1> $62 WK <%#= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "after_school") : new_user_session_path(interval: "weekly", plan_name: "after_school"), class: "btn-default btn2" %></h1>
               
-              <h1> $248 MO <%= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"), class: "btn-default btn2"%></h1>
+              <h1> $248 MO <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"), class: "btn-default btn2"%></h1>
 
               
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       
     </div>
 
 
 
-
+   
 
 
 

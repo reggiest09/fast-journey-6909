@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :subscriptions do
     get 'cancel'
   end
-  root 'pages#index'
+  #root 'pages#index'
+  root 'new_layout#index'
   resources :profiles, only: [:index]
   resources :school_closing_steps
   resources :football_steps

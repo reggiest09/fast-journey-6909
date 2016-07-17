@@ -21,6 +21,9 @@ class Subscription < ActiveRecord::Base
       if user.plan_name == "school_closing" && user.plan == "daily"
         stripe_charge = Stripe::Charge.create(amount: stripe_charge_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      elsif user.plan_name == "queen_city" && user.plan == "weekly"
+        stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+        user.stripe_charges.create(amount: after_school_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
       elsif user.plan_name == "school_closing" && user.plan == "all_days"
         stripe_charge = Stripe::Charge.create(amount: stripe_all_dates, currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
         user.stripe_charges.create(amount: stripe_all_dates, currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
@@ -81,6 +84,10 @@ class Subscription < ActiveRecord::Base
 
   def stripe_charge_amount(user)
     (user.holiday.reject { |c| c.empty? }.count) * 25 * 100
+  end
+
+  def after_school_amount(user)
+    (user.amount) * child_name.join(",").split(',').count * 100
   end
 
   def stripe_all_dates

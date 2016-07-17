@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :football_camps, reject_if: :all_blank, allow_destroy: true
 
   serialize :holiday
-
+  serialize :child_name, Array
 
   after_create :send_admin_mail
 

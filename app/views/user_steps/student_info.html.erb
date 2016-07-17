@@ -10,6 +10,10 @@
         <div class="col-lg-3">
           <%= f.input :last_name, placeholder: 'last name',class: "required email", required: true %>
         </div>
+        <div class="col-lg-3">
+          <%= f.input :child_name, placeholder: 'Child Name', input_html: { multiple: true,"data-role"=>"tagsinput",required: true }, class: "required name col-xs-6 col-lg-2" %>
+          <span><b>Enter comma (,) add multiple childrens</b></span>
+        </div>
       </div>
       <div class="row">
         <div class="col-lg-3">
@@ -53,13 +57,21 @@
         </div>
       </div>
     </div>
-  </div>
   <div class="previous"%>
     <%= link_to "previous step", wizard_path(:new_registration),class: "btn btn-primary btn-sm" %>
     <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
-    <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
-    <%= f.hidden_field "interval", :value => params[:interval] %>
+    <%= f.hidden_field "plan_name", :value => params[:plan_name].present? ? params[:plan_name] : current_user.plan_name %>
+    <%= f.hidden_field "interval", :value => params[:interval].present? ? params[:interval] : current_user.interval%>
+  </div>
   </div>
 <% end %>
 <div class="wave2"></div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    if($('.bootstrap-tagsinput').size() > 1){
+      $('.bootstrap-tagsinput').first().remove()
+    }
+  })
+</script

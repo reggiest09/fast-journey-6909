@@ -33,7 +33,7 @@ private
                                  :father_cell_number,:persons_auth,
                                  :other_arrangements,:emergency_contact,
                                  :child_helath_prob,:child_midication,
-                                 :child_midication_desc,:snack)
+                                 :child_midication_desc,:snack,child_name: [])
   end
 
   def stripe_plan_price
