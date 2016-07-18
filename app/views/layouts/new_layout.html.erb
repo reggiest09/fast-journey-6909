@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>T.A.P.S</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <script src="//load.sumome.com/" data-sumo-site-id="ecf9e6a1561472401ffd7a3f8bbcd44adade533522cb0463d0f7cfa58d3a055b" async="async"></script>
+  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+  <%#= javascript_include_tag 'gmaps.js' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% flash.each do |name, msg| %>
+		<div class="alert alert-success fade in">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      <strong><%=msg%></strong>
+    </div>
+	<% end %>
+  <%= yield %>
+</body>
+</html>
