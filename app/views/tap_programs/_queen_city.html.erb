@@ -63,7 +63,7 @@
               </p>
                -->
               
-              <h1> $35 <%= link_to 'Buy Plan', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "queen_city") : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
+              <h1> $35 <%= link_to 'Buy Plan', current_user.present? ? after_school_registrations_path : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
               
               <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %>
 

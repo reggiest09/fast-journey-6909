@@ -1,0 +1,83 @@
+<div id="content">
+<%= bootstrap_nested_form_for @user,url: {controller: 'after_school_registrations',action: 'create',id: @user.id}, method: :post do |f| %>
+  <div class="container center_div">
+    <div class="tab-pane" id="tab1">
+      <h4> Step 1 </h4>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.text_field :first_name, placeholder: 'first name',class: "required email", required: true %>
+        </div>
+        <div class="col-lg-3">
+          <%= f.text_field :last_name, placeholder: 'last name',class: "required email", required: true %>
+        </div>
+      </div>
+        <h5> Childern Names</h5>
+        <%= f.fields_for :children_names do |task_form| %>
+          <div class="row">
+            <div class="col-lg-3">
+              <%= task_form.text_field :name %>
+            </div>
+            <div class="col-lg-3">
+             
+              <%#= f.select (:gender, %w{ Male Female }, :include_blank => true) %>
+              <%= task_form.select :gender, %w{ Male Female }, {:prompt => "Gender..."} %>
+            </div>
+            <div class="col-lg-3">
+              <%= task_form.text_field :age, required: true %>
+            </div>
+            <div class="col-lg-3">
+              <%= task_form.text_field :grade, required: true %>
+            </div>
+          <%= task_form.link_to_remove "Remove this task", class: "btn btn-danger" %>
+          </div>
+          <br/>
+        <% end %>
+         <div class="links">
+            <p><%= f.link_to_add "Add a task", :children_names,class: "btn btn-primary" %></p>
+            <%#= f.link_to_add 'add children', f, :children_names%>
+        </div>
+     
+      <div class="row">
+ 
+      <div class="row">
+       <div class="col-lg-3">
+              <%= f.text_field :school_name, required: true %>
+      </div>
+       <div class="col-lg-3">
+              <%= f.text_field :email, required: true %>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+                <%= f.text_field :home_address, required: true %>
+        </div>
+        <div class="col-lg-3">
+                <%= f.text_field :home_city, required: true %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+                <%= f.text_field :home_state, required: true %>
+        </div>
+        <div class="col-lg-3">
+                <%= f.text_field :home_zip_code, required: true %>
+        </div>
+      </div>
+    </div>
+  <div class="previous"%>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+  </div>
+  </div>
+  </div>
+<% end %>
+</div>
+<div class="wave2"></div>
+</div>
+
+<script>
+  $(document).ready(function(){
+    if($('.bootstrap-tagsinput').size() > 1){
+      $('.bootstrap-tagsinput').first().remove()
+    }
+  })
+</script

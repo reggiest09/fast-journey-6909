@@ -16,12 +16,14 @@ Rails.application.routes.draw do
   resources :school_closing_steps
   resources :football_steps
   resources :tap_programs
+  resources :after_school_registrations
 
   get "qc_before_after_school" => "pages#qc_before_after_school"
   get "qc_after_school" => "pages#qc_after_school"
   get "qc_befor_school" => "pages#qc_befor_school"
   get "taps_after_school" => "pages#taps_after_school"
   get "taps_gallery" => "pages#taps_gallery"
+  get "payment" => "after_school_registrations#payment"
   get '/st_payment' => 'pages#st_payment'
   get 'payment' => 'school_closing_steps#payment'
   get 'football_payment' => 'football_steps#football_payment'

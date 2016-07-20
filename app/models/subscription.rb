@@ -15,30 +15,35 @@ class Subscription < ActiveRecord::Base
 
   def create_stripe_customer_and_subscription(user)
     begin
+      # s_customer = Stripe::Customer.create(description: user.first_name, card: self.stripe_card_token,email: user.email)
+      # stripe_customer = StripeCustomer.create(object: s_customer.object, description: s_customer.description, livemode: s_customer.livemode, created_timestamp: s_customer.created, reference_id: s_customer.id, user_id: self.user_id)
+      # customer = Stripe::Customer.retrieve(stripe_customer.reference_id)
+      # if user.plan_name == "school_closing" && user.plan == "daily"
+      #   stripe_charge = Stripe::Charge.create(amount: stripe_charge_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      #   user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      # elsif user.plan_name == "queen_city" && user.plan == "weekly"
+      #   stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      #   user.stripe_charges.create(amount: after_school_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      # elsif user.plan_name == "school_closing" && user.plan == "all_days"
+      #   stripe_charge = Stripe::Charge.create(amount: stripe_all_dates, currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      #   user.stripe_charges.create(amount: stripe_all_dates, currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      # elsif user.plan_name == "football" || user.plan_name == "basketball"
+      #   stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      #   user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
+      # elsif user.plan_name == "summer_wk"
+      #   #stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      #   user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: s_customer.id) 
+      #   subscription = customer.subscriptions.create(:plan => user.plan)
+      #   user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: customer.id)
+      # else
+      #   subscription = customer.subscriptions.create(:plan => payment_discount)
+      #   user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: stripe_customer.id)
+      # end
       s_customer = Stripe::Customer.create(description: user.first_name, card: self.stripe_card_token,email: user.email)
       stripe_customer = StripeCustomer.create(object: s_customer.object, description: s_customer.description, livemode: s_customer.livemode, created_timestamp: s_customer.created, reference_id: s_customer.id, user_id: self.user_id)
       customer = Stripe::Customer.retrieve(stripe_customer.reference_id)
-      if user.plan_name == "school_closing" && user.plan == "daily"
-        stripe_charge = Stripe::Charge.create(amount: stripe_charge_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "queen_city" && user.plan == "weekly"
-        stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: after_school_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "school_closing" && user.plan == "all_days"
-        stripe_charge = Stripe::Charge.create(amount: stripe_all_dates, currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: stripe_all_dates, currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "football" || user.plan_name == "basketball"
-        stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
-      elsif user.plan_name == "summer_wk"
-        #stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
-        user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: s_customer.id) 
-        subscription = customer.subscriptions.create(:plan => user.plan)
-        user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: customer.id)
-      else
-        subscription = customer.subscriptions.create(:plan => payment_discount)
-        user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: stripe_customer.id)
-      end
+      stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+      user.stripe_charges.create(amount: stripe_charge_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
     rescue Exception => e
     end
   end
@@ -87,7 +92,7 @@ class Subscription < ActiveRecord::Base
   end
 
   def after_school_amount(user)
-    (user.amount) * child_name.join(",").split(',').count * 100
+    (35 * user.children_names.count) * 100
   end
 
   def stripe_all_dates

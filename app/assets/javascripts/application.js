@@ -23,5 +23,6 @@
 //= require js/jquery.touchSwipe.min
 //= require js/jquery.ui.totop
 //= require js/script
+//= require jquery_nested_form
 //= require js/bootstrap-tagsinput
 //= require_tree .
