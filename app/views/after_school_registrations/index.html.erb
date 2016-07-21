@@ -35,7 +35,7 @@
         <p>
           Please allow 10-15 minutes to complete this application
         </p>
-        <%=link_to "Start a New Registration",new_after_school_registration_path,class: "btn btn-default btn-primary" %>
+        <%=link_to "Start a New Registration",new_after_school_registration_path(value: params["summer_plan"].to_i),class: "btn btn-default btn-primary" %>
         <br>
       </div>
     </div>

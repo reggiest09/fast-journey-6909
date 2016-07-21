@@ -63,7 +63,17 @@
               </p>
                -->
               
-              <h1> $35 <%= link_to 'Buy Plan', current_user.present? ? after_school_registrations_path : new_user_session_path(interval: "weekly",plan_name: "queen_city"), class: "btn-default btn2" %></h1>
+              
+              <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
+                   <%#=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
+                   <%#=hidden_field_tag 'interval',nil, value: 'weekly'%>
+                  <h4>One child $25 WK<%=radio_button_tag 'summer_plan', 1, false%></h4>
+                  <h4>Two Children $50 WK<%=radio_button_tag 'summer_plan', 2, false%></h4>
+                  <h4>Three Children $75 WK<%=radio_button_tag 'summer_plan',3,false%></h4>
+                  <h4>Four children $100 WK<%=radio_button_tag 'summer_plan',4,false%></h4>
+                  <h4>Five Children $125 WK<%=radio_button_tag 'summer_plan',5,false%></h4>
+                  <%=submit_tag 'Buy Plan',class: 'btn btn-primary hide-button' %>
+              <%end%>
               
               <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %>
 
@@ -120,3 +130,14 @@
 </div>
 
 
+<script>
+   $(document).ready(function(){
+
+    $('.hide-button').prop('disabled', true);
+  })
+  $('input[type=radio]').click(function(){
+    if(this.checked) {
+      $('.hide-button').prop('disabled', false);
+    }
+  });
+</script>

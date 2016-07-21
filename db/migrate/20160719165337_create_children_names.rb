@@ -5,6 +5,7 @@ class CreateChildrenNames < ActiveRecord::Migration
       t.string :age
       t.string :gender
       t.string :grade
+      t.string :school_name
       t.integer :user_id
       t.timestamps null: false
     end

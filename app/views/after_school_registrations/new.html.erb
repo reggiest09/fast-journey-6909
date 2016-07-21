@@ -11,29 +11,37 @@
           <%= f.text_field :last_name, placeholder: 'last name',class: "required email", required: true %>
         </div>
       </div>
-        <h5> Childern Names</h5>
+        <h4><b> Childern Names</b></h4>
+        <% i =1%>
         <%= f.fields_for :children_names do |task_form| %>
+          <%='Child:'+' '+i.to_s%>
           <div class="row">
             <div class="col-lg-3">
-              <%= task_form.text_field :name %>
+              <%= task_form.text_field :name,label: "Child Name",required: true %>
             </div>
             <div class="col-lg-3">
              
               <%#= f.select (:gender, %w{ Male Female }, :include_blank => true) %>
-              <%= task_form.select :gender, %w{ Male Female }, {:prompt => "Gender..."} %>
+              <%= task_form.select :gender, %w{ Male Female }, {label: "Child Gender", required: true } %>
             </div>
             <div class="col-lg-3">
-              <%= task_form.text_field :age, required: true %>
+              <%= task_form.text_field :age, label: "Child Age", required: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <%= task_form.text_field :grade, label: "Child Grade", required: true %>
             </div>
             <div class="col-lg-3">
-              <%= task_form.text_field :grade, required: true %>
+              <%= task_form.text_field :school_name, label: "Child School", required: true %>
             </div>
-          <%= task_form.link_to_remove "Remove this task", class: "btn btn-danger" %>
+          <%#= task_form.link_to_remove "Remove this task", class: "btn btn-danger" %>
           </div>
           <br/>
+          <% i += 1%>
         <% end %>
          <div class="links">
-            <p><%= f.link_to_add "Add a task", :children_names,class: "btn btn-primary" %></p>
+            <p><%#= f.link_to_add "Add a task", :children_names,class: "btn btn-primary" %></p>
             <%#= f.link_to_add 'add children', f, :children_names%>
         </div>
      
