@@ -45,12 +45,8 @@
             <%#= f.link_to_add 'add children', f, :children_names%>
         </div>
      
-      <div class="row">
  
       <div class="row">
-       <div class="col-lg-3">
-              <%= f.text_field :school_name, required: true %>
-      </div>
        <div class="col-lg-3">
               <%= f.text_field :email, required: true %>
       </div>
@@ -71,7 +67,11 @@
                 <%= f.text_field :home_zip_code, required: true %>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <%= f.text_area :ada_accommodation, label: 'Please list ADA Accommodations needed' %>
+        </div>
+      </div>
   <div class="previous"%>
     <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
   </div>

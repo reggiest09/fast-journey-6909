@@ -15,7 +15,7 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
-  index do
+  index titile: "2016-2017 afterschool" do
     column :id
     column :email
     actions
@@ -34,4 +34,30 @@ ActiveAdmin.register User do
     end
     f.actions
   end
+
+  show do
+    attributes_table do
+      row :first_name
+      row :last_name 
+      row :email
+      row :home_address
+      row :home_city
+      row :home_state
+      row :home_zip_code
+      row :ada_accommodation
+      row :child_name do
+        div do
+          User.find_by_id(seller.id).children_names.present? ? User.find_by_id(seller.id).children_names.to_json : []
+        end
+     end
+    end
+    active_admin_comments
+  end
+  controller do
+    def scoped_collection
+      # some stuffs
+      super.where("created_at >= ? AND created_at <= ?", Time.now.beginning_of_year,Time.now.next_year)
+    end 
+  end
+
 end
