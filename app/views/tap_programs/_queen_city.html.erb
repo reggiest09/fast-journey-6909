@@ -12,17 +12,17 @@
 
     <p>
       <strong class="text-uppercase">
-        Providing Quality Student Care For Queen City Families
+         T.A.P.S After School Registration is now open
       </strong>
     </p>
 
     <p>
-      TAPS will provide transportation to and from Queen City for our students. T.A.P.S will be providing a healthy morning snack. Before care begins at 6:30 AM and operates until the start of the school day.The program follows the regular school calendar. After-school begins immediately after the final bell. Starting with pick up at Queen City and drop off at our TAPS site. TAPS after-school will run until 6:30 PM. When schools are closed, the program is closed. When schools are open for any part of the day, the program is open (Unless otherwise directed).
+      TAPS will provide transportation for our students. TAPS will be providing a healthy morning snack. Before care begins at 6:30 AM and operates until the start of the school day.The program follows the regular school calendar TAPS after-school will run until 6:30 PM. When schools are closed, the program is closed. When schools are open for any part of the day, the program is open (Unless otherwise directed). When your kids are safe and having fun, you’ll like TAPS After School as much as they do.
     </p>
 
 
 
-    <h2>Select Plan</h2>
+    <h2>Affordable After School Program </h2>
 
     <div class="row">
       <!-- <div class="col-sm-4">
@@ -63,15 +63,20 @@
               </p>
                -->
               
+                  
+                    <strong class="text-uppercase">
+                      My Family is registering:
+                    </strong>
+
               
               <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
                    <%#=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
                    <%#=hidden_field_tag 'interval',nil, value: 'weekly'%>
-                  <h4>One child $25 WK<%=radio_button_tag 'summer_plan', 1, false%></h4>
-                  <h4>Two Children $50 WK<%=radio_button_tag 'summer_plan', 2, false%></h4>
-                  <h4>Three Children $75 WK<%=radio_button_tag 'summer_plan',3,false%></h4>
-                  <h4>Four children $100 WK<%=radio_button_tag 'summer_plan',4,false%></h4>
-                  <h4>Five Children $125 WK<%=radio_button_tag 'summer_plan',5,false%></h4>
+                  <h4>One child $25<%=radio_button_tag 'summer_plan', 1, false%></h4>
+                  <h4>Two Children $50<%=radio_button_tag 'summer_plan', 2, false%></h4>
+                  <h4>Three Children $75<%=radio_button_tag 'summer_plan',3,false%></h4>
+                  <h4>Four Children $100<%=radio_button_tag 'summer_plan',4,false%></h4>
+                  <h4>Five Children $125<%=radio_button_tag 'summer_plan',5,false%></h4>
                   <%=submit_tag 'Buy Plan',class: 'btn btn-primary hide-button' %>
               <%end%>
               

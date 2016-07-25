@@ -11,7 +11,7 @@
           <%= f.text_field :last_name, placeholder: 'last name',class: "required email", required: true %>
         </div>
       </div>
-        <h4><b> Childern Names</b></h4>
+        <h4><b> Child Name or Names</b></h4>
         <% i =1%>
         <%= f.fields_for :children_names do |task_form| %>
           <%='Child:'+' '+i.to_s%>
@@ -73,7 +73,7 @@
         </div>
       </div>
   <div class="previous"%>
-    <%= f.submit "Continue",class: "next btn btn-primary btn-sm form-validation" %>
+    <%= f.submit "Continue",class: "next btn btn-primary btn-lg form-validation" %>
   </div>
   </div>
   </div>

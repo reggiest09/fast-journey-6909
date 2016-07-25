@@ -36,7 +36,7 @@ class Subscription < ActiveRecord::Base
         subscription = customer.subscriptions.create(:plan => user.plan)
         user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: customer.id)
       elsif user.children_names.present?
-        stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+        stripe_charge = Stripe::Charge.create(amount: after_school_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for After-School Registration")
         user.stripe_charges.create(amount: after_school_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
       else
         subscription = customer.subscriptions.create(:plan => payment_discount)

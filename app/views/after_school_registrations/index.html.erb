@@ -3,16 +3,16 @@
     <div class="row">
       <div class="col-md-12">
         <h3>
-          After-School/Before Registration Form
+          2016-2017 After-School Registration Form
         </h3>
         <h3>
           T.A.P.S
         </h3>
         
-        <div>
+        <!-- <div>
          <p>If you select a weekly or monthly after school or before school plan.
          You will be charged immediately for the current pay period. Each subsequent period, you'll see a charge for the subscription renewal. You can cancel at any time...</p>
-        </div>
+        </div> -->
         
         <div>
           To register your student in the after school program located at the TAPS <span>School click below to start a Registration.</span>
@@ -33,9 +33,9 @@
           </li>
         </ul>
         <p>
-          Please allow 10-15 minutes to complete this application
+          Please allow 5 minutes to complete this application
         </p>
-        <%=link_to "Start a New Registration",new_after_school_registration_path(value: params["summer_plan"].to_i),class: "btn btn-default btn-primary" %>
+        <%=link_to "Start a New Registration",new_after_school_registration_path(value: params["summer_plan"].to_i),class: "btn btn-default btn-primary btn-lg" %>
         <br>
       </div>
     </div>
