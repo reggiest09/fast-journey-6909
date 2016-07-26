@@ -70,7 +70,7 @@
 
               
               <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
-                   <%#=hidden_field_tag 'plan_name',nil,value: 'summer_wk'%>
+                   <%=hidden_field_tag 'plan_name',nil,value: "after_school"%>
                    <%#=hidden_field_tag 'interval',nil, value: 'weekly'%>
                   <h4>One child $25<%=radio_button_tag 'summer_plan', 1, false%></h4>
                   <h4>Two Children $50<%=radio_button_tag 'summer_plan', 2, false%></h4>

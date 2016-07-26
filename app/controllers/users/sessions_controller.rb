@@ -14,7 +14,7 @@ class Users::SessionsController < Devise::SessionsController
       when "before_school"
         session["#{resource_name}_return_to"] = user_steps_path(plan_name: session[:plan_name],interval: session[:interval])
       when "after_school"
-        session["#{resource_name}_return_to"] = user_steps_path(plan_name: session[:plan_name],interval: session[:interval])
+        session["#{resource_name}_return_to"] = after_school_registrations_path(summer_plan: session[:summer_plan])
       when "school_closing"
         session["#{resource_name}_return_to"] = school_closing_steps_path(plan_name: session[:plan_name],interval: session[:interval])
       when "football"
