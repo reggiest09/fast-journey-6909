@@ -15,9 +15,10 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
-  index titile: "2016-2017 afterschool" do
+  index :title => "2016-2017 After School List" do
     column :id
     column :email
+    column :created_at
     actions
     # actions defaults: false do |user|
     #   link_to "Show", admin_user_path(user)
@@ -47,7 +48,7 @@ ActiveAdmin.register User do
       row :ada_accommodation
       row :child_name do
         div do
-          User.find_by_id(seller.id).children_names.present? ? User.find_by_id(seller.id).children_names.to_json : []
+          User.find_by_id(user.id).children_names.present? ? User.find_by_id(user.id).children_names.to_json : []
         end
      end
     end
