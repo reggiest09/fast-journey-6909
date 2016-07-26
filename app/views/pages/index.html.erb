@@ -322,12 +322,14 @@ $(window).load(function() {
 
 
  <script>
-   $(document).ready(function(){
-      if(sessionStorage && ! sessionStorage.getItem('isshow')){
+   $(document).ready(function() {
+    var shown= localStorage.getItem('isshow');
+    if(shown !="t"){
         $('.modal').modal();
-      }
-      sessionStorage.setItem('isshow',true);
+        localStorage.setItem('isshow', "t");
     }
 
- });
+  });
+
+ 
 </script> 
