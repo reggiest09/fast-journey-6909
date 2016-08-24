@@ -1,148 +1,201 @@
+<div class="container main-container headerOffset" >
 
-<div id="content">
-  <div class="breadcrumbs1_wrapper">
-    <div class="container">
-      <div class="breadcrumbs1"><%=link_to 'Home', pages_path %><span></span>TAPS After School</div>
-    </div>
-  </div>
+    <div class="row innerPage">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row userInfo">
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="title-big text-center section-title-style2">
+            <span>
+               Join TAPS AfterSchool Enrichment 2016-2017
+            </span>
+                    </h1>
 
-  <div class="container">
-
-    <h2 class="c">Information</h2>
-
-    <p>
-      <strong class="text-uppercase">
-         T.A.P.S After School Registration is now open
-      </strong>
-    </p>
-
-    <p>
-      TAPS will provide transportation for our students. TAPS will be providing a healthy morning snack. Before care begins at 6:30 AM and operates until the start of the school day.The program follows the regular school calendar TAPS after-school will run until 6:30 PM. When schools are closed, the program is closed. When schools are open for any part of the day, the program is open (Unless otherwise directed). When your kids are safe and having fun, you’ll like TAPS After School as much as they do.
-    </p>
+                    <p class="lead text-center">
+                       Every parent knows how important school is for their child’s growth during the K-12 years. However it doesn’t just end when the bell rings at 3 P.M. TAPS After-school program is a great way to further improve your child’s development.
+                    </p>
 
 
+                    <hr class="hr hr30">
+                    <div class="row animated">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            <%= image_tag "tfb.jpg", class: "img-responsive", alt: "img" %>
 
-    <h2>Affordable After School Program </h2>
+                            <h3 class="block-title-3">
+                                Increases Academic Effort 
+                            </h3>
 
-    <div class="row">
-      <!-- <div class="col-sm-4">
-        <div class="thumb4">
-          <div class="thumbnail clearfix">
-            <figure class="img-polaroid">
-              <img src="/assets/parents01.jpg" alt="" class="img-responsive">
-            </figure>
-            <div class="caption">
-              <h3>Before School</h3>
-              <p>
-                <strong class="text-uppercase">
-                  TAPS BEFORE SCHOOL PLAN
-                </strong>
-              </p>
-              
-              <h1> $15 WK <%#= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "before_school") : new_user_session_path(interval: "weekly", plan_name: "before_school"), class: "btn-default btn2" %></h1>
-              
-              <h1> $60 MO <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "before_school") : new_user_session_path(interval: "monthly", plan_name: "before_school"), class: "btn-default btn2"%></h1>
-        
-              
+                            <p>
+                               TAPS After-school programs offer the opportunity for kids to not only work on their homework but to get help if they need it. Your child may feel more comfortable working on school assignments in a slightly less formal environment where they can ask questions at any time. 
+                            </p>
+
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            <%= image_tag "goals.jpg", class: "img-responsive", alt: "img" %>
+                            <h3 class="block-title-3">
+                               Setting Goals
+                            </h3>
+
+                            <p>
+                                After-school activities present opportunities for your children to develop their goal-setting skills. Most extracurricular activities involve reaching or achieving a goal, whether it be the lead actor in the school play, winning the state championship or coming in first place in the science fair. As a result, these activities help encourage students to work toward achieving those goals, while having fun at the same time.
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            
+                            <%= image_tag "esteem.jpg", class: "img-responsive", alt: "img" %>
+                            <h3 class="block-title-3">
+                                 Building Self-Esteem
+                            </h3>
+
+                            <p>
+                               Mastering new skills can help build confidence in children. By participating in after-school activities, they can build their self-esteem in a relaxed setting as their activities provide the opportunity to be successful in something that they are passionate about
+                            </p>
+
+                        </div>
+
+
+                    </div>
+                    <!--/.row-->
+
+                    <hr>
+                </div>
             </div>
-          </div>
+            <!--/row end-->
         </div>
-      </div> -->
-      <div class="col-sm-4">
-        <div class="thumb4">
-          <div class="thumbnail clearfix">
-            <figure class="img-polaroid">
-              <img src="/assets/parents02.jpg" alt="" class="img-responsive">
-            </figure>
-            <div class="caption">
-              <h3>After School</h3>
-              <!-- <p>
-                <strong class="text-uppercase">
-                 TAPS AFTER SCHOOL PLAN  $25 Registration Fee
-                </strong>
-              </p>
-               -->
-              
-                  
-                    <strong class="text-uppercase">
-                      My Family is registering:
-                    </strong>
-
-              
-              <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
-                   <%=hidden_field_tag 'plan_name',nil,value: "after_school"%>
-                   <%#=hidden_field_tag 'interval',nil, value: 'weekly'%>
-                  <h4>One child $25<%=radio_button_tag 'summer_plan', 1, false%></h4>
-                  <h4>Two Children $50<%=radio_button_tag 'summer_plan', 2, false%></h4>
-                  <h4>Three Children $75<%=radio_button_tag 'summer_plan',3,false%></h4>
-                  <h4>Four Children $100<%=radio_button_tag 'summer_plan',4,false%></h4>
-                  <h4>Five Children $125<%=radio_button_tag 'summer_plan',5,false%></h4>
-                  <%=submit_tag 'Buy Plan',class: 'btn btn-primary hide-button' %>
-              <%end%>
-              
-              <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "queen_city") : new_user_session_path(interval: "monthly",plan_name: "queen_city"), class: "btn-default btn2" %>
-
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-8">  
-      <figure class="google_map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13023.086444686476!2d-80.746715!3d35.311656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541c3cfc836d17%3A0xbdf42fd6f88a83ba!2s9100+Olmsted+Dr%2C+Charlotte%2C+NC+28262!5e0!3m2!1sen!2sus!4v1457247619016" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </figure>
     </div>
-     <!--  <div class="col-sm-4">
-        <div class="thumb4">
-          <div class="thumbnail clearfix">
-            <figure class="img-polaroid">
-              <img src="/assets/parents03.jpg" alt="" class="img-responsive">
-            </figure>
-            <div class="caption">
-              <h3>BEFORE SCHOOL & AFTERSCHOOL</h3>
-              <p>
-                <strong class="text-uppercase">
-                  BEFORE SCHOOL & AFTERSCHOOL PLAN
-                </strong>
-              </p>
-              
-              <h1> $62 WK <%#= link_to 'Buy Weekly', current_user.present? ? user_steps_path(interval: "weekly", plan_name: "after_school") : new_user_session_path(interval: "weekly", plan_name: "after_school"), class: "btn-default btn2" %></h1>
-              
-              <h1> $248 MO <%#= link_to 'Buy Monthly', current_user.present? ? user_steps_path(interval: "monthly", plan_name: "after_school") : new_user_session_path(interval: "monthly", plan_name: "after_school"), class: "btn-default btn2"%></h1>
-
-              
-            </div>
-          </div>
-        </div>
-      </div> -->
-      
-    </div>
-
-
-
-   
-
-
-
-
-
-
-
-
-  </div>
-  <div class="wave2"></div>
+    <!--/.innerPage-->
+    <div style="clear:both"></div>
 </div>
+<!-- /.main-container -->
 
 
-<script>
-   $(document).ready(function(){
+    <div class="row transitionfx">
 
-    $('.hide-button').prop('disabled', true);
-  })
-  $('input[type=radio]').click(function(){
-    if(this.checked) {
-      $('.hide-button').prop('disabled', false);
-    }
-  });
-</script>
+        <!-- left column -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <!-- product Image and Zoom -->
+            <div class="main-image sp-wrap col-lg-12 no-padding">
+
+                <a href="assets/product_details/hi-res-croped/1.jpg"><img
+                        src="assets/product_details/low-res-white/1.jpg" class="img-responsive" alt="img"></a>
+                <a href="assets/product_details/hi-res-croped/2.jpg"><img
+                        src="assets/product_details/low-res-white/2.jpg" class="img-responsive" alt="img"></a>
+                <a href="assets/product_details/hi-res-croped/3.jpg"><img
+                        src="assets/product_details/low-res-white/3.jpg" class="img-responsive" alt="img"></a></div>
+        </div>
+        <!--/ left column end -->
+
+        <!-- right column -->
+        <div class="col-lg-6 col-md-6 col-sm-5">
+            <h1 class="product-title"> TAPS After School Enrichment</h2>
+
+                
+                <h3 class="product-code">Please select the number of children you wish to enroll.
+                 </h3>
+                 <h3 class="product-code">Please select either weekly or monthly payment options.
+                 </h3>
+                
+                <div class="product-price"><span class="price-sales"> $55 per Week</span> 
+                </div>
+                <div class="product-price"><span class="price-sales"> $220 per Month</span> 
+                </div>
+                
+
+                
+                <!-- productFilter -->
+
+                <div class="cart-actions">
+                    <div class="addto row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                
+                            <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
+                                <%= hidden_field_tag 'plan_name',nil,value: "after_school"%>
+                                <div class="field">
+                                 <%= label 'payment_plan', "Monthly", :value => "true"  %>
+                                 <%= radio_button_tag 'payment_plan', "monthly", true, class: 'monthly_radio'%>
+                                 <%= label 'payment_plan', "weekly", :value => "false" %>
+                                 <%= radio_button_tag 'payment_plan', "weekly", false, :checked => true, class: 'weekly_radio' %>
+                                </div>
+                                    <div class= "weekly">
+                                        <%= label 'weekly', "One child", :value => "true"  %>
+                                        <%= radio_button_tag 'summer_plan', 1, true, class: 'monthly_radio'%></br>
+                                        <%= label 'weekly', "Two Children", :value => "false" %>
+                                        <%= radio_button_tag 'summer_plan', 2, false, :checked => true, class: 'weekly_radio' %></br>
+                                        <%= label 'weekly', "Three Children", :value => "false" %>
+                                        <%=radio_button_tag 'summer_plan',3,false%>
+                                    </div>
+                                    
+                                    <%=submit_tag 'Buy NOW',class: "btn btn-primary btn lg"%>
+                            <%end%>
+                            <div class="details-description">
+                    <p>  Please be advised all weekly payments, need to be paid the Friday prior or the first day services are rendered. This will be a reoccurring weekly payment. </p>
+                </div>
+                
+                        </div>
+                        
+
+
+                    </div>
+                    <div style="clear:both"></div>
+                    <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> TAPS After School Enrichment</h3>
+
+                   
+
+                    <h3 class="incaps"><i class="glyphicon glyphicon-lock"></i> Secure online payments</h3>
+                </div>
+                <!--/.cart-actions-->
+
+                                <div class="clear"></div>
+                <div class="product-tab w100 clearfix">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#details" data-toggle="tab">Information</a></li>
+                        <li><a href="#size" data-toggle="tab">Steps</a></li>
+                        <li><a href="#shipping" data-toggle="tab">Credit Card Information</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="details">We are excited that your child will be attending a TAPS Before School.  For the 2016-2017 school year, TAPS has an easy-to-use, secure online registration system that will allow you to complete many of the forms required for registering your child for various TAPS Services. .<br>
+                            <br>
+                        </div>
+                        <div class="tab-pane" id="size"><br>
+ 
+                             Only parents and legal guardians may register students.<br>
+ You will need to complete the entire application at one time. (You cannot save and return later.)<br>
+                            Completing the registration process will take approximately 5 minutes<br>
+                             We also encourage you to register as soon as
+possible because space in the program is limited.<br>
+
+                            <br>
+                        </div>
+                        <div class="tab-pane" id="shipping">
+                           we do not store your credit card number. We have partnered with a service provider that has been authorized to process credit card payments. Your credit card details are sent directly to this partner and never passes through our servers.
+                         
+
+
+                        </div>
+                    </div>
+                    <!-- /.tab content -->
+
+                </div>
+                <!--/.product-tab-->
+
+                <div style="clear:both"></div>
+                <div class="product-share clearfix">
+                    <p> SHARE </p>
+
+                    <div class="socialIcon"><a href="https://www.facebook.com/TAPS-Teaching-Athletes-Plans-for-Success-1568681750057651/?fref=ts"> <i class="fa fa-facebook"></i></a> <a href="https://twitter.com/RollNorsemen?lang=en"> <i
+                            class="fa fa-twitter"></i></a> </div>
+                </div>
+                <!--/.product-share-->
+
+        </div>
+        <!--/ right column end -->
+        <div class="gap"></div>
+    </div>
+    <!--/.row-->
+
+<!-- /main-container -->

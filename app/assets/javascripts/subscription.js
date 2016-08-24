@@ -1,8 +1,11 @@
 var subscription;
-jQuery(function() {
+function validate_form(){
+    console.log("I am herereere..");
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
     return subscription.setupForm();
-});
+}
+
+
 subscription = {
     setupForm: function() {
       $(document).on('submit','#new_subscription',function(e){

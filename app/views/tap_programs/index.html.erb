@@ -4,9 +4,21 @@
   <%= render partial: 'queen_city' %>
 <% elsif params[:query] == "tap_after_sc"%>
   <%= render partial: 'tap_after_school' %>
-<% elsif params[:query] == "noresman_football"%>
+<% elsif params[:query] == "noresmen_football"%>
   <%= render partial: 'noresmen_football' %>
 <% elsif params[:query] == "school_closing"%>
   <%= render partial: 'school_closing' %>
+<%elsif params[:query] == "before_school_fater_school"%>
+	<%= render partial: 'before_school_fater_school' %>
+<%elsif params[:query] == "before_school_only"%>
+	<%= render partial: 'before_school_only' %>
+<%elsif params[:query] == "christmas_break"%>
+	<%= render partial: 'christmas_break' %>
+<%elsif params[:query] == "spring_break"%>
+	<%= render partial: 'spring_break' %>
+<%elsif params[:query] == "noresmen_cheer"%>
+	<%= render partial: 'noresmen_cheer' %>
+<%elsif params[:query] == "noresmen_basketball"%>
+	<%= render partial: 'noresmen_basketball' %>
 <%else%>
 <%end%>

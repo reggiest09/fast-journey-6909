@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-	#layout 'user_home_layout'
+	 layout 'application'
 	require 'prawn'
 	def index
 		

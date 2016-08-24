@@ -1,4 +1,5 @@
 class TapProgramsController < ApplicationController
+  layout 'application'
 	before_action :authenticate_user!, only: [:football_camp, :register_football]
   def index
   end

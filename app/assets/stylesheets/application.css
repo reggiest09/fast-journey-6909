@@ -13,21 +13,17 @@
 
  *= require_tree .
  *= require_self
- *= require bootstrap.min
- *= require prettify
- *= require simpletextrotator
- *= require font-awesome
- *= require et-line-font
- *= require magnific-popup
- *= require css/flexslider
- *= require owl.carousel
- *= require css/animate
- *= require style
- *= require rails_bootstrap_forms
+ *= require slider.css
+ *= require bootstrap.css
+ *= require style.css
  */
 
  .form-signup, .form-signin {
   margin: 0 auto;
   max-width: 330px;
   padding: 15px;
+}
+
+.tab-pane{
+	padding-top: 50px;
 }

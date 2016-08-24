@@ -24,4 +24,48 @@ class User < ActiveRecord::Base
     rescue Exception => e
     end
   end
+
+  def self.calculate_plan_name(plan_mode, number_of_child, after_school)
+    if plan_mode == "weekly" && number_of_child == "1" && after_school == "after_school"
+      plan_name = "AFW1Child"
+    elsif plan_mode == "weekly" && number_of_child == "2" && after_school == "after_school"
+      plan_name = "AFW2Child"
+    elsif plan_mode == "weekly" && number_of_child == "3" && after_school == "after_school"
+      plan_name = "AFW3Child"
+    elsif plan_mode == "monthly" && number_of_child == "1" && after_school == "after_school"
+      plan_name = "AFM1Child"
+    elsif plan_mode == "monthly" && number_of_child == "2" && after_school == "after_school"
+      plan_name = "AFM2Child"
+    elsif plan_mode == "monthly" && number_of_child == "3" && after_school == "after_school"
+      plan_name = "AFM3Child"
+
+    elsif plan_mode == "weekly" && number_of_child == "1" && after_school == "before_school_fater_school"
+      plan_name = "BAW1Child"
+    elsif plan_mode == "weekly" && number_of_child == "2" && after_school == "before_school_fater_school"
+      plan_name = "BAW2Child"
+    elsif plan_mode == "weekly" && number_of_child == "3" && after_school == "before_school_fater_school"
+      plan_name = "BAW3Child"
+    elsif plan_mode == "monthly" && number_of_child == "1" && after_school == "before_school_fater_school"
+      plan_name = "BAM1Child"
+    elsif plan_mode == "monthly" && number_of_child == "2" && after_school == "before_school_fater_school"
+      plan_name = "BAM2Child"
+    elsif plan_mode == "monthly" && number_of_child == "3" && after_school == "before_school_fater_school"
+      plan_name = "BAM3Child"
+
+    elsif plan_mode == "weekly" && number_of_child == "3" && after_school == "before_school_only"
+      plan_name = "BW3Child"
+    elsif plan_mode == "weekly" && number_of_child == "2" && after_school == "before_school_only"
+      plan_name = "BW2Child"
+    elsif plan_mode == "weekly" && number_of_child == "1" && after_school == "before_school_only"
+      plan_name = "BW1Child"
+    elsif plan_mode == "monthly" && number_of_child == "3" && after_school == "before_school_only"
+      plan_name = "BM3Child"
+    elsif plan_mode == "monthly" && number_of_child == "2" && after_school == "before_school_only"
+      plan_name = "BM2Child"
+    elsif plan_mode == "monthly" && number_of_child == "1" && after_school == "before_school_only"
+      plan_name = "BM1Child"
+    else
+    end
+
+  end
 end

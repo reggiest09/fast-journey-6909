@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  layout 'application'
   # include Wicked::Wizard
   # steps :student_info, :gardian_details, :other_deatils, :redme, :payment
 
@@ -48,7 +49,7 @@ def check_coupon_code
   private
 
   def sub_params
-    params.require(:subscription).permit(:stripe_card_token, :user_id, :active, :tos_payment).merge({plan_name: current_user.plan})
+    params.require(:subscription).permit(:stripe_card_token, :user_id, :active, :tos_payment, :plan_name)
   end
 
 end

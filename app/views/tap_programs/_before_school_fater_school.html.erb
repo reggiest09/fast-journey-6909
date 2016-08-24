@@ -1,0 +1,214 @@
+
+    <div class="container main-container headerOffset">
+
+    <div class="row innerPage">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row userInfo">
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="title-big text-center section-title-style2">
+            <span>
+              Before School & After School Care 2016-2017
+            </span>
+                    </h1>
+
+                    <p class="lead text-center">
+                        TAPS before- and after-school child care program allows kindergarten and school-age children to balance learning and fun through a variety of experiences. From homework help to fun physical activities, our program is designed so that everyone goes home happy.
+                    </p>
+
+
+                    <hr class="hr hr30">
+                    <div class="row animated">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            <%= image_tag "before.png", class: "img-responsive", alt: "img" %>
+
+                            <h3 class="block-title-3">
+                                Character Development
+                            </h3>
+
+                            <p>
+                                Being kind and empathetic, and playing fairly are all things that make up character—and we think it’s important to focus on them.
+                            </p>
+
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            
+                            <%= image_tag "bsas.jpg", class: "img-responsive", alt: "img" %>
+                            <h3 class="block-title-3">
+                               Additional Benefits
+                            </h3>
+
+                            <p>
+                                Another benefit of TAPS before-after-school program is it widens your child's interests. It helps him discover innate talent for some activity and provides an opportunity to hone it further. Constant practice makes him more confident. In this age of endless possibilities, the child needs a portfolio of skills besides academic learning to succeed. 
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-sm-6">
+                            <%= image_tag "as.jpg", class: "img-responsive", alt: "img" %>
+
+                            <h3 class="block-title-3">
+                                Communication Skills
+                            </h3>
+
+                            <p>
+                                Children who attend TAPS after-school programs develop better communication skills. They also learn how to think on their feet. Besides improving school attendance and academic performance, the programs reinforce school learning with practical application. 
+                            </p>
+
+                        </div>
+
+
+                    </div>
+                    <!--/.row-->
+
+                    <hr>
+                </div>
+            </div>
+            <!--/row end-->
+        </div>
+    </div>
+    <!--/.innerPage-->
+    <div style="clear:both"></div>
+</div>
+<!-- /.main-container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row transitionfx">
+
+        <!-- left column -->
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <!-- product Image and Zoom -->
+            <div class="main-image sp-wrap col-lg-12 no-padding">
+
+                <a href="assets/product_details/hi-res-croped/1.jpg"><img
+                        src="assets/product_details/low-res-white/1.jpg" class="img-responsive" alt="img"></a>
+                <a href="assets/product_details/hi-res-croped/2.jpg"><img
+                        src="assets/product_details/low-res-white/2.jpg" class="img-responsive" alt="img"></a>
+                <a href="assets/product_details/hi-res-croped/3.jpg"><img
+                        src="images/product_details/low-res-white/3.jpg" class="img-responsive" alt="img"></a></div>
+        </div>
+        <!--/ left column end -->
+
+        <!-- right column -->
+        <div class="col-lg-6 col-md-6 col-sm-5">
+            <h1 class="product-title"> Before & After School Care</h2>
+
+                <h3 class="product-code">Please select the number of children you wish to enroll  
+                 </h3>
+                 <h3 class="product-code">Pleas select your subscription plan.  
+                 </h3>
+                
+                <div class="product-price"><span class="price-sales"> $70 per Week</span> 
+                </div>
+                <div class="product-price"><span class="price-sales"> $280 per Month</span> 
+                </div>
+                
+                
+
+                
+                <!-- productFilter -->
+
+                <div class="cart-actions">
+                    <div class="addto row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <%=form_tag current_user.present? ? after_school_registrations_path : new_user_session_path,method: :get do %>
+                                <%=hidden_field_tag 'plan_name',nil,value: "before_school_fater_school"%>
+                                <div class="field">
+                                 <%= label 'payment_plan', "Monthly", :value => "true"  %>
+                                 <%= radio_button_tag 'payment_plan', "monthly", true, class: 'monthly_radio'%>
+                                 <%= label 'payment_plan', "weekly", :value => "false" %>
+                                 <%= radio_button_tag 'payment_plan', "weekly", false, :checked => true, class: 'weekly_radio' %>
+                                </div>
+                                    <div class= "weekly">
+                                        <%= label 'weekly', "One child", :value => "true"  %>
+                                        <%= radio_button_tag 'summer_plan', 1, true, class: 'monthly_radio'%></br>
+                                        <%= label 'weekly', "Two Children", :value => "false" %>
+                                        <%= radio_button_tag 'summer_plan', 2, false, :checked => true, class: 'weekly_radio' %></br>
+                                        <%= label 'weekly', "Three Children", :value => "false" %>
+                                        <%=radio_button_tag 'summer_plan',3,false%>
+                                    </div>
+                                    
+                                    <%=submit_tag 'Buy NOW',class: " btn btn-primary btn-lg"%>
+                            <%end%>
+                             <div class="details-description">
+                    <p>  Please be advised all weekly payments, need to be paid the Friday prior or the first day services are rendered. This will be a reoccurring weekly payment. </p>
+                </div>
+                        </div>
+                        
+
+
+                    </div>
+                    <div style="clear:both"></div>
+                    <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> Before School & After School Care</h3>
+
+                    <h3 style="display:none" class="incaps"><i class="fa fa-minus-circle color-out"></i> Out of stock
+                    </h3>
+
+                    <h3 class="incaps"><i class="glyphicon glyphicon-lock"></i> Secure online payments</h3>
+                </div>
+                <!--/.cart-actions-->
+
+                                <div class="clear"></div>
+                <div class="product-tab w100 clearfix">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#details" data-toggle="tab">Information</a></li>
+                        <li><a href="#size" data-toggle="tab">Steps</a></li>
+                        <li><a href="#shipping" data-toggle="tab">Credit Card Information</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="details">We are excited that your child will be attending a TAPS Before School.  For the 2016-2017 school year, TAPS has an easy-to-use, secure online registration system that will allow you to complete many of the forms required for registering your child for various TAPS Services. .<br>
+                            <br>
+                        </div>
+                        <div class="tab-pane" id="size"><br>
+ 
+                             Only parents and legal guardians may register students.<br>
+ You will need to complete the entire application at one time. (You cannot save and return later.)<br>
+                            Completing the registration process will take approximately 5 minutes<br>
+                             We also encourage you to register as soon as
+possible because space in the program is limited.<br>
+
+                            <br>
+                        </div>
+                        <div class="tab-pane" id="shipping">
+                           we do not store your credit card number. We have partnered with a service provider that has been authorized to process credit card payments. Your credit card details are sent directly to this partner and never passes through our servers.
+                         
+
+
+                        </div>
+                    </div>
+                    <!-- /.tab content -->
+
+                </div>
+                <!--/.product-tab-->
+
+                <div style="clear:both"></div>
+                <div class="product-share clearfix">
+                    <p> SHARE </p>
+
+                    <div class="socialIcon"><a href="https://www.facebook.com/TAPS-Teaching-Athletes-Plans-for-Success-1568681750057651/?fref=ts"> <i class="fa fa-facebook"></i></a> <a href="https://twitter.com/RollNorsemen?lang=en"> <i
+                            class="fa fa-twitter"></i></a> </div>
+                </div>
+                <!--/.product-share-->
+
+        </div>
+        <!--/ right column end -->
+        <div class="gap"></div>
+    </div>
+    <!--/.row-->
