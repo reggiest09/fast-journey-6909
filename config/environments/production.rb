@@ -68,6 +68,8 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
