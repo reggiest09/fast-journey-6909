@@ -173,6 +173,12 @@
 </div>
 </div>
 <script>
+  if('<%=params[:payment_plan]%>' == "all_days"){
+    console.log("I am here..");
+    $('input.check_boxes').attr('checked', 'checked');
+    $('.icheckbox_square-green').addClass("icheckbox_square-green iCheck-margin checked");
+  }
+  
   $(".submit-form").click(function(e){
     if('<%=params[:interval]%>' == "all_days"){
       e.preventDefault()
@@ -185,15 +191,6 @@
     }
     else{
       $('form.simple_form').submit()
-    }
-  });
-
-  $(document).on('turbolinks:load', function() {
-    console.log("I am here..");
-    if('<%=params[:payment_plan]%>' == "all_days"){
-      console.log("I am here..");
-      $('input.check_boxes').attr('checked', 'checked');
-      $('.icheckbox_square-green').addClass("icheckbox_square-green iCheck-margin checked");
     }
   });
 </script>
