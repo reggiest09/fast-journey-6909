@@ -1,3 +1,9 @@
+<% flash.each do |name, msg| %>
+          <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong><%=msg%></strong>
+      </div>
+        <% end %>
 <div id="content">
 <%= simple_form_for @subscription do |f| %>
   <div class="container center_div">

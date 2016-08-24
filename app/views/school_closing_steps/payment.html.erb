@@ -1,4 +1,10 @@
 <div id="content">
+  <% flash.each do |name, msg| %>
+          <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong><%=msg%></strong>
+      </div>
+        <% end %>
 <%= simple_form_for @subscription do |f| %>
   <div class="container change-container center_div">
   <div class="tab-pane" id="tab5">

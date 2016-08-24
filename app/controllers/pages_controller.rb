@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout 'user_home_layout', only: :index
+   layout 'application'
   def qc_before_after_school
   end
 

@@ -1,3 +1,4 @@
+<div class="container" style="margin-top: 100px; margin-bottom: 50px;">
 <div id="content">
 <div class="container">
   <div class="row">
@@ -47,8 +48,14 @@
             <% current_user.subscriptions.each do |subscription| %>
               <tr>
                 <td> <%= current_user.plan.titleize%> </td>
-                <td> <%= subscription.plan_name.titleize%> </td>
-                <td> <%= subscription.active%> </td>
+                <td>
+                  <% if subscription.plan_name.nil? %> 
+                    No Plan 
+                  <% else %>
+                    <%= subscription.plan_name.titleize%>
+                  <% end %>
+                </td>
+                <td> <%= subscription.try(:active)%> </td>
                 <td>
                   <% if subscription.active %>
                     <%= link_to "Cancel", subscription_cancel_path(subscription.stripe_card_token), class: "btn btn-success btn-sm" %>
@@ -72,4 +79,5 @@
   <%end%>
 </div>
  <div class="wave2"></div>
+</div>
 </div>

@@ -1,335 +1,448 @@
-<script>
-$(document).ready(function() {
-  //
-  //  carouFredSel team
-  $('#team .carousel.main ul').carouFredSel({
-    auto: {
-      timeoutDuration: 8000
-    },
-    responsive: true,
-    prev: '.team_prev',
-    next: '.team_next',
-    width: '100%',
-    scroll: {
-      // fx : "crossfade",
-      items: 1,
-      duration: 1000,
-      easing: "easeOutExpo"
-    },
-    items: {
-          width: '350',
-      height: 'variable', //  optionally resize item-height
-      visible: {
-        min: 1,
-        max: 4
-      }
-    },
-    mousewheel: false,
-    swipe: {
-      onMouse: true,
-      onTouch: true
-      }
-  });
-  $(window).bind("resize",updateSizes_vat).bind("load",updateSizes_vat);
-  function updateSizes_vat(){
-    $('#team .carousel.main ul').trigger("updateSizes");
-  }
-  updateSizes_vat();
-}); //
-$(window).load(function() {
-  //
-  /////// flexslider
-  $('#flexslider').flexslider({
-    animation: "fade",
-    slideshow: true,
-    slideshowSpeed: 7000,
-    animationDuration: 600,
-    pauseOnAction: true,
-    prevText: "",
-    nextText: "",
-    controlNav: true,
-    directionNav: true
-  });
-}); //
-</script>
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-<% flash.each do |name, msg| %>
-      <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
-        <strong><%=msg%></strong>
-      </div>
-    <% end %>
-
-<div id="main">
-
-<div class="top_wrapper">
-  <div class="top_bg">
-    <img src="/assets/sky1.jpg" alt="" class="sky1">
-    <div class="grass1"></div>
-    <div class="sun1"></div>
-    <div class="green1"></div>
-  </div>
-  <div class="top_content">
-    <div class="container">
-      <header>
-        <div class="logo_wrapper">
-          <a href="#" class="logo">
-            <img src="/assets/logo.png" alt="" class="img-responsive">
-          </a>
-        </div>
-      </header>
-      <%= render partial: '/layouts/tap_nav_header' %>
-      <div id="slider_wrapper">
-        <div id="slider">
-          <div id="flexslider">
-            <ul class="slides clearfix">
-              <li>
-                <img src="/assets/slide01.jpg" alt="">
-                <div class="flex-caption">
-                  <div class="flex-caption_inner container">
-                  </div>
-                </div>
-              </li>
-                <!-- <li>
-                  <img src="/assets/slide02.jpg" alt="">
-                  <div class="flex-caption">
-                    <div class="flex-caption_inner container">
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <img src="/assets/slide03.jpg" alt="">
-                  <div class="flex-caption">
-                    <div class="flex-caption_inner container">
-                    </div>
-                  </div>
-                </li> -->
-
+trusted<div class="banner">
+    <div class="full-container">
+        <div class="slider-content">
+            <ul id="pager" class="container">
             </ul>
-          </div>
-        </div>
-      </div>
+            <div class="slider slider-v2">
+                <div class="slider-item slider-item-img1 "
+                     data-cycle-pager-template="<a href=#> TAPS AFTERSCHOOL PROGRAM </a>">
+                    <div class="sliderInfo">
+                        <div class="container">
+                            <div class="col-lg-5 col-md-5 col-sm-5 pull-right sliderText dark alpha80 hidden-xs">
+                                <div class="inner">
+                                    <h1>TAPS AFTERSCHOOL PROGRAM</h1>
 
-      <div class="snail1_wrapper">
-        <div class="tree1 animated" data-animation="fadeIn" data-animation-delay="200"><img src="/assets/tree1.png" alt="" class="img-responsive"></div>
-        <div class="snail1 animated" data-animation="bounceInLeft" data-animation-delay="300"><img src="/assets/snail1.png" alt="" class="img-responsive"></div>
-      </div>
-
-      <div class="slogan1 animated" data-animation="fadeIn" data-animation-delay="400">"WE Care About Your Child's Future"</div>
-
-      <div class="slogan2 animated" data-animation="fadeIn" data-animation-delay="500">T.A.P.S (Teaching Athletes Plans for Success) Inc. is a 501(c)(3) non-profit organization providing a comprehensive array of programs and support services addressing the socio-emotional challenges of youth ages 5-17.  The mission of TAPS is to prepare youth for education, self-enhancement, corporate America, and tomorrow’s challenges, while developing male and female athletic talent.</div>
-
-      <div id="team_wrapper">
-        <div id="team_inner">
-          <div class="">
-            <div id="team">
-              <a class="team_prev" href="#"></a>
-              <a class="team_next" href="#"></a>
-              <div class="carousel-box">
-                <div class="inner">
-                  <div class="carousel main">
-                    <ul>
-                   
-                      <li>
-                        <div class="team">
-                          <div class="team_inner">
-                            <%=link_to tap_programs_path(query: "summer_camp") do%>
-                              <figure><img src="/assets/banner2.jpg" alt="" class="img-responsive"><em></em></figure>
-                              <div class="caption">
-                                <div class="txt1">Summer Camp</div>
-                                <div class="txt2">Our Summer Enrichment offers STEM, Performing Arts, Math, Reading, Recreation and Sports Specific Training.</div>
-                                <div class="txt3">more</div>
-                              </div>
-                            <%end%>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="team">
-                          <div class="team_inner">
-                            <%=link_to tap_programs_path(query: "noresman_football") do%>
-                              <figure><img src="/assets/banner3.jpg" alt="" class="img-responsive"><em></em></figure>
-                              <div class="caption">
-                                <div class="txt1">Norsemen</div>
-                                <div class="txt2">Golden Norsemen Athletics offers Football, Basketball, Baseball and Cheer to youth ages 5 - 14. </div>
-                                <div class="txt3">more</div>
-                              </div>
-                            <%end%>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="team">
-                          <div class="team_inner">
-                            <%=link_to tap_programs_path(query: "taps_afterschool") do%>
-                              <figure><img src="/assets/banner1.jpg" alt="" class="img-responsive"><em></em></figure>
-                              <div class="caption">
-                                <div class="txt1">TAPS After School</div>
-                                <div class="txt2">TAPS provides Quality Before and After-School Program Mon - Fri. </div>
-                                <div class="txt3">more</div>
-                              </div>
-                            <%end%>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="team">
-                          <div class="team_inner">
-                            <%=link_to tap_programs_path(query: "summer_camp") do%>
-                              <figure><img src="/assets/banner2.jpg" alt="" class="img-responsive"><em></em></figure>
-                              <div class="caption">
-                                <div class="txt1">Summer Camp</div>
-                                <div class="txt2">Our Summer Enrichment offers STEM, Performing Arts, Math, Reading, Recreation and Sports Specific Training.</div>
-                                <div class="txt3">more</div>
-                              </div>
-                            <%end%>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="team">
-                          <div class="team_inner">
-                            <%=link_to tap_programs_path(query: "noresman_football") do%>
-                              <figure><img src="/assets/banner3.jpg" alt="" class="img-responsive"><em></em></figure>
-                              <div class="caption">
-                                <div class="txt1">Norsemen</div>
-                                <div class="txt2">Golden Norsemen Athletics offers Football, Basketball, Baseball and Cheer to youth ages 5 - 14. </div>
-                                <div class="txt3">more</div>
-                              </div>
-                            <%end%>
-                          </div>
-                        </div>
-                      </li>
-                          <!-- new slider here -->
-                          
-                          </div>
-                        </div>
-                      </li>
-
-
-
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-    </div>
-  </div>
-  <div class="wave1"></div>
-</div>
-
-<div class="splash_wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-push-6 animated" data-animation="fadeInRight" data-animation-delay="0">
-
-        <div class="thumb1">
-          <div class="thumbnail clearfix">
-            <figure class="">
-              <img src="/assets/home01.jpg" alt="" class="img-responsive">
-            </figure>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-sm-6 col-sm-pull-6 animated" data-animation="fadeInLeft" data-animation-delay="300">
-
-        <h1>Donating online is one of the fastest and easiest ways to join the cause</h1>
-
-        <p>
-          <strong class="text-uppercase">
-           T.A.P.S is a nonprofit organization supporting at-risk urban youth. Our goal is the help our youth recognize their full potential on and off the playing courts and fields. We strive to assist our youth in identifying their strengths and develop a plan to execute their dreams.
-          </strong>
-        </p>
-
-        <p>
-          We strive to assist our youth in identifying their strengths and develop a plan to execute their dreams.
-        </p>
-
-        <a href="http://www.fundtaps.org/" class="btn-default btn1">Give Back Today</a>
-
-
-
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="parallax1" class="parallax">
-  <div class="wave2"></div>
-  <div class="bg1 parallax-bg"></div>
-  <div class="parallax-content">
-    <div class="container">
-      <div class="txt1 animated" data-animation="zoomIn" data-animation-delay="0">grow with us</div>
-      <div class="txt2 animated" data-animation="zoomIn" data-animation-delay="200">join us today</div>
-    </div>
-  </div>
-</div>
-
-
-    <%= render partial: "/layouts/footer_content" %>
-
-</div>
-
-<div id="myModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">T.A.P.S Education & Sports Academy</h4>
-            </div>
-            <div class="modal-body">
-                <h4>Register Online For  Our 2016 - 2017 After School Program </h4>
-            </div>
-            <div class="modal-footer">
-                
-                   <%=link_to 'Register Today', tap_programs_path(query: "taps_afterschool"),class: "btn btn-primary center-button",target: "_blank" %>
-
-
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <script>
-   $(document).ready(function() {
-    var shown= localStorage.getItem('isshow');
-    if(shown !="t"){
-        $('.modal').modal();
-        localStorage.setItem('isshow', "t");
-    }
-
-  });
+                                    <p class="hidden-xs"> kids engage in physical, learning and imaginative activities that encourage them to explore who they are and what they can achieve. In addition to supplementing what they have learned in school,  </p>
+                                     
+                                     <%=link_to 'After School',tap_programs_path(query: "taps_afterschool"),class: "btn btn-default btn-primary btn-lg" %></div>
 
  
-</script> 
+                               
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="img" src="assets/slider/slider4.jpg" class="img-responsive parallaximg sliderImg"></div>
+                <!--/.slider-item-->
+
+                <div class="slider-item slider-item-img2  parallax"
+                     data-cycle-pager-template="<a href=#> NORSEMEN FOOTBALL </a>">
+                    <div class="sliderInfo">
+                        <div class="container">
+                            <div class="col-lg-5 col-md-5 col-sm-5 pull-left sliderText dark alpha80 hidden-xs">
+                                <div class="inner">
+                                   trusted <h1>NORSEMEN FOOTBALL</h1>
+
+                                    <p class="hidden-xs"> Ages 5-12 Pratice location Newell Park, Newell Baptist Church Rd. Mon & Weds. 6:45pm-8:30pm
+                                    Saturdays 9am-12pm </p>
+                                    <%=link_to 'Norsemen Football',tap_programs_path(query: "noresmen_football"),class: "btn btn-default btn-primary" %></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="img" src="assets/slider/slider3.JPG" class="img-responsive parallaximg sliderImg"></div>
+                <!--/.slider-item-->
+
+                <div class="slider-item slider-item-img3  parallax"
+                     data-cycle-pager-template="<a href=#> TAPS FOUNDATION </a>">
+                    <div class="sliderInfo">
+                        <div class="container">
+                            <div class="col-lg-4 col-md-4 col-sm-5 pull-right sliderText dark alpha80 transformRight hidden-xs">
+                                <div class="inner">
+                                    <h1>TAPS FOUNDATION</h1>
+
+                                    <p class="hidden-xs"> A nonprofit organization supporting at-risk urban youth. Our goal is the help our youth recognize their full potential on and off the playing courts and fields. We strive to assist our youth in identifying their strengths and develop a plan to execute their dreams. </p>
+                                    <a href="http://www.fundtaps.org/" class="slide-link">DONATE TODAY<span
+                                            class="arrowUnicode">►</span></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img alt="img" src="assets/slider/slider2.JPG" class="img-responsive parallaximg sliderImg"></div>
+                <!--/.slider-item-->
+            </div>
+            <!--/.slider-v2-->
+        </div>
+        <!--/.slider-content-->
+    </div>
+    <!--/.full-container-->
+</div>
+<!--/.banner style2-->
+<div class="container main-container">
+
+    <!-- Main component call to action -->
+
+    <div class="row featuredPostContainer globalPadding style2">
+        <h3 class="section-title style2 text-center"><span>TAPS AFTER SCHOOL PROGRAMS</span></h3>
+
+        <div id="productslider" class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                    <div class="image">
+                        <!-- <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div> -->
+                       <%= link_to "<img src='assets/product/34.jpg' alt='img' class='img-responsive'>".html_safe, tap_programs_path(query: "taps_afterschool") %>
+
+                        <div class="promotion"><span class="new-product"> Join Today</span> </div>
+                    </div>
+                    <div class="description">
+                        <h4>After School Registration</h4>
+
+                        <p>100% of our parents are satisfied with our afterschool program. </p>
+                        <span class="size">Fun/Exciting /Educational </span></div>
+                    <div class="price"><span>$55 per Week</span></div>
+                    
+                    <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "taps_afterschool"),class: "btn btn-primary btn-lg" %></div>
+
+
+                   
+
+                     
+
+
+
+
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                    <div class="image">
+                        <!-- <div class="quickview">
+                            <a data-toggle="modal" class="btn btn-xs btn-quickview" href="ajax/product.html"
+                               data-target="#productSetailsModalAjax">Quick View </a>
+                        </div> -->
+                        <%= link_to "<img src='assets/product/30.jpg' alt='img' class='img-responsive'>".html_safe, tap_programs_path(query: "before_school_fater_school") %>
+
+                        <div class="promotion"><span class="discount">Join Today</span></div>
+                    </div>
+                    <div class="description">
+                        <h4>Before School & After School Registration</h4>
+
+                        <p>Mornings and afternoons await your child here. </p>
+                        <span class="size">Self-awareness/integrity/purpose </span></div>
+                    <div class="price"><span>$70 per week</span></div>
+                  <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "before_school_fater_school"),class: "btn btn-primary btn-lg" %></div>
+
+
+
+                            
+                     
+
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                  <div class="image"> 
+                        
+                        <div class="image">
+                        <%= link_to "<img src='assets/product/36.jpg' alt='img'
+                    class='img-responsive'>".html_safe, tap_programs_path(query: "before_school_only") %>
+                    </div>
+
+                        <div class="promotion"><span class="new-product"> NEW</span></div>
+                     </div> 
+                    <div class="description">
+                        <h4>BEFORE SCHOOL ONLY REGISTRATION</h4>
+
+                        <p>A great start to every school day. </p>
+                        <span class="size">Developing healthy habits for life</span></div>
+                    <div class="price"><span>$20 per week</span></div>
+                    <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "before_school_only"),class: "btn btn-primary btn-lg" %></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                    <div class="image">
+                        <%= link_to "<img src='assets/product/9.jpg' alt='img'
+                    class='img-responsive'>".html_safe, tap_programs_path(query: "school_closing") %>
+                    </div>
+                    <div class="description">
+                        <h4>SCHOOL CLOSING DAYS</h4>
+
+                        <p> Teacher Workdays </p>
+                       <span class="size">Charlotte-Mecklenburg Schools 2016-2017</span></div>
+                    <div class="price"><span>$25 per day</span></div>
+                    <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "school_closing"),class: "btn btn-primary btn-lg" %></div>
+
+
+
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                    <div class="image">
+                        <%= link_to "<img src='assets/product/12.jpg' alt='img'
+                    class='img-responsive'>".html_safe, tap_programs_path(query: "christmas_break") %>
+                    </div>
+                    <div class="description">
+                        <h4>Christmas Break</h4>
+
+                        <p>Join us this Christmas Break. </p>
+                        <span class="size">Daily Drop-of Options </span></div>
+                    <div class="price"><span>$25 per day</span></div>
+                    <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "christmas_break"),class: "btn btn-primary btn-lg" %></div>
+
+
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="product">
+                    <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                       data-placement="left">
+                        <i class="glyphicon glyphicon-heart"></i>
+                    </a>
+
+                    <div class="image">
+                        <%= link_to "<img src='assets/product/13.jpg' alt='img'
+                    class='img-responsive'>".html_safe, tap_programs_path(query: "spring_break") %>
+                    </div>
+                    <div class="description">
+                        <h4><a href="product-details.html">Spring Break Days.</a></h4>
+
+                        <p>We are open during spring break. </p>
+                        <span class="size">Daily drop-off available</span></div>
+                    <div class="price"><span>$25 per day</span></div>
+                    <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "spring_break"),class: "btn btn-primary btn-lg" %></div>
+                    
+                </div>
+            </div>
+            
+            
+            
+
+        </div>
+        <!--/.productslider-->
+
+    </div>
+    <!--/.featuredPostContainer-->
+</div>
+<!-- /main container -->
+
+<div class="parallax-section parallax-image-1">
+    <div class="container">
+        <div class="row ">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="parallax-content clearfix">
+                    <h1 class="parallaxPrce"> We Are </h1>
+
+                    <h2 class="uppercase">TAPS Teaching Athletes Plans for Success Inc. (T.A.P.S)!</h2>
+
+                    <h2> Non-Profit Organization · Charlotte, North Carolina. </h2>
+
+                    <div style="clear:both"></div>
+                    <a href="http://www.fundtaps.org/" class="btn btn-discover "> <i class="fa fa-shopping-cart"></i> Donate Now </a></div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</div>
+<!--/.parallax-image-1-->
+
+<div class="container main-container">
+
+    <!-- Main component call to action -->
+
+    <div class="morePost row featuredPostContainer style2 globalPaddingTop ">
+        <h3 class="section-title style2 text-center"><span>Norsemen Athletics</span></h3>
+
+        <div class="container">
+            <div class="row xsResponse">
+                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="product">
+                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                           data-placement="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </a>
+
+                        <div class="image">
+                            
+                     <%= link_to "<img src='assets/product/fb.jpg' alt='img'
+                class='img-responsive'>".html_safe, tap_programs_path(query: "noresmen_football") %>
+
+                            <div class="promotion"><span class="new-product"> NEW</span> <span
+                                    class="discount">$175</span></div>
+                        </div>
+                        <div class="description">
+                            <h4>Norsemen Football</h4>
+
+                            <p> Choose Norseman Footbal & learn football’s timeless qualities of leadership, responsibility, perseverance and teamwork.. </p>
+                            <span class="size">XL / XXL / S </span></div>
+                        <div class="price"><span>$175</span></div>
+                        <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "noresmen_football"),class: "btn btn-primary btn-lg" %></div>
+                    </div>
+                </div>
+                <!--/.item-->
+                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="product">
+                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                           data-placement="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </a>
+
+                        <div class="image">
+                            
+                            <%= link_to "<img src='assets/product/cheer.png' alt='img'
+                class='img-responsive'>".html_safe, tap_programs_path(query: "noresmen_cheer") %>
+
+                            <div class="promotion"><span class="discount">$175</span></div>
+                        </div>
+                        <div class="description">
+                            <h4>Norsemen Cheer</h4>
+
+                            <p>athleticism, strength, flexibility. </p>
+                            <span class="size">XL / XXL / S </span></div>
+                        <div class="price"><span>$175</span></div>
+                        <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "noresmen_cheer"),class: "btn btn-primary btn-lg" %></div>
+                    </div>
+                </div>
+                <!--/.item-->
+                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="product">
+                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                           data-placement="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </a>
+
+                        <div class="image">
+                            
+                            <%= link_to "<img src='assets/product/bb.jpg' alt='img'
+                class='img-responsive'>".html_safe, tap_programs_path(query: "noresmen_basketball") %>
+
+
+                            <div class="promotion"><span class="new-product"> NEW</span></div>
+                        </div>
+                        <div class="description">
+                            <h4>Norsemen Basketball</h4>
+
+                            <p>Norsemen Basketball is a high-intensity, high-agility activity that teaches children coordination, concentration, and cooperation.. </p>
+                            <span class="size">XL / XXL / S </span></div>
+                        <div class="price"><span>$100</span></div>
+                        <div class="action-control"><%=link_to "<span class='add2cart'><i class='glyphicon glyphicon-shopping-cart'> </i> Register </span>".html_safe , tap_programs_path(query: "noresmen_basketball"),class: "btn btn-primary btn-lg" %></div>
+                    </div>
+                </div>
+                <!--/.item-->
+                <div class="item col-lg-3 col-md-3 col-sm-4 col-xs-6">
+                    <div class="product">
+                        <a class="add-fav tooltipHere" data-toggle="tooltip" data-original-title="Add to Wishlist"
+                           data-placement="left">
+                            <i class="glyphicon glyphicon-heart"></i>
+                        </a>
+
+                        <div class="image">
+                            
+                          <img src="assets/product/baseball.jpg" alt="img"
+                                                                class="img-responsive"></div>
+                        <div class="description">
+                            <h4>Norsemen Baseball</h4>
+
+                            <p>coming soon </p>
+                            <span class="size">XL / XXL / S </span></div>
+                        <div class="price"><span>TBD</span></div>
+                        <div class="action-control"><a class="btn btn-primary"> <span class="add2cart"><i
+                                class="glyphicon glyphicon-shopping-cart"> </i> TBD </span> </a></div>
+                    </div>
+                </div>
+                <!--/.item-->
+                
+                <!--/.item-->
+                
+                <!--/.item-->
+                
+                <!--/.item-->
+                
+                <!--/.item-->
+               
+                <!--/.item-->
+                
+                <!--/.item-->
+                
+                <!--/.item-->
+                
+                <!--/.item-->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="load-more-block text-center">
+                    <a class="btn btn-thin" href="#">
+                        <i class="fa fa-plus-sign">+</i>More Programs Coming Soon</a>
+                </div>
+            </div>
+
+
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.featuredPostContainer-->
+
+    <hr class="no-margin-top">
+    <div class="width100 section-block ">
+        <div class="row featureImg">
+            <div class="col-md-3 col-sm-3 col-xs-6"><a href="category.html"><img src="assets/site/new-collection-1.jpg"
+                                                                                 class="img-responsive" alt="img"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"><a href="category.html"><img src="assets/site/new-collection-2.jpg"
+                                                                                 class="img-responsive" alt="img"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"><a href="category.html"><img src="assets/site/new-collection-3.jpg"
+                                                                                 class="img-responsive" alt="img"></a>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6"><a href="category.html"><img src="assets/site/new-collection-4.jpg"
+                                                                                 class="img-responsive" alt="img"></a>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.section-block-->
+
+    
+
+    <!--/.section-block-->
+
+</div>
+<!--main-container-->
+<!--/.parallax-section-->
+<!-- Product Details Modal  -->
+<!-- Modal -->
+<div class="modal fade" id="productSetailsModalAjax" tabindex="-1" role="dialog"
+     aria-labelledby="productSetailsModalAjaxLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- End Modal -->

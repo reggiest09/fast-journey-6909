@@ -1,5 +1,5 @@
 class NewLayoutController < ApplicationController
-	layout 'new_layout'
+	 layout 'application'
 	def index
 	end
 end

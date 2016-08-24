@@ -1,11 +1,22 @@
+<div class="container" style="
+    margin-top: 100px; margin-bottom: 50px;">
+  <div class="row">
+    <% flash.each do |name, msg| %>
+          <div class="alert alert-success fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong><%=msg%></strong>
+      </div>
+        <% end %>
 <div id="content">
 <%= simple_form_for @subscription do |f| %>
   <div class="container change-container center_div">
   <div class="tab-pane" id="tab5">
      <h4>Step 5</h4>
   <%= f.hidden_field :stripe_card_token %>
-
-  <%= f.hidden_field :user_id,value: current_user.id%>
+  <%= f.hidden_field :plan_mode, value: @plan_mode %>
+  <%= f.hidden_field :number_of_child, value: @child_count %>
+  
+  <%= f.hidden_field :user_id, value: current_user.id%>
   <%#= f.hidden_field :plan_id %>
   <% if @subscription.stripe_card_token.present? %>
     Credit card has been provided.
@@ -49,10 +60,22 @@
 </div>
   <div class="previous"%>
     <%#= link_to "previous step", wizard_path(:redme),class: "page-refresh btn btn-primary btn-sm" %>
-    <%= f.submit "Make Payment",class: "next btn btn-primary" %>
+    <%= f.submit "Make Payment",class: "next btn btn-primary", :onclick => "validate_form();"%>
     <%# link_to "skip this step", next_wizard_path,class: "skip btn btn-primary btn-sm" %>
   </div>
 <%end%>
+
+<% if current_user.plan_name == "school_closing_date"%>
+  <div class="row">
+    <div class="col-lg-12 color-change">
+    <% if current_user.plan == "daily" %>
+      You will be charged $<%= current_user.holiday.reject { |c| c.empty? }.count * (25 * current_user.children_names.count) %>
+    <%else%>
+      You will be charged $85
+    <%end%>
+    </div>
+  </div>
+<% end %>
 
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -128,4 +151,5 @@
 </div>
  <div class="wave2"></div>
 </div>
-
+</div>
+</div>

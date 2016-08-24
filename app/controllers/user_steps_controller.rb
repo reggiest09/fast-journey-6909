@@ -1,4 +1,5 @@
 class UserStepsController < ApplicationController
+  layout 'application'
   before_action :authenticate_user!
   before_action :user_plan_update, only: :show
   include Wicked::Wizard

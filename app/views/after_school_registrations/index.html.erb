@@ -1,7 +1,8 @@
 <div id="content">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+  <div class="container" style="
+    margin-top: 100px; margin-bottom: 50px;">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-6">
         <h3>
           2016-2017 After-School Registration Form
         </h3>
@@ -35,7 +36,7 @@
         <p>
           Please allow 5 minutes to complete this application
         </p>
-        <%=link_to "Start a New Registration",new_after_school_registration_path(value: params["summer_plan"].to_i),class: "btn btn-default btn-primary btn-lg" %>
+        <%=link_to "Start a New Registration",new_after_school_registration_path(value: params["summer_plan"].to_i, payment_plan: params[:payment_plan]),class: "btn btn-default btn-primary btn-lg" %>
         <br>
       </div>
     </div>
