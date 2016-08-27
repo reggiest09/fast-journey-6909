@@ -3,7 +3,7 @@ class SchoolClosingStepsController < ApplicationController
   before_action :authenticate_user!
   def index
     @user = current_user
-    @user.update_attributes(:plan_name => params[:plan_name], :plan => params[:payment_plan])
+    @user.update_attributes(:plan_name => params[:plan_name], :plan => params[:payment_plan], :child_count => params[:summer_plan])
     @subscription = Subscription.new
   end
 
@@ -16,7 +16,7 @@ class SchoolClosingStepsController < ApplicationController
     end
     @user.attributes = person_params.merge(child_name: params[:user][:child_name].present? ? params[:user][:child_name] : nil)
     if @user.save
-      redirect_to payment_path
+      redirect_to payment_path(:child_count => params[:user][:plan_mode])
     else
       render 'index'
     end

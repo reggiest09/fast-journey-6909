@@ -50,7 +50,6 @@ class Subscription < ActiveRecord::Base
 
 
   def create_stripe_customer_and_subscription(user)
-    binding.pry
     begin
       s_customer = Stripe::Customer.create(description: user.first_name, card: self.stripe_card_token, email: user.email)
       stripe_customer = StripeCustomer.create(object: s_customer.object, description: s_customer.description, livemode: s_customer.livemode, created_timestamp: s_customer.created, reference_id: s_customer.id, user_id: self.user_id)
@@ -75,14 +74,14 @@ class Subscription < ActiveRecord::Base
         stripe_charge = Stripe::Charge.create(amount: stripe_all_dates, currency: "usd", customer: s_customer.id, description: "spring break all days")
         user.stripe_charges.create(amount: stripe_all_dates, currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)  
       elsif user.plan_name == "noresmen_football" || user.plan_name == "noresmen_cheer"
-        binding.pry
+        
         stripe_charge = Stripe::Charge.create(amount: stripe_football_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for Football")
         user.stripe_charges.create(amount: stripe_football_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)
       elsif user.plan_name == "noresmen_basketball" || user.plan_name == "norsemen_baseball"
-        stripe_charge = Stripe::Charge.create(amount: stripe_baseball_and_basketball_amount(user), currency: "usd", customer: s_customer.id, description: "Charge for test@example.com")
+        stripe_charge = Stripe::Charge.create(amount: stripe_baseball_and_basketball_amount(user), currency: "usd", customer: s_customer.id, description: "BB")
         user.stripe_charges.create(amount: stripe_baseball_and_basketball_amount(user), currency: "usd", description: "test", stripe_customer_id: stripe_customer.id)  
       else
-        binding.pry
+        
         
         subscription = customer.subscriptions.create(:plan => payment_discount(user.plan_name))
         user.subscriptions.create(stripe_card_token: subscription.id,plan_name: user.plan_name, stripe_customer_id: stripe_customer.id)
@@ -117,7 +116,7 @@ class Subscription < ActiveRecord::Base
       plan = "baw3"
     elsif plan_name == "BAM1Child"
       plan = "bam1"
-    elsif plan_name == "BAM@Child"
+    elsif plan_name == "BAM2Child"
       plan = "bam2"
     elsif plan_name == "BAM3Child"
       plan = "bam3"
@@ -142,7 +141,8 @@ class Subscription < ActiveRecord::Base
   end
 
   def stripe_charge_amount(user)
-    ((user.holiday.reject { |c| c.empty? }.count) * (25 * user.children_names.count )) * 100
+    days_amount = (user.holiday.reject { |c| c.empty? }.count) * 25
+    (user.child_count.to_i * days_amount) * 100
   end
 
   def after_school_amount(user)
@@ -150,15 +150,15 @@ class Subscription < ActiveRecord::Base
   end
 
   def stripe_all_dates
-    (85 * 100)
+    (85 * user.children_names.count)  * 100
   end
-  
+
   def stripe_football_amount(user)
-    (175 * user.children_names.count) * 100
+    (175 * user.child_count.to_i) * 100
   end
 
   def stripe_baseball_and_basketball_amount(user)
-    (100 * user.children_names.count) * 100
+    (100 * user.child_count.to_i) * 100
   end
 
   # def check_subscription(user)

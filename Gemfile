@@ -38,7 +38,6 @@ gem 'activeadmin', github: 'activeadmin'
 # gem 'prawn'
 # gem 'prawn-table'
 gem 'bootstrap_form'
-gem 'thin'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

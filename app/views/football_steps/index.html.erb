@@ -72,39 +72,38 @@
   	      <%= f.input :shirt_size, as: :radio_buttons, :collection => [['Youth XS', 'f_c'], ['Youth S', 'search'],['Youth M', 'advertisement'],['Youth L', 'other'],['Adult S', 'other'],['Adult M', 'other']],class: "required", required: true %>
   	    </div>
   	  </div>
+      
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 ">
-	      <%= f.input :father_name, label: "Parents Name" %>
-	    </div>
-	    <div class="col-lg-3 col-xs-5 ">
-	      <%= f.input :school_name, label: "Father's Cell Phone Number" %>
-	    </div>
-	  </div>
-	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 ">
+      <%if params[:plan_name] == "noresmen_cheer" %>
+	     <div class="col-lg-3 col-xs-5 ">
 	      <%= f.input :company, label: 'Company'%>
-	    </div>
-	    <div class="col-lg-3 col-xs-5 ">
-        <%if params[:plan_name] == "noresmen_basketball" %> 
-          <%= f.input :register_for, as: :check_boxes, collection: [['Summer Camp', 'noresmen_football']],class: "required", required: true %>
-        <%else%>
-	       <%= f.input :register_for, as: :check_boxes, collection: [['Football', 'football'], ['Cheerleading', 'cheerleading']],class: "required", required: true %>
-        <%end%>
-	    </div>
+	     </div>
+      <% end %>
+	    
 	  </div>
 	  <div class="row">
-	    <div class="col-lg-3 col-xs-5 ">
-        <% text = params[:plan_name] == "football" ? "Please list the names and grades of brothers and/or sisters also participating in football and/or cheerleading:" : "Please list the names and grades of brothers and/or sisters also participating in Summer Camp:" %>
-	      <%= f.input :other_arrangements, as: :text,label: text%>
-	    </div>
+	    
       <%if params[:plan_name] == "football" %>
   	    <div class="col-lg-3 col-xs-5 ">
   	      <%= f.input :player_weight, label: "Football Player's Weight"%>
   	    </div>
       <%end%>
 	  </div>
+
+    <%if params[:plan_name] == "noresmen_cheer" %> 
+       <div class="row">
+      <div class="col-lg-3 col-xs-5 ">
+        <%= f.input :father_name, label: "Parents Name" %>
+      </div>
+      <div class="col-lg-3 col-xs-5 ">
+        <%= f.input :school_name, label: "Father's Cell Phone Number" %>
+      </div>
+       </div>
+      <% end %>
 	  <div class="row">
     </div>
+
+
 
     <%= f.hidden_field "plan_name", :value => params[:plan_name] %>
     <%= f.hidden_field "interval", :value => params[:interval] %>

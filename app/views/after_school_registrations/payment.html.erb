@@ -65,13 +65,17 @@
   </div>
 <%end%>
 
-<% if current_user.plan_name == "school_closing_date"%>
+<% if current_user.plan_name == "school_closing_date" || current_user.plan_name == "christmas_break" || current_user.plan_name == "spring_break" %>
   <div class="row">
     <div class="col-lg-12 color-change">
     <% if current_user.plan == "daily" %>
-      You will be charged $<%= current_user.holiday.reject { |c| c.empty? }.count * (25 * current_user.children_names.count) %>
+      <% days_amount = (current_user.holiday.reject { |c| c.empty? }.count) * 25 %>
+      You will be charged $ <%= (current_user.child_count.to_i * days_amount) %>
     <%else%>
-      You will be charged $85
+        <% if current_user.children_names.count > 0 %>
+          You will be charged $<%= 85 * current_user.children_names.count %>
+        <% else %>
+      <% end %>
     <%end%>
     </div>
   </div>
