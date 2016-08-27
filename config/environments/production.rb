@@ -85,7 +85,8 @@ Rails.application.configure do
     :domain               => 'tapseducationandsportsacademy.com',
     :user_name            => ENV["USER_EMAIL"],
     :password             => ENV["USER_PASSWORD"],
-    :authentication       => 'plain'
+    :authentication       => 'plain',
+    :enable_starttls_auto  => true
   }
 
   # Raises error for missing translations
