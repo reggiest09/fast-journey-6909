@@ -113,11 +113,6 @@
                 <div class="product-price"><span class="price-sales"> $25 per day </span> 
                 </div>
                 
-                <div class="product-price"><span class="price-sales"> $85 For All Days </span> 
-                </div>
-                
-
-                
                 <!-- productFilter -->
 
                 <div class="cart-actions">
@@ -128,8 +123,6 @@
                                 <div class="field">
                                  <%= label 'payment_plan', "daily", :value => "true"  %>
                                  <%= radio_button_tag 'payment_plan', "daily", true, class: 'monthly_radio'%>
-                                 <%= label 'payment_plan', "all_days", :value => "false" %>
-                                 <%= radio_button_tag 'payment_plan', "all_days", false, :checked => true, class: 'weekly_radio' %>
                                 </div>
                                     <div class= "weekly">
                                         <%= label 'weekly', "One child", :value => "true"  %>
