@@ -12,7 +12,9 @@
       <%= render partial: "summer_weekly", locals: {plan_name: params[:plan_name],f: f} %>
     <%else%>
       <h3>  <%if params[:plan_name] == "noresmen_basketball" %> 
-             Norsemen Basketball 2016- 2017 
+             Norsemen Basketball 2016- 2017
+           <h3>  You may enter multiple children's names In the Child Name box. Seperate your childrens names by comma. If you are registering more than one child. Please email your children's birthday dates to tapssportsacademy@gmail.com</h3>
+
             <%else%>
               Norsemen Football / Cheerleading Registration Form 
             <%end%>
@@ -28,7 +30,7 @@
       <div class="row">
         <div class="col-lg-3 col-xs-5">
           <%= f.input :child_name, placeholder: 'Child Name', input_html: { multiple: true,"data-role"=>"tagsinput",required: true }, class: "required name col-xs-6 col-lg-2" %>
-          <span><b>Enter comma (,) add multiple childrens</b></span>
+          <span><b>Enter comma (,) add multiple children names</b></span>
         </div>
       </div></br>
       <div class="row">
